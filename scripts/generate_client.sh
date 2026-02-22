@@ -17,7 +17,7 @@ if [[ ! -f "$OPENAPI_DIR/openapi.yaml" ]]; then
 fi
 
 echo "Bundling OpenAPI spec with Redocly..."
-npx --yes @redocly/cli bundle "$OPENAPI_DIR/openapi.yaml" -o "$BUNDLED"
+npx --yes @redocly/cli bundle "$OPENAPI_DIR/openapi.yaml" -o "$BUNDLED" --component-renaming-conflicts-severity off
 
 echo "Applying upstream-spec fixes (descriptions, array items, path params, path templating)..."
 python "$SCRIPT_DIR/patch_bundled_spec_full.py" "$BUNDLED"
