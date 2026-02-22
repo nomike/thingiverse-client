@@ -1,0 +1,47 @@
+site_name: Thingiverse Python SDK
+site_description: Python SDK for the Thingiverse API
+site_url: https://placeholder.github.io/thingiverse-api/
+repo_url: https://github.com/placeholder/thingiverse-api
+repo_name: placeholder/thingiverse-api
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [thingiverse_client]
+          options:
+            docstring_style: google
+            show_source: true
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - File uploads: file-uploads.md
+  - API Reference:
+      - thingiverse_client: api/thingiverse_client.md
+
+markdown_extensions:
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - admonition
+  - tables

@@ -1,0 +1,84 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "thingiverse-client"
+version = "0.1.0"
+description = "Python SDK for the Thingiverse API"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Thingiverse SDK contributors" }]
+keywords = ["thingiverse", "api", "sdk", "3d", "maker"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "httpx>=0.27.0",
+    "attrs>=22.2.0",
+    "python-dateutil>=2.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-httpx>=0.27",
+    "responses>=0.24.0",
+    "ruff>=0.4.0",
+    "pyyaml>=6.0",
+    "openapi-python-client>=0.28.0",
+    "zensical>=0.0.11",
+    "mkdocstrings-python>=0.26.0",
+]
+
+[project.urls]
+Documentation = "https://github.com/placeholder/thingiverse-api#readme"
+Repository = "https://github.com/placeholder/thingiverse-api"
+
+[tool.hatch.build.targets.wheel]
+packages = ["thingiverse_client"]
+
+[tool.hatch.build.targets.sdist]
+include = ["thingiverse_client", "thingiverse_client/py.typed"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+src = ["thingiverse_client", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"thingiverse_client/errors.py" = ["N818"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v --tb=short -m 'not destructive'"
+filterwarnings = ["ignore::DeprecationWarning"]
+markers = [
+    "integration: marks tests as integration (read-only API calls)",
+    "destructive: marks tests that modify data (optional, not run in CI)",
+]
+
+[tool.coverage.run]
+source = ["thingiverse_client"]
+branch = true
+omit = ["tests/*", "*/__init__.py"]
+
+[tool.coverage.report]
+exclude_lines = ["pragma: no cover", "def __repr__", "raise NotImplementedError"]

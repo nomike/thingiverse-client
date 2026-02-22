@@ -1,0 +1,30 @@
+openapi: 3.0.0
+info:
+  title: API documentation
+  version: 0.0.1
+servers:
+  - url: https://api.thingiverse.com
+    description: Production
+  - url: https://api-staging.thingiverse.com
+    description: Staging
+paths:
+  /things/:
+    get:
+      operationId: get_things
+      responses:
+        '200':
+          description: OK
+  /things/{thing_id}:
+    get:
+      operationId: get_thing_by_id
+      parameters:
+        - name: thing_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+components:
+  schemas: {}
