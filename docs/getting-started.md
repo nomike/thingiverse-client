@@ -24,10 +24,10 @@ Use the generated API modules under `thingiverse_client.api`:
 
 ```python
 from thingiverse_client import AuthenticatedClient, BASE_URL_PRODUCTION
-from thingiverse_client.api.default import get_things
+from thingiverse_client.api.thing import get_things_thing_id
 
 client = AuthenticatedClient(base_url=BASE_URL_PRODUCTION, token="...")
-response = get_things.sync_detailed(client=client)
+response = get_things_thing_id.sync_detailed(thing_id=123, client=client)
 ```
 
 ## File uploads

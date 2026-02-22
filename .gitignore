@@ -1,4 +1,5 @@
 __pycache__/
+.ruff_cache/
 build/
 dist/
 *.egg-info/
@@ -24,3 +25,7 @@ site/
 
 /coverage.xml
 /.coverage
+
+# Generated/temp OpenAPI bundle files
+openapi/bundled.yaml
+openapi/bundled.orig.yaml

@@ -35,6 +35,7 @@ nav:
   - Home: index.md
   - Getting started: getting-started.md
   - File uploads: file-uploads.md
+  - OpenAPI spec (upstream): openapi-upstream.md
   - API Reference:
       - thingiverse_client: api/thingiverse_client.md
 
