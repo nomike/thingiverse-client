@@ -187,6 +187,7 @@ def _fix_path_templating(spec: dict) -> int:
                     and p.get("name") not in valid_path_params
                 ):
                     p["in"] = "query"
+                    p.pop("required", None)
                     changes += 1
 
     return changes
