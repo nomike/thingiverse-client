@@ -1,0 +1,80 @@
+name: Sync upstream API
+
+on:
+  schedule:
+    # Every Monday at 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Fetch OpenAPI spec from Thingiverse
+        run: python scripts/fetch_openapi_spec.py
+
+      - name: Regenerate SDK
+        run: bash scripts/generate_client.sh
+
+      - name: Lint and format generated code
+        run: |
+          ruff check --fix thingiverse_client/ || true
+          ruff format thingiverse_client/
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet HEAD -- openapi/ thingiverse_client/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No upstream changes detected."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Upstream changes detected:"
+            git diff --stat HEAD -- openapi/ thingiverse_client/
+          fi
+
+      - name: Run unit tests
+        if: steps.diff.outputs.changed == 'true'
+        run: pytest tests/unit/ -v
+
+      - name: Create or update PR
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+          branch: chore/sync-upstream-api
+          commit-message: "chore: regenerate SDK from upstream OpenAPI spec"
+          title: "chore: upstream API changes detected"
+          body: |
+            Automated SDK regeneration detected changes in the upstream Thingiverse OpenAPI spec.
+
+            **What to review:**
+            - Changes in `openapi/` — raw spec differences from Thingiverse
+            - Changes in `thingiverse_client/api/` — new, removed, or modified endpoints
+            - Changes in `thingiverse_client/models/` — schema/type changes
+
+            **If the workflow failed before reaching this step**, the patch script
+            (`scripts/patch_bundled_spec_full.py`) may need updating for new spec issues.
+
+            Unit tests passed on the regenerated SDK.
+          labels: automated,api-sync
+          delete-branch: true
