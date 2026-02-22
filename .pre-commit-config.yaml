@@ -35,19 +35,22 @@ repos:
       - id: markdownlint
         args: [--fix]
 
-  # YAML lint
+  # YAML lint (exclude upstream openapi/ spec from strict linting)
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.35.1
     hooks:
       - id: yamllint
         args: [-c, .yamllint.yml]
+        exclude: ^openapi/
 
-  # Trailing whitespace and end-of-file
+  # Trailing whitespace and end-of-file (exclude upstream openapi/ spec)
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
       - id: trailing-whitespace
+        exclude: ^openapi/
       - id: end-of-file-fixer
+        exclude: ^openapi/
       - id: check-yaml
       - id: check-json
       - id: check-added-large-files
