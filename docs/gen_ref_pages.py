@@ -6,6 +6,7 @@ pages grouped by resource, so the generated docs stay in sync with the
 code automatically.
 """
 
+import re
 from pathlib import Path
 
 import mkdocs_gen_files
@@ -114,10 +115,49 @@ RESOURCE_PREFIXES = [
     "verified",
 ]
 
+_HTTP_VERB_RE = re.compile(r"^(get|post|put|patch|delete|head|options)_")
+
+_PLURAL_SEGMENT_TO_RESOURCE = {
+    "apps": "app",
+    "banner": "banner",
+    "categories": "category",
+    "categoriesreturncomplete": "category",
+    "collections": "collection",
+    "comments": "comment",
+    "copies": "copy",
+    "copiesreturncomplete": "copy",
+    "email": "email",
+    "events": "event",
+    "featured": "thing",
+    "files": "file",
+    "groups": "group",
+    "grouptopics": "group_topic",
+    "homebanner": "home_banner",
+    "messages": "message",
+    "newest": "thing",
+    "popular": "thing",
+    "printers": "printer",
+    "programs": "program",
+    "search": "search",
+    "sitewidenotification": "sitewidenotification",
+    "subscriptions": "subscription",
+    "tags": "tag",
+    "thingops": "thing_ops",
+    "things": "thing",
+    "users": "user",
+    "verified": "verified",
+}
+
 model_files = sorted(p.stem for p in MODELS_DIR.glob("*.py") if p.stem != "__init__")
 
 
 def _classify(name: str) -> str:
+    stripped = _HTTP_VERB_RE.sub("", name)
+    if stripped != name:
+        first_seg = stripped.split("_")[0]
+        resource = _PLURAL_SEGMENT_TO_RESOURCE.get(first_seg)
+        if resource:
+            return resource
     for prefix in sorted(RESOURCE_PREFIXES, key=len, reverse=True):
         if name.startswith(prefix):
             return prefix
