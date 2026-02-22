@@ -192,6 +192,34 @@ def _fix_path_templating(spec: dict) -> int:
     return changes
 
 
+def _fix_duplicate_image_summary_sizes(spec: dict) -> int:
+    """Extract the image_summary 'sizes' item schema into a named component and $ref it so the generator sees one schema instead of two duplicates."""
+    components = spec.get("components") or {}
+    schemas = components.get("schemas") or {}
+    if not isinstance(schemas, dict):
+        return 0
+    changes = 0
+    image_summary = schemas.get("image_summary_schema")
+    if not isinstance(image_summary, dict):
+        return 0
+    props = image_summary.get("properties") or {}
+    sizes = props.get("sizes") if isinstance(props, dict) else None
+    if not isinstance(sizes, dict):
+        return 0
+    items = sizes.get("items")
+    if (
+        not isinstance(items, dict)
+        or items.get("type") != "object"
+        or "ImageSummarySizesItem" in schemas
+    ):
+        return 0
+    # Extract to a named schema so both ImageSummary and image_summary_schema use the same ref
+    schemas["ImageSummarySizesItem"] = dict(items)
+    sizes["items"] = {"$ref": "#/components/schemas/ImageSummarySizesItem"}
+    changes += 1
+    return changes
+
+
 def main() -> int:
     path = Path(sys.argv[1] if len(sys.argv) > 1 else "openapi/bundled.yaml")
     if not path.exists():
@@ -207,13 +235,14 @@ def main() -> int:
     n_array = _add_array_items(spec)
     n_req = _require_path_params(spec)
     n_path = _fix_path_templating(spec)
+    n_sizes = _fix_duplicate_image_summary_sizes(spec)
 
     path.write_text(
         yaml.dump(spec, default_flow_style=False, allow_unicode=True),
         encoding="utf-8",
     )
     print(
-        f"Patched {path}: {n_desc} description(s), {n_array} array items, {n_req} path required, {n_path} path fix(es)"
+        f"Patched {path}: {n_desc} description(s), {n_array} array items, {n_req} path required, {n_path} path fix(es), {n_sizes} image-summary title(s)"
     )
     return 0
 
