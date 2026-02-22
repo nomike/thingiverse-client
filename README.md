@@ -20,14 +20,14 @@ pip install -e ".[dev]"
 
 ```python
 from thingiverse_client import AuthenticatedClient, BASE_URL_PRODUCTION
+from thingiverse_client.api.thing import get_things_thing_id
 
 client = AuthenticatedClient(
     base_url=BASE_URL_PRODUCTION,
     token="YOUR_ACCESS_TOKEN",
 )
 
-from thingiverse_client.api.default import get_things
-response = get_things.sync_detailed(client=client)
+response = get_things_thing_id.sync_detailed(thing_id=123, client=client)
 ```
 
 ## Using the staging API
@@ -103,9 +103,7 @@ To refresh the SDK from the upstream Thingiverse OpenAPI spec:
    ./scripts/generate_client.sh
    ```
 
-3. Restore or merge `pyproject.toml` if the generator overwrote it (e.g. `git checkout pyproject.toml` then re-add any new deps from the generated file).
-
-4. Commit changes and open a PR; merging can trigger a new release via release-please.
+3. Commit changes and open a PR; merging can trigger a new release via release-please.
 
 ## Documentation
 

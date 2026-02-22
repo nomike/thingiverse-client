@@ -38,4 +38,18 @@ rm -rf "$OUTPUT_DIR"
 mv "$TEMP_OUTPUT/thingiverse_client" "$OUTPUT_DIR"
 rm -rf "$TMPDIR"
 
+# Add project-specific constants that the generator does not produce.
+cat > "$OUTPUT_DIR/_constants.py" << 'PYEOF'
+"""Thingiverse API base URLs (not part of the generated client)."""
+
+BASE_URL_PRODUCTION: str = "https://api.thingiverse.com"
+BASE_URL_STAGING: str = "https://api-staging.thingiverse.com"
+PYEOF
+
+# Re-export the constants from the package __init__.
+if ! grep -q "BASE_URL_PRODUCTION" "$OUTPUT_DIR/__init__.py"; then
+  sed -i 's/from .client import/from ._constants import BASE_URL_PRODUCTION, BASE_URL_STAGING\nfrom .client import/' "$OUTPUT_DIR/__init__.py"
+  sed -i 's/__all__ = (/__all__ = (\n    "BASE_URL_PRODUCTION",\n    "BASE_URL_STAGING",/' "$OUTPUT_DIR/__init__.py"
+fi
+
 echo "Done. Client is in $OUTPUT_DIR"
