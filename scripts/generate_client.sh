@@ -48,8 +48,22 @@ PYEOF
 
 # Re-export the constants from the package __init__.
 if ! grep -q "BASE_URL_PRODUCTION" "$OUTPUT_DIR/__init__.py"; then
-  sed -i 's/from .client import/from ._constants import BASE_URL_PRODUCTION, BASE_URL_STAGING\nfrom .client import/' "$OUTPUT_DIR/__init__.py"
-  sed -i 's/__all__ = (/__all__ = (\n    "BASE_URL_PRODUCTION",\n    "BASE_URL_STAGING",/' "$OUTPUT_DIR/__init__.py"
+  python -c "
+import pathlib, sys
+p = pathlib.Path(sys.argv[1])
+t = p.read_text()
+t = t.replace(
+    'from .client import',
+    'from ._constants import BASE_URL_PRODUCTION, BASE_URL_STAGING\nfrom .client import',
+    1,
+)
+t = t.replace(
+    '__all__ = (',
+    '__all__ = (\n    \"BASE_URL_PRODUCTION\",\n    \"BASE_URL_STAGING\",',
+    1,
+)
+p.write_text(t)
+" "$OUTPUT_DIR/__init__.py"
 fi
 
 echo "Done. Client is in $OUTPUT_DIR"
