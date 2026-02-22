@@ -159,7 +159,7 @@ def _classify(name: str) -> str:
         if resource:
             return resource
     for prefix in sorted(RESOURCE_PREFIXES, key=len, reverse=True):
-        if name.startswith(prefix):
+        if stripped.startswith(prefix):
             return prefix
     return "other"
 
