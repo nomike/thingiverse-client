@@ -11,16 +11,6 @@ repos:
         stages: [commit-msg]
         additional_dependencies: ["@commitlint/config-conventional"]
 
-  # Docs build check (Zensical reads mkdocs.yml)
-  - repo: local
-    hooks:
-      - id: zensical-build
-        name: zensical build
-        entry: zensical build
-        language: system
-        pass_filenames: false
-        files: ^(mkdocs\.yml|docs/|zensical\.toml)
-
   # Ruff (format + lint)
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.8.0

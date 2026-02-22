@@ -20,9 +20,17 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.prune
 
 plugins:
   - search
+  - gen-files:
+      scripts:
+        - docs/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
   - mkdocstrings:
       handlers:
         python:
@@ -36,8 +44,7 @@ nav:
   - Getting started: getting-started.md
   - File uploads: file-uploads.md
   - OpenAPI spec (upstream): openapi-upstream.md
-  - API Reference:
-      - thingiverse_client: api/thingiverse_client.md
+  - API Reference: api/
 
 markdown_extensions:
   - pymdownx.snippets
