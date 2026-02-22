@@ -23,20 +23,20 @@ echo "Applying upstream-spec fixes (descriptions, array items, path params, path
 python "$SCRIPT_DIR/patch_bundled_spec_full.py" "$BUNDLED"
 
 echo "Generating Python client..."
-TMPDIR="$(mktemp -d)"
-TEMP_OUTPUT="$TMPDIR/thingiverse-client"
+GEN_TMPDIR="$(mktemp -d)"
+TEMP_OUTPUT="$GEN_TMPDIR/thingiverse-client"
 openapi-python-client generate --path "$BUNDLED" --config "$CONFIG" --output-path "$TEMP_OUTPUT"
 
 # The generator creates a full project; we only want the inner package.
 if [[ ! -d "$TEMP_OUTPUT/thingiverse_client" ]]; then
   echo "Error: expected package dir $TEMP_OUTPUT/thingiverse_client not found."
-  rm -rf "$TMPDIR"
+  rm -rf "$GEN_TMPDIR"
   exit 1
 fi
 
 rm -rf "$OUTPUT_DIR"
 mv "$TEMP_OUTPUT/thingiverse_client" "$OUTPUT_DIR"
-rm -rf "$TMPDIR"
+rm -rf "$GEN_TMPDIR"
 
 # Add project-specific constants that the generator does not produce.
 cat > "$OUTPUT_DIR/_constants.py" << 'PYEOF'
