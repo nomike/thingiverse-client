@@ -25,5 +25,6 @@ site/
 /coverage.xml
 /.coverage
 
-# Temp file when creating/updating openapi/bundled.patch
+# Generated/temp OpenAPI bundle files
+openapi/bundled.yaml
 openapi/bundled.orig.yaml
