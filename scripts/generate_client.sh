@@ -19,6 +19,13 @@ fi
 echo "Bundling OpenAPI spec with Redocly..."
 npx --yes @redocly/cli bundle "$OPENAPI_DIR/openapi.yaml" -o "$BUNDLED"
 
+echo "Applying upstream-spec fix patch..."
+if ! patch -p0 --forward < "$OPENAPI_DIR/bundled.patch"; then
+  echo "Patch failed. Upstream spec may have changed; see docs/openapi-upstream.md for how to update the patch."
+  exit 1
+fi
+rm -f "$OPENAPI_DIR/bundled.yaml.orig"
+
 echo "Generating Python client..."
 # Generate into thingiverse_client/ so package name matches directory
 openapi-python-client generate --path "$BUNDLED" --config "$CONFIG" --output-path "$OUTPUT_DIR" --overwrite

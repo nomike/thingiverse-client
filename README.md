@@ -97,7 +97,7 @@ To refresh the SDK from the upstream Thingiverse OpenAPI spec:
    python scripts/fetch_openapi_spec.py
    ```
 
-2. Bundle and regenerate the client:
+2. Bundle, apply the fix patch, and regenerate the client (see [OpenAPI upstream notes](docs/openapi-upstream.md)):
 
    ```bash
    ./scripts/generate_client.sh
