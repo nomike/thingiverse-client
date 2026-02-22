@@ -35,14 +35,15 @@ with mkdocs_gen_files.open("api/client.md", "w") as f:
         "        - BASE_URL_STAGING\n"
     )
 
-# ── Endpoint pages (one per API sub-package) ──────────────────────────
-NICE_NAMES = {
+# ── Display names shared by endpoints and models ─────────────────────
+_DISPLAY_NAMES = {
     "app": "App",
     "banner": "Banner",
     "category": "Category",
     "changelog": "Changelog",
     "collection": "Collection",
     "comment": "Comment",
+    "copy": "Copy",
     "deprecated": "Deprecated",
     "email": "Email",
     "event": "Event",
@@ -52,6 +53,7 @@ NICE_NAMES = {
     "home_banner": "Home Banner",
     "make": "Make",
     "message": "Message",
+    "other": "Other",
     "printer": "Printer",
     "program": "Program",
     "search": "Search",
@@ -64,10 +66,16 @@ NICE_NAMES = {
     "verified": "Verified",
 }
 
+
+def _nice(key: str) -> str:
+    return _DISPLAY_NAMES.get(key, key.replace("_", " ").title())
+
+
+# ── Endpoint pages (one per API sub-package) ──────────────────────────
 groups = sorted(d.name for d in API_DIR.iterdir() if d.is_dir() and d.name != "__pycache__")
 
 for group in groups:
-    nice = NICE_NAMES.get(group, group.replace("_", " ").title())
+    nice = _nice(group)
     nav["Endpoints", nice] = f"endpoints/{group}.md"
 
     with mkdocs_gen_files.open(f"api/endpoints/{group}.md", "w") as f:
@@ -121,35 +129,8 @@ for m in model_files:
     bucket = _classify(m)
     groups_map.setdefault(bucket, []).append(m)
 
-MODEL_NICE = {
-    "thing": "Thing",
-    "user": "User",
-    "tag": "Tag",
-    "copy": "Copy",
-    "collection": "Collection",
-    "comment": "Comment",
-    "group": "Group",
-    "category": "Category",
-    "file": "File",
-    "make": "Make",
-    "search": "Search",
-    "subscription": "Subscription",
-    "banner": "Banner",
-    "app": "App",
-    "changelog": "Changelog",
-    "email": "Email",
-    "event": "Event",
-    "home_banner": "Home Banner",
-    "message": "Message",
-    "printer": "Printer",
-    "program": "Program",
-    "sitewidenotification": "Sitewide Notification",
-    "verified": "Verified",
-    "other": "Other",
-}
-
 for bucket in sorted(groups_map):
-    nice = MODEL_NICE.get(bucket, bucket.replace("_", " ").title())
+    nice = _nice(bucket)
     nav["Models", nice] = f"models/{bucket}.md"
 
     members = groups_map[bucket]
