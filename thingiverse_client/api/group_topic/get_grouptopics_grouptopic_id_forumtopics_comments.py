@@ -1,0 +1,272 @@
+from http import HTTPStatus
+from typing import Any
+from urllib.parse import quote
+
+import httpx
+
+from ... import errors
+from ...client import AuthenticatedClient, Client
+from ...models.get_grouptopics_grouptopic_id_forumtopics_comments_response_200 import (
+    GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200,
+)
+from ...models.get_grouptopics_grouptopic_id_forumtopics_comments_response_401 import (
+    GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401,
+)
+from ...models.get_grouptopics_grouptopic_id_forumtopics_comments_response_403 import (
+    GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403,
+)
+from ...models.get_grouptopics_grouptopic_id_forumtopics_comments_response_404 import (
+    GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404,
+)
+from ...types import UNSET, Response, Unset
+
+
+def _get_kwargs(
+    grouptopic_id: int,
+    *,
+    search: str | Unset = UNSET,
+    page: int | Unset = UNSET,
+    per_page: int | Unset = UNSET,
+) -> dict[str, Any]:
+    params: dict[str, Any] = {}
+
+    params["search"] = search
+
+    params["page"] = page
+
+    params["per_page"] = per_page
+
+    params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
+
+    _kwargs: dict[str, Any] = {
+        "method": "get",
+        "url": "/grouptopics/{grouptopic_id}/forumtopics-comments".format(
+            grouptopic_id=quote(str(grouptopic_id), safe=""),
+        ),
+        "params": params,
+    }
+
+    return _kwargs
+
+
+def _parse_response(
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> (
+    GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404
+    | None
+):
+    if response.status_code == 200:
+        response_200 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200.from_dict(
+            response.json()
+        )
+
+        return response_200
+
+    if response.status_code == 401:
+        response_401 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401.from_dict(
+            response.json()
+        )
+
+        return response_401
+
+    if response.status_code == 403:
+        response_403 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403.from_dict(
+            response.json()
+        )
+
+        return response_403
+
+    if response.status_code == 404:
+        response_404 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404.from_dict(
+            response.json()
+        )
+
+        return response_404
+
+    if client.raise_on_unexpected_status:
+        raise errors.UnexpectedStatus(response.status_code, response.content)
+    else:
+        return None
+
+
+def _build_response(
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> Response[
+    GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404
+]:
+    return Response(
+        status_code=HTTPStatus(response.status_code),
+        content=response.content,
+        headers=response.headers,
+        parsed=_parse_response(client=client, response=response),
+    )
+
+
+def sync_detailed(
+    grouptopic_id: int,
+    *,
+    client: AuthenticatedClient,
+    search: str | Unset = UNSET,
+    page: int | Unset = UNSET,
+    per_page: int | Unset = UNSET,
+) -> Response[
+    GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404
+]:
+    """Get list topics and comments of a certain forum
+
+    Args:
+        grouptopic_id (int):  Example: 2.
+        search (str | Unset):  Example: 3d.
+        page (int | Unset):  Example: 1.
+        per_page (int | Unset):  Example: 30.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
+    Returns:
+        Response[GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404]
+    """
+
+    kwargs = _get_kwargs(
+        grouptopic_id=grouptopic_id,
+        search=search,
+        page=page,
+        per_page=per_page,
+    )
+
+    response = client.get_httpx_client().request(
+        **kwargs,
+    )
+
+    return _build_response(client=client, response=response)
+
+
+def sync(
+    grouptopic_id: int,
+    *,
+    client: AuthenticatedClient,
+    search: str | Unset = UNSET,
+    page: int | Unset = UNSET,
+    per_page: int | Unset = UNSET,
+) -> (
+    GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404
+    | None
+):
+    """Get list topics and comments of a certain forum
+
+    Args:
+        grouptopic_id (int):  Example: 2.
+        search (str | Unset):  Example: 3d.
+        page (int | Unset):  Example: 1.
+        per_page (int | Unset):  Example: 30.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
+    Returns:
+        GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404
+    """
+
+    return sync_detailed(
+        grouptopic_id=grouptopic_id,
+        client=client,
+        search=search,
+        page=page,
+        per_page=per_page,
+    ).parsed
+
+
+async def asyncio_detailed(
+    grouptopic_id: int,
+    *,
+    client: AuthenticatedClient,
+    search: str | Unset = UNSET,
+    page: int | Unset = UNSET,
+    per_page: int | Unset = UNSET,
+) -> Response[
+    GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404
+]:
+    """Get list topics and comments of a certain forum
+
+    Args:
+        grouptopic_id (int):  Example: 2.
+        search (str | Unset):  Example: 3d.
+        page (int | Unset):  Example: 1.
+        per_page (int | Unset):  Example: 30.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
+    Returns:
+        Response[GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404]
+    """
+
+    kwargs = _get_kwargs(
+        grouptopic_id=grouptopic_id,
+        search=search,
+        page=page,
+        per_page=per_page,
+    )
+
+    response = await client.get_async_httpx_client().request(**kwargs)
+
+    return _build_response(client=client, response=response)
+
+
+async def asyncio(
+    grouptopic_id: int,
+    *,
+    client: AuthenticatedClient,
+    search: str | Unset = UNSET,
+    page: int | Unset = UNSET,
+    per_page: int | Unset = UNSET,
+) -> (
+    GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403
+    | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404
+    | None
+):
+    """Get list topics and comments of a certain forum
+
+    Args:
+        grouptopic_id (int):  Example: 2.
+        search (str | Unset):  Example: 3d.
+        page (int | Unset):  Example: 1.
+        per_page (int | Unset):  Example: 30.
+
+    Raises:
+        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
+        httpx.TimeoutException: If the request takes longer than Client.timeout.
+
+    Returns:
+        GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403 | GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404
+    """
+
+    return (
+        await asyncio_detailed(
+            grouptopic_id=grouptopic_id,
+            client=client,
+            search=search,
+            page=page,
+            per_page=per_page,
+        )
+    ).parsed

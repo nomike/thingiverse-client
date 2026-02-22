@@ -23,7 +23,19 @@ echo "Applying upstream-spec fixes (descriptions, array items, path params, path
 python "$SCRIPT_DIR/patch_bundled_spec_full.py" "$BUNDLED"
 
 echo "Generating Python client..."
-# Generate into thingiverse_client/ so package name matches directory
-openapi-python-client generate --path "$BUNDLED" --config "$CONFIG" --output-path "$OUTPUT_DIR" --overwrite
+TMPDIR="$(mktemp -d)"
+TEMP_OUTPUT="$TMPDIR/thingiverse-client"
+openapi-python-client generate --path "$BUNDLED" --config "$CONFIG" --output-path "$TEMP_OUTPUT"
+
+# The generator creates a full project; we only want the inner package.
+if [[ ! -d "$TEMP_OUTPUT/thingiverse_client" ]]; then
+  echo "Error: expected package dir $TEMP_OUTPUT/thingiverse_client not found."
+  rm -rf "$TMPDIR"
+  exit 1
+fi
+
+rm -rf "$OUTPUT_DIR"
+mv "$TEMP_OUTPUT/thingiverse_client" "$OUTPUT_DIR"
+rm -rf "$TMPDIR"
 
 echo "Done. Client is in $OUTPUT_DIR"
