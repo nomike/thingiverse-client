@@ -131,9 +131,16 @@ def _fix_path_templating(spec: dict) -> int:
         if isinstance(post_op, dict):
             params = post_op.get("parameters")
             if isinstance(params, list):
-                new_params = [
-                    p for p in params if not (isinstance(p, dict) and p.get("in") == "path")
-                ]
+
+                def is_path_param(param):
+                    if not isinstance(param, dict):
+                        return False
+                    if param.get("in") == "path":
+                        return True
+                    ref = param.get("$ref", "")
+                    return "commentIdPathParam" in ref
+
+                new_params = [p for p in params if not is_path_param(p)]
                 if len(new_params) != len(params):
                     post_op["parameters"] = new_params
                     changes += 1
