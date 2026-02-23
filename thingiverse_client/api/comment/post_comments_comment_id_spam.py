@@ -22,6 +22,7 @@ from ...types import Response
 def _get_kwargs(
     comment_id: int,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "post",
         "url": "/comments/{comment_id}/spam".format(

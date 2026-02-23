@@ -25,6 +25,7 @@ def _get_kwargs(
     copy_id: int,
     image_id: int,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "patch",
         "url": "/copies/{copy_id}/images/{image_id}".format(

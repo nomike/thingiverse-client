@@ -24,6 +24,7 @@ from ...types import Response
 def _get_kwargs(
     collection_id: int,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "post",
         "url": "/collections/{collection_id}/watch".format(

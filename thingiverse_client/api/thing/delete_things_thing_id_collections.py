@@ -21,6 +21,7 @@ from ...types import Response
 def _get_kwargs(
     thing_id: int,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "delete",
         "url": "/things/{thing_id}/collections".format(

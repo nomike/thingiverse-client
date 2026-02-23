@@ -22,6 +22,7 @@ def _get_kwargs(
     type_: GetBanner0PageAdType | Unset = UNSET,
     search: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     json_location = location.value

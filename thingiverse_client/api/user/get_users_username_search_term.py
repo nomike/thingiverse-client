@@ -25,6 +25,7 @@ def _get_kwargs(
     username: str,
     term: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/users/{username}/search/{term}".format(
