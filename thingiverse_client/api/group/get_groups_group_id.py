@@ -16,6 +16,7 @@ from ...types import Response
 def _get_kwargs(
     group_id: int,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/groups/{group_id}".format(

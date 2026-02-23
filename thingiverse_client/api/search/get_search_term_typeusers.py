@@ -26,6 +26,7 @@ def _get_kwargs(
     skill_level: GetSearchTermTypeusersSkillLevel | Unset = UNSET,
     programs: int | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["page"] = page

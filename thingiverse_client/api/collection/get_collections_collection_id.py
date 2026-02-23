@@ -22,6 +22,7 @@ from ...types import Response
 def _get_kwargs(
     collection_id: int,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/collections/{collection_id}/".format(

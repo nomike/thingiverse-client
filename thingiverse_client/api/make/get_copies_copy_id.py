@@ -16,6 +16,7 @@ from ...types import Response
 def _get_kwargs(
     copy_id: int,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/copies/{copy_id}/".format(

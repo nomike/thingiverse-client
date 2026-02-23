@@ -26,6 +26,7 @@ def _get_kwargs(
     *,
     timestamp: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["timestamp"] = timestamp

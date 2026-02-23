@@ -17,6 +17,7 @@ def _get_kwargs(
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["page"] = page

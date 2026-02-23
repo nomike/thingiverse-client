@@ -22,6 +22,7 @@ def _get_kwargs(
     collection_id: int,
     thing_id: int,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "delete",
         "url": "/collections/{collection_id}/thing/{thing_id}".format(

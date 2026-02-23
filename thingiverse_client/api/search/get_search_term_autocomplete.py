@@ -15,6 +15,7 @@ from ...types import Response
 def _get_kwargs(
     term: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/search/{term}/autocomplete".format(

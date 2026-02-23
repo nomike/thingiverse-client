@@ -14,6 +14,7 @@ from ...types import Response
 def _get_kwargs(
     id: int,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "post",
         "url": "/events/{id}/read-all".format(

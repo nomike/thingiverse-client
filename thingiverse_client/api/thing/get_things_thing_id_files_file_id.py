@@ -23,6 +23,7 @@ def _get_kwargs(
     thing_id: int,
     file_id: int,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/things/{thing_id}/files/{file_id}".format(

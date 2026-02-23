@@ -22,6 +22,7 @@ def _get_kwargs(
     sort: GetSearchTermTypemakesSort | Unset = UNSET,
     user_id: int | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["page"] = page

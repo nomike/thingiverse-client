@@ -29,6 +29,7 @@ def _get_kwargs(
     image_type: str | Unset = UNSET,
     image_size: str | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["sort"] = sort

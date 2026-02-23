@@ -24,6 +24,7 @@ from ...types import Response
 def _get_kwargs(
     username: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/users/{username}/all-collected-things".format(

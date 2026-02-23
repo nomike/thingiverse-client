@@ -25,6 +25,7 @@ def _get_kwargs(
     group_id: int,
     forum_slug: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/groups/{group_id}/forum-by-slug/{forum_slug}".format(

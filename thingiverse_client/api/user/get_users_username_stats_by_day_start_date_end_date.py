@@ -23,6 +23,7 @@ def _get_kwargs(
     start_date: str,
     end_date: str,
 ) -> dict[str, Any]:
+
     _kwargs: dict[str, Any] = {
         "method": "get",
         "url": "/users/{username}/stats-by-day/{start_date}/{end_date}".format(

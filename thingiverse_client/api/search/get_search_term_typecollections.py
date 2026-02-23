@@ -34,6 +34,7 @@ def _get_kwargs(
     is_featured: GetSearchTermTypecollectionsIsFeatured | Unset = UNSET,
     liked_by: int | Unset = UNSET,
 ) -> dict[str, Any]:
+
     params: dict[str, Any] = {}
 
     params["page"] = page
