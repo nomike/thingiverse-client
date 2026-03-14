@@ -1,8 +1,8 @@
 """Unit tests for the collection API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.collection import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.collection import (
     delete_collections_collection_id,
     delete_collections_collection_id_thing_thing_id,
     get_collections,

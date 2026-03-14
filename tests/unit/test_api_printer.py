@@ -1,8 +1,8 @@
 """Unit tests for the printer API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.printer import get_printers_0_brands, get_printers_0_models
+from thingiverse import AuthenticatedClient
+from thingiverse.api.printer import get_printers_0_brands, get_printers_0_models
 
 
 def test_get_printers_0_brands_kwargs() -> None:

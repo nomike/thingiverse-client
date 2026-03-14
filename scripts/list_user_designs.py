@@ -9,9 +9,9 @@ import json
 import os
 import sys
 
-from thingiverse_client import BASE_URL_PRODUCTION, AuthenticatedClient
-from thingiverse_client.api.thing import get_things_thing_id
-from thingiverse_client.api.user import get_users_username_things
+from thingiverse import BASE_URL_PRODUCTION, AuthenticatedClient
+from thingiverse.api.thing import get_things_thing_id
+from thingiverse.api.user import get_users_username_things
 
 
 def main() -> None:

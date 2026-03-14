@@ -1,8 +1,8 @@
 """Unit tests for the changelog API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.changelog import get_changelogs
+from thingiverse import AuthenticatedClient
+from thingiverse.api.changelog import get_changelogs
 
 
 def test_get_changelogs_kwargs() -> None:

@@ -1,8 +1,8 @@
 """Unit tests for the sitewidenotification API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.sitewidenotification import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.sitewidenotification import (
     get_sitewidenotification,
     get_sitewidenotification_id,
 )

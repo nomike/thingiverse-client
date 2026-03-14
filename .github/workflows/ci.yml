@@ -23,7 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[dev]"
       - name: Ruff
-        run: ruff check thingiverse_client tests scripts && ruff format --check .
+        run: ruff check thingiverse tests scripts && ruff format --check .
       - name: Tests
         env:
           THINGIVERSE_TOKEN: ${{ secrets.THINGIVERSE_TOKEN }}

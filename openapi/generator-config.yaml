@@ -1,6 +1,6 @@
-# Config for openapi-python-client (used when generating thingiverse_client)
+# Config for openapi-python-client (used when generating thingiverse)
 project_name_override: thingiverse-client
-package_name_override: thingiverse_client
+package_name_override: thingiverse
 # Version is taken from pyproject.toml or set by release-please
 post_hooks:
   - "ruff check . --fix-only"

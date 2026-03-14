@@ -5,7 +5,7 @@
 The Thingiverse API uses Bearer token authentication. Obtain a token from the [Thingiverse developer settings](https://www.thingiverse.com/apps) or from browser network requests to `api.thingiverse.com`.
 
 ```python
-from thingiverse_client import AuthenticatedClient, BASE_URL_PRODUCTION
+from thingiverse import AuthenticatedClient, BASE_URL_PRODUCTION
 
 client = AuthenticatedClient(
     base_url=BASE_URL_PRODUCTION,
@@ -20,11 +20,11 @@ client = AuthenticatedClient(
 
 ## Making requests
 
-Use the generated API modules under `thingiverse_client.api`:
+Use the generated API modules under `thingiverse.api`:
 
 ```python
-from thingiverse_client import AuthenticatedClient, BASE_URL_PRODUCTION
-from thingiverse_client.api.thing import get_things_thing_id
+from thingiverse import AuthenticatedClient, BASE_URL_PRODUCTION
+from thingiverse.api.thing import get_things_thing_id
 
 client = AuthenticatedClient(base_url=BASE_URL_PRODUCTION, token="...")
 response = get_things_thing_id.sync_detailed(thing_id=123, client=client)

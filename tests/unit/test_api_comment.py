@@ -1,8 +1,8 @@
 """Unit tests for the comment API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.comment import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.comment import (
     delete_comments_comment_id,
     get_comments,
     get_comments_comment_id,

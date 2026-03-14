@@ -1,8 +1,8 @@
 """Unit tests for the make API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.make import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.make import (
     delete_copies_copy_id,
     delete_copies_copy_id_images_image_id,
     delete_copies_copy_id_likes,

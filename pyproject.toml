@@ -48,23 +48,23 @@ Documentation = "https://github.com/placeholder/thingiverse-api#readme"
 Repository = "https://github.com/placeholder/thingiverse-api"
 
 [tool.hatch.build.targets.wheel]
-packages = ["thingiverse_client"]
+packages = ["thingiverse"]
 
 [tool.hatch.build.targets.sdist]
-include = ["thingiverse_client", "thingiverse_client/py.typed"]
+include = ["thingiverse", "thingiverse/py.typed"]
 
 [tool.ruff]
 target-version = "py310"
 line-length = 100
-src = ["thingiverse_client", "tests", "scripts"]
+src = ["thingiverse", "tests", "scripts"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM"]
 ignore = ["E501"]
 
 [tool.ruff.lint.per-file-ignores]
-"thingiverse_client/**" = ["SIM101", "SIM108", "SIM114"]
-"thingiverse_client/errors.py" = ["N818"]
+"thingiverse/**" = ["SIM101", "SIM108", "SIM114"]
+"thingiverse/errors.py" = ["N818"]
 
 [tool.ruff.format]
 quote-style = "double"
@@ -80,7 +80,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["thingiverse_client"]
+source = ["thingiverse"]
 branch = true
 omit = ["tests/*", "*/__init__.py"]
 

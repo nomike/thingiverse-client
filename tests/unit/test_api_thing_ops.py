@@ -1,8 +1,8 @@
 """Unit tests for the thing_ops API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.thing_ops import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.thing_ops import (
     post_thingops_ids_copy,
     post_thingops_ids_move,
     post_thingops_ids_remove,

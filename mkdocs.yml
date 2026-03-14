@@ -34,7 +34,7 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: [thingiverse_client]
+          paths: [thingiverse]
           options:
             docstring_style: google
             show_source: true

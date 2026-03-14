@@ -37,20 +37,20 @@ jobs:
 
       - name: Lint and format generated code
         run: |
-          ruff check --fix thingiverse_client/ || true
-          ruff format thingiverse_client/
+          ruff check --fix thingiverse/ || true
+          ruff format thingiverse/
 
       - name: Check for changes
         id: diff
         run: |
-          git add -- openapi/ thingiverse_client/
-          if git diff --quiet --cached -- openapi/ thingiverse_client/; then
+          git add -- openapi/ thingiverse/
+          if git diff --quiet --cached -- openapi/ thingiverse/; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No upstream changes detected."
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
             echo "Upstream changes detected:"
-            git diff --cached --stat -- openapi/ thingiverse_client/
+            git diff --cached --stat -- openapi/ thingiverse/
           fi
 
       - name: Run unit tests
@@ -70,8 +70,8 @@ jobs:
 
             **What to review:**
             - Changes in `openapi/` — raw spec differences from Thingiverse
-            - Changes in `thingiverse_client/api/` — new, removed, or modified endpoints
-            - Changes in `thingiverse_client/models/` — schema/type changes
+            - Changes in `thingiverse/api/` — new, removed, or modified endpoints
+            - Changes in `thingiverse/models/` — schema/type changes
 
             **If the workflow failed before reaching this step**, the patch script
             (`scripts/patch_bundled_spec_full.py`) may need updating for new spec issues.

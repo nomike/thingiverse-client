@@ -1,8 +1,8 @@
 """Unit tests for the tag API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.tag import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.tag import (
     get_tags,
     get_tags_0_popular,
     get_tags_tag,

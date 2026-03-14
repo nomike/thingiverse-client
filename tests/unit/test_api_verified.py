@@ -1,8 +1,8 @@
 """Unit tests for the verified API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.verified import get_verified
+from thingiverse import AuthenticatedClient
+from thingiverse.api.verified import get_verified
 
 
 def test_get_verified_kwargs() -> None:

@@ -1,8 +1,8 @@
 """Unit tests for the subscription API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.subscription import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.subscription import (
     delete_events_id,
     get_subscriptions_0_analytics,
     get_subscriptions_0_dashboard,
@@ -26,7 +26,7 @@ def test_get_subscriptions_0_analytics_kwargs() -> None:
 
 
 def test_get_subscriptions_0_dashboard_kwargs() -> None:
-    from thingiverse_client.models.get_subscriptions_0_dashboard_type import (
+    from thingiverse.models.get_subscriptions_0_dashboard_type import (
         GetSubscriptions0DashboardType,
     )
 

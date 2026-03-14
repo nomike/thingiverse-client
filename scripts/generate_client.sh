@@ -6,7 +6,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 OPENAPI_DIR="$REPO_ROOT/openapi"
 BUNDLED="$OPENAPI_DIR/bundled.yaml"
-OUTPUT_DIR="$REPO_ROOT/thingiverse_client"
+OUTPUT_DIR="$REPO_ROOT/thingiverse"
 CONFIG="$OPENAPI_DIR/generator-config.yaml"
 
 cd "$REPO_ROOT"
@@ -28,14 +28,14 @@ TEMP_OUTPUT="$GEN_TMPDIR/thingiverse-client"
 openapi-python-client generate --path "$BUNDLED" --config "$CONFIG" --output-path "$TEMP_OUTPUT"
 
 # The generator creates a full project; we only want the inner package.
-if [[ ! -d "$TEMP_OUTPUT/thingiverse_client" ]]; then
-  echo "Error: expected package dir $TEMP_OUTPUT/thingiverse_client not found."
+if [[ ! -d "$TEMP_OUTPUT/thingiverse" ]]; then
+  echo "Error: expected package dir $TEMP_OUTPUT/thingiverse not found."
   rm -rf "$GEN_TMPDIR"
   exit 1
 fi
 
 rm -rf "$OUTPUT_DIR"
-mv "$TEMP_OUTPUT/thingiverse_client" "$OUTPUT_DIR"
+mv "$TEMP_OUTPUT/thingiverse" "$OUTPUT_DIR"
 rm -rf "$GEN_TMPDIR"
 
 # Add project-specific constants that the generator does not produce.

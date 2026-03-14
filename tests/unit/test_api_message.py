@@ -1,8 +1,8 @@
 """Unit tests for the message API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.message import post_messages
+from thingiverse import AuthenticatedClient
+from thingiverse.api.message import post_messages
 
 
 def test_post_messages_kwargs() -> None:

@@ -1,8 +1,8 @@
 """Unit tests for the group API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.group import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.group import (
     delete_groups_group_id,
     delete_groups_group_id_forum_forum_id,
     delete_groups_group_id_members,

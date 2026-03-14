@@ -1,8 +1,8 @@
 """Unit tests for the email API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.email import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.email import (
     post_email,
     post_email_thingiverse_enqueue_support,
     post_email_type_enqueue_dmca,
@@ -22,7 +22,7 @@ def test_post_email_thingiverse_enqueue_support_kwargs() -> None:
 
 
 def test_post_email_type_enqueue_dmca_kwargs() -> None:
-    from thingiverse_client.models.post_email_type_enqueue_dmca_type import (
+    from thingiverse.models.post_email_type_enqueue_dmca_type import (
         PostEmailTypeEnqueueDmcaType,
     )
 
