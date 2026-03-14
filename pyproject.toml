@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "thingiverse-client"
-version = "0.2.2"
+version = "1.0.0"
 description = "Python SDK for the Thingiverse API"
 readme = "README.md"
 license = { text = "MIT" }
