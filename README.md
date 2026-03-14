@@ -122,10 +122,17 @@ zensical serve
 
 ## Publishing to PyPI
 
-When ready to publish:
+Publishing is automated via the [Publish to PyPI](.github/workflows/publish-pypi.yml) workflow. When a GitHub release is published (e.g. by merging a release-please release PR), the workflow builds the package and uploads it to PyPI.
 
-1. Create a PyPI account and configure [trusted publishing](https://docs.pypi.org/trusted-publishers/) (e.g. OIDC with GitHub Actions) or use an API token.
-2. Add a workflow that runs on release (e.g. when the release-please release is published) to run `python -m build` and `twine upload dist/*`.
+**One-time setup:**
+
+1. Create a [PyPI](https://pypi.org) account and register the project name `thingiverse-client` if needed.
+2. Configure [trusted publishing](https://docs.pypi.org/trusted-publishers/) for this repository:
+   - PyPI: [Add a new trusted publisher](https://pypi.org/trusted-publishers/add/) for the project.
+   - Set **Owner** and **Repository name** to this repo, **Workflow name** to `publish-pypi.yml`.
+   - No secrets or API tokens are required; PyPI uses OIDC to verify the workflow.
+
+After that, each new release will be published to PyPI automatically. Optionally, add a GitHub Actions environment (e.g. `pypi`) and set `environment: pypi` in the workflow for approval or protection rules.
 
 ## License
 
