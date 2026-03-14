@@ -1,8 +1,8 @@
 """Unit tests for the user API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.user import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.user import (
     delete_users_username,
     delete_users_username_followers,
     get_users_username,

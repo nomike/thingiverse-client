@@ -17,7 +17,7 @@ We keep the **downloaded source spec untouched**. After Redocly produces a singl
 1. **Fetch** — `scripts/fetch_openapi_spec.py` → pristine files from Thingiverse.
 2. **Bundle** — Redocly → `openapi/bundled.yaml`.
 3. **Patch** — `scripts/patch_bundled_spec_full.py` → fix bundled spec in place.
-4. **Generate** — openapi-python-client → `thingiverse_client/`.
+4. **Generate** — openapi-python-client → `thingiverse/`.
 
 The script adds missing response `description`s, adds `items` to array schemas, sets path parameters to `required: true`, fixes path templating, and moves parameters that are in path but not in the path template to `query`. If the generator reports new issues after a fetch, extend the script and re-run.
 
@@ -46,7 +46,7 @@ When the upstream spec changes and new generator errors appear, edit `scripts/pa
 4. **Try to generate the SDK**
 
    ```bash
-   openapi-python-client generate --path openapi/bundled.yaml --config openapi/generator-config.yaml --output-path thingiverse_client --overwrite
+   openapi-python-client generate --path openapi/bundled.yaml --config openapi/generator-config.yaml --output-path thingiverse --overwrite
    ```
 
 5. **Manually address all the issues that are reported**

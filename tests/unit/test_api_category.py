@@ -1,8 +1,8 @@
 """Unit tests for the category API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.category import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.category import (
     get_categories,
     get_categories_slug,
     get_categories_slug_things,

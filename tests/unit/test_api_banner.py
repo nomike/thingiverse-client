@@ -1,10 +1,10 @@
 """Unit tests for the banner API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.banner import get_banner, get_banner_0_page_ad
-from thingiverse_client.models.get_banner_0_page_ad_location import GetBanner0PageAdLocation
-from thingiverse_client.models.get_banner_location import GetBannerLocation
+from thingiverse import AuthenticatedClient
+from thingiverse.api.banner import get_banner, get_banner_0_page_ad
+from thingiverse.models.get_banner_0_page_ad_location import GetBanner0PageAdLocation
+from thingiverse.models.get_banner_location import GetBannerLocation
 
 
 def test_get_banner_kwargs() -> None:

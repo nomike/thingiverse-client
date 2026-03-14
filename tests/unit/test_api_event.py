@@ -1,8 +1,8 @@
 """Unit tests for the event API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.event import get_events, get_events_id
+from thingiverse import AuthenticatedClient
+from thingiverse.api.event import get_events, get_events_id
 
 
 def test_get_events_kwargs() -> None:

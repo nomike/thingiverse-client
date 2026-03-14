@@ -11,7 +11,7 @@ pip install thingiverse-client
 ## Quick start
 
 ```python
-from thingiverse_client import AuthenticatedClient, BASE_URL_PRODUCTION
+from thingiverse import AuthenticatedClient, BASE_URL_PRODUCTION
 
 client = AuthenticatedClient(
     base_url=BASE_URL_PRODUCTION,
@@ -23,7 +23,7 @@ client = AuthenticatedClient(
 ## Using the staging API
 
 ```python
-from thingiverse_client import AuthenticatedClient, BASE_URL_STAGING
+from thingiverse import AuthenticatedClient, BASE_URL_STAGING
 
 client = AuthenticatedClient(base_url=BASE_URL_STAGING, token="...")
 ```

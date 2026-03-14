@@ -1,8 +1,8 @@
 """Integration tests: read-only API calls. Require THINGIVERSE_TOKEN."""
 
 import pytest
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.thing import get_things_thing_id
+from thingiverse import AuthenticatedClient
+from thingiverse.api.thing import get_things_thing_id
 
 from tests.conftest import _get_token
 

@@ -1,8 +1,8 @@
 """Unit tests for the search API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.search import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.search import (
     get_search_tag_tag,
     get_search_term_autocomplete,
     get_search_term_typecollections,

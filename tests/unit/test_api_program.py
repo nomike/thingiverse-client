@@ -1,8 +1,8 @@
 """Unit tests for the program API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.program import get_programs_0_all
+from thingiverse import AuthenticatedClient
+from thingiverse.api.program import get_programs_0_all
 
 
 def test_get_programs_0_all_kwargs() -> None:

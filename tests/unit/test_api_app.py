@@ -1,8 +1,8 @@
 """Unit tests for the app API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.app import get_apps_0_approvedandpublished, get_apps_id
+from thingiverse import AuthenticatedClient
+from thingiverse.api.app import get_apps_0_approvedandpublished, get_apps_id
 
 
 def test_get_apps_0_approvedandpublished_kwargs() -> None:

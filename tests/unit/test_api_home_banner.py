@@ -1,8 +1,8 @@
 """Unit tests for the home_banner API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.home_banner import get_homebanner
+from thingiverse import AuthenticatedClient
+from thingiverse.api.home_banner import get_homebanner
 
 
 def test_get_homebanner_kwargs() -> None:

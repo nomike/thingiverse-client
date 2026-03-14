@@ -1,8 +1,8 @@
 """Unit tests for the deprecated API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.deprecated import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.deprecated import (
     get_featured,
     get_files_file_id_finalize,
     get_newest,

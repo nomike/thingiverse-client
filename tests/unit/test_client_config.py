@@ -1,6 +1,6 @@
 """Unit tests for client and staging/production URL constants."""
 
-from thingiverse_client import (
+from thingiverse import (
     BASE_URL_PRODUCTION,
     BASE_URL_STAGING,
     AuthenticatedClient,

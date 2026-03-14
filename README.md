@@ -19,8 +19,8 @@ pip install -e ".[dev]"
 ## Quick start
 
 ```python
-from thingiverse_client import AuthenticatedClient, BASE_URL_PRODUCTION
-from thingiverse_client.api.thing import get_things_thing_id
+from thingiverse import AuthenticatedClient, BASE_URL_PRODUCTION
+from thingiverse.api.thing import get_things_thing_id
 
 client = AuthenticatedClient(
     base_url=BASE_URL_PRODUCTION,
@@ -35,7 +35,7 @@ response = get_things_thing_id.sync_detailed(thing_id=123, client=client)
 Use `BASE_URL_STAGING` to target the staging environment:
 
 ```python
-from thingiverse_client import AuthenticatedClient, BASE_URL_STAGING
+from thingiverse import AuthenticatedClient, BASE_URL_STAGING
 
 client = AuthenticatedClient(base_url=BASE_URL_STAGING, token="...")
 ```
@@ -68,6 +68,12 @@ File uploads (designs and images) use a specific flow. See the [Thingiverse uplo
 3. Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `feat: add X`, `fix: Y`). The commit-msg hook enforces this.
 
 ## Running tests
+
+Use the virtual environment’s Python so that dependencies (e.g. `httpx`) are found. Either activate the venv first (`source .venv/bin/activate` then `pytest`) or run:
+
+```bash
+.venv/bin/python -m pytest tests/unit tests/integration -v
+```
 
 - **Unit tests** (default, no API calls):
 

@@ -11,7 +11,7 @@ from pathlib import Path
 
 import mkdocs_gen_files
 
-PACKAGE = Path("thingiverse_client")
+PACKAGE = Path("thingiverse")
 API_DIR = PACKAGE / "api"
 MODELS_DIR = PACKAGE / "models"
 
@@ -26,7 +26,7 @@ nav["Client"] = "client.md"
 with mkdocs_gen_files.open("api/client.md", "w") as f:
     f.write(
         "# Client\n\n"
-        "::: thingiverse_client\n"
+        "::: thingiverse\n"
         "    options:\n"
         "      show_root_heading: true\n"
         "      members:\n"
@@ -82,7 +82,7 @@ for group in groups:
     with mkdocs_gen_files.open(f"api/endpoints/{group}.md", "w") as f:
         f.write(
             f"# {nice}\n\n"
-            f"::: thingiverse_client.api.{group}\n"
+            f"::: thingiverse.api.{group}\n"
             "    options:\n"
             "      show_root_heading: true\n"
             "      show_submodules: true\n"
@@ -178,7 +178,7 @@ for bucket in sorted(groups_map):
         f.write(f"# {nice} Models\n\n")
         for member in members:
             f.write(
-                f"::: thingiverse_client.models.{member}\n"
+                f"::: thingiverse.models.{member}\n"
                 "    options:\n"
                 "      show_root_heading: true\n"
                 "      show_source: false\n\n"

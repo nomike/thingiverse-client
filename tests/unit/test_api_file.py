@@ -1,8 +1,8 @@
 """Unit tests for the file API group."""
 
 import httpx
-from thingiverse_client import AuthenticatedClient
-from thingiverse_client.api.file import (
+from thingiverse import AuthenticatedClient
+from thingiverse.api.file import (
     get_files_file_id,
     get_files_file_id_download,
     post_files_0_upload_file,

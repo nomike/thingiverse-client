@@ -1,1 +1,1 @@
-# Tests for thingiverse_client
+# Tests for thingiverse

@@ -17,4 +17,4 @@ Once the client is generated from the full OpenAPI spec (including the file reso
 - Generated methods for the upload and finalize endpoints
 - Optionally a thin hand-written helper that wraps the upload-then-finalize flow
 
-Use the generated API modules under `thingiverse_client.api` for `uploadFile` and `FinalizeFiles`; refer to the upload guide for request format and ordering.
+Use the generated API modules under `thingiverse.api` for `uploadFile` and `FinalizeFiles`; refer to the upload guide for request format and ordering.
