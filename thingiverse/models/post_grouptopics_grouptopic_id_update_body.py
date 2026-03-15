@@ -15,7 +15,7 @@ T = TypeVar("T", bound="PostGrouptopicsGrouptopicIdUpdateBody")
 class PostGrouptopicsGrouptopicIdUpdateBody:
     """
     Attributes:
-        attachments (list[str] | Unset): Array of atachments ids to update Example: ['80111'].
+        attachments (list[str] | Unset): Array of attachments ids to update Example: ['80111'].
         body (str | Unset): Set the body of the topic
         filenames (list[str] | Unset): Array of names of the files Example: ['File1.jpg', 'File2.jpg'].
         files (list[str] | Unset): Array of files Example: ['File1.jpg', 'File2.jpg'].
