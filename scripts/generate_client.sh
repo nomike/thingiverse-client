@@ -69,4 +69,7 @@ fi
 echo "Applying Ruff (check --fix and format) so generated code matches repo config..."
 ruff check thingiverse --fix && ruff format thingiverse
 
+echo "Running pre-commit on generated code (fixes trailing newlines, etc.)..."
+pre-commit run --all-files
+
 echo "Done. Client is in $OUTPUT_DIR"
