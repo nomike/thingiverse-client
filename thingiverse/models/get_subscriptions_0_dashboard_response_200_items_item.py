@@ -56,11 +56,11 @@ class GetSubscriptions0DashboardResponse200ItemsItem:
         content: dict[str, Any] | Unset
         if isinstance(self.content, Unset):
             content = UNSET
-        elif (
-            isinstance(self.content, ThingSchema)
-            or isinstance(self.content, CopySchema)
-            or isinstance(self.content, CommentSchema)
-        ):
+        elif isinstance(self.content, ThingSchema):
+            content = self.content.to_dict()
+        elif isinstance(self.content, CopySchema):
+            content = self.content.to_dict()
+        elif isinstance(self.content, CommentSchema):
             content = self.content.to_dict()
         else:
             content = self.content.to_dict()

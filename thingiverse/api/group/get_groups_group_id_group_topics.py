@@ -22,8 +22,8 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     group_id: int,
     *,
-    filter_: str,
-    sort: str,
+    filter_: str | Unset = UNSET,
+    sort: str | Unset = UNSET,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
 ) -> dict[str, Any]:
@@ -110,8 +110,8 @@ def sync_detailed(
     group_id: int,
     *,
     client: AuthenticatedClient,
-    filter_: str,
-    sort: str,
+    filter_: str | Unset = UNSET,
+    sort: str | Unset = UNSET,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
 ) -> Response[
@@ -124,8 +124,8 @@ def sync_detailed(
 
     Args:
         group_id (int):  Example: 25.
-        filter_ (str):  Example: pinned.
-        sort (str):  Example: popular.
+        filter_ (str | Unset):  Example: pinned.
+        sort (str | Unset):  Example: popular.
         page (int | Unset):  Example: 1.
         per_page (int | Unset):  Example: 30.
 
@@ -156,8 +156,8 @@ def sync(
     group_id: int,
     *,
     client: AuthenticatedClient,
-    filter_: str,
-    sort: str,
+    filter_: str | Unset = UNSET,
+    sort: str | Unset = UNSET,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
 ) -> (
@@ -171,8 +171,8 @@ def sync(
 
     Args:
         group_id (int):  Example: 25.
-        filter_ (str):  Example: pinned.
-        sort (str):  Example: popular.
+        filter_ (str | Unset):  Example: pinned.
+        sort (str | Unset):  Example: popular.
         page (int | Unset):  Example: 1.
         per_page (int | Unset):  Example: 30.
 
@@ -198,8 +198,8 @@ async def asyncio_detailed(
     group_id: int,
     *,
     client: AuthenticatedClient,
-    filter_: str,
-    sort: str,
+    filter_: str | Unset = UNSET,
+    sort: str | Unset = UNSET,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
 ) -> Response[
@@ -212,8 +212,8 @@ async def asyncio_detailed(
 
     Args:
         group_id (int):  Example: 25.
-        filter_ (str):  Example: pinned.
-        sort (str):  Example: popular.
+        filter_ (str | Unset):  Example: pinned.
+        sort (str | Unset):  Example: popular.
         page (int | Unset):  Example: 1.
         per_page (int | Unset):  Example: 30.
 
@@ -242,8 +242,8 @@ async def asyncio(
     group_id: int,
     *,
     client: AuthenticatedClient,
-    filter_: str,
-    sort: str,
+    filter_: str | Unset = UNSET,
+    sort: str | Unset = UNSET,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
 ) -> (
@@ -257,8 +257,8 @@ async def asyncio(
 
     Args:
         group_id (int):  Example: 25.
-        filter_ (str):  Example: pinned.
-        sort (str):  Example: popular.
+        filter_ (str | Unset):  Example: pinned.
+        sort (str | Unset):  Example: popular.
         page (int | Unset):  Example: 1.
         per_page (int | Unset):  Example: 30.
 

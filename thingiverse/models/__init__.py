@@ -763,8 +763,6 @@ from .patch_grouptopics_grouptopic_id_response_401 import PatchGrouptopicsGroupt
 from .patch_grouptopics_grouptopic_id_response_403 import PatchGrouptopicsGrouptopicIdResponse403
 from .patch_grouptopics_grouptopic_id_response_404 import PatchGrouptopicsGrouptopicIdResponse404
 from .patch_things_thing_id_body import PatchThingsThingIdBody
-from .patch_things_thing_id_body_ancestors_item import PatchThingsThingIdBodyAncestorsItem
-from .patch_things_thing_id_body_tags_item import PatchThingsThingIdBodyTagsItem
 from .patch_things_thing_id_images_image_id_body import PatchThingsThingIdImagesImageIdBody
 from .patch_things_thing_id_images_image_id_response_200 import (
     PatchThingsThingIdImagesImageIdResponse200,
@@ -1001,18 +999,6 @@ from .post_grouptopics_grouptopic_id_pin_response_404 import (
     PostGrouptopicsGrouptopicIdPinResponse404,
 )
 from .post_grouptopics_grouptopic_id_update_body import PostGrouptopicsGrouptopicIdUpdateBody
-from .post_grouptopics_grouptopic_id_update_body_attachments_item import (
-    PostGrouptopicsGrouptopicIdUpdateBodyAttachmentsItem,
-)
-from .post_grouptopics_grouptopic_id_update_body_filenames_item import (
-    PostGrouptopicsGrouptopicIdUpdateBodyFilenamesItem,
-)
-from .post_grouptopics_grouptopic_id_update_body_files_item import (
-    PostGrouptopicsGrouptopicIdUpdateBodyFilesItem,
-)
-from .post_grouptopics_grouptopic_id_update_body_tags_item import (
-    PostGrouptopicsGrouptopicIdUpdateBodyTagsItem,
-)
 from .post_grouptopics_grouptopic_id_update_response_200 import (
     PostGrouptopicsGrouptopicIdUpdateResponse200,
 )
@@ -1693,8 +1679,6 @@ __all__ = (
     "PatchGrouptopicsGrouptopicIdResponse403",
     "PatchGrouptopicsGrouptopicIdResponse404",
     "PatchThingsThingIdBody",
-    "PatchThingsThingIdBodyAncestorsItem",
-    "PatchThingsThingIdBodyTagsItem",
     "PatchThingsThingIdImagesImageIdBody",
     "PatchThingsThingIdImagesImageIdResponse200",
     "PatchThingsThingIdImagesImageIdResponse401",
@@ -1843,10 +1827,6 @@ __all__ = (
     "PostGrouptopicsGrouptopicIdPinResponse403",
     "PostGrouptopicsGrouptopicIdPinResponse404",
     "PostGrouptopicsGrouptopicIdUpdateBody",
-    "PostGrouptopicsGrouptopicIdUpdateBodyAttachmentsItem",
-    "PostGrouptopicsGrouptopicIdUpdateBodyFilenamesItem",
-    "PostGrouptopicsGrouptopicIdUpdateBodyFilesItem",
-    "PostGrouptopicsGrouptopicIdUpdateBodyTagsItem",
     "PostGrouptopicsGrouptopicIdUpdateResponse200",
     "PostGrouptopicsGrouptopicIdUpdateResponse401",
     "PostGrouptopicsGrouptopicIdUpdateResponse403",

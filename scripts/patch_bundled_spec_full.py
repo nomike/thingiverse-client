@@ -6,8 +6,11 @@ Run after Redocly bundle; used when (re)creating openapi/bundled.patch.
 Fixes applied:
 1. Add missing response description for any 200 with content.
 2. Add items: {} to any schema with type: array and no items/prefixItems.
-3. Set required: true for all parameters with in: path.
-4. Path/param fixes: /comments/ POST has no path params; /copies/.../images/... only copy_id/image_id;
+3. Override items type for known request-body arrays (PATCH thing: tags=string, ancestors=integer;
+   POST grouptopic update: tags, filenames, files, attachments=string) so the generator
+   produces list[str]/list[int] instead of array-of-object.
+4. Set required: true for all parameters with in: path.
+5. Path/param fixes: /comments/ POST has no path params; /copies/.../images/... only copy_id/image_id;
    /events/0/read-all -> /events/{id}/read-all.
 """
 
@@ -59,6 +62,66 @@ def _add_array_items(obj: object) -> int:
         for i in obj:
             count += _add_array_items(i)
     return count
+
+
+def _resolve_schema(spec: dict, schema_ref: dict) -> dict | None:
+    """Resolve schema: if it's a $ref, return the referenced schema from components/schemas."""
+    ref = schema_ref.get("$ref")
+    if ref and isinstance(ref, str) and ref.startswith("#/components/schemas/"):
+        name = ref.split("/")[-1]
+        schemas = (spec.get("components") or {}).get("schemas") or {}
+        return schemas.get(name) if isinstance(schemas.get(name), dict) else None
+    return schema_ref if isinstance(schema_ref, dict) else None
+
+
+def _get_request_body_schema(spec: dict, path_str: str, method: str) -> dict | None:
+    """Get the request body schema for path + method (inline or resolved from $ref)."""
+    paths = spec.get("paths") or {}
+    path_item = paths.get(path_str)
+    if not isinstance(path_item, dict):
+        return None
+    op = path_item.get(method)
+    if not isinstance(op, dict):
+        return None
+    content = (op.get("requestBody") or {}).get("content")
+    if not isinstance(content, dict):
+        return None
+    schema = content.get("application/json", {}).get("schema")
+    if not schema:
+        return None
+    return _resolve_schema(spec, schema)
+
+
+def _fix_request_body_primitive_arrays(spec: dict) -> int:
+    """Set correct items type for request-body arrays that are primitives (not objects). Returns count of overrides.
+
+    The upstream spec does not declare these arrays as primitive item types; the generator would
+    otherwise produce array-of-object models and from_dict() would fail when the API sends
+    primitive arrays (e.g. tags: ["foo", "bar"], ancestors: [2000]).
+    """
+    changes = 0
+
+    # PATCH /things/{thing_id}: tags = array of string, ancestors = array of integer
+    schema = _get_request_body_schema(spec, "/things/{thing_id}", "patch")
+    if isinstance(schema, dict):
+        props = schema.get("properties") or {}
+        if isinstance(props.get("tags"), dict) and props["tags"].get("type") == "array":
+            props["tags"]["items"] = {"type": "string"}
+            changes += 1
+        if isinstance(props.get("ancestors"), dict) and props["ancestors"].get("type") == "array":
+            props["ancestors"]["items"] = {"type": "integer"}
+            changes += 1
+
+    # POST /grouptopics/{grouptopic_id}/update: tags, filenames, files, attachments = array of string
+    schema = _get_request_body_schema(spec, "/grouptopics/{grouptopic_id}/update", "post")
+    if isinstance(schema, dict):
+        props = schema.get("properties") or {}
+        for key in ("tags", "filenames", "files", "attachments"):
+            if isinstance(props.get(key), dict) and props[key].get("type") == "array":
+                props[key]["items"] = {"type": "string"}
+                changes += 1
+
+    return changes
 
 
 def _require_path_params(spec: dict) -> int:
@@ -234,6 +297,7 @@ def main() -> int:
 
     n_desc = _ensure_response_descriptions(spec)
     n_array = _add_array_items(spec)
+    n_primitive_arrays = _fix_request_body_primitive_arrays(spec)
     n_req = _require_path_params(spec)
     n_path = _fix_path_templating(spec)
     n_sizes = _fix_duplicate_image_summary_sizes(spec)
@@ -243,7 +307,7 @@ def main() -> int:
         encoding="utf-8",
     )
     print(
-        f"Patched {path}: {n_desc} description(s), {n_array} array items, {n_req} path required, {n_path} path fix(es), {n_sizes} image-summary title(s)"
+        f"Patched {path}: {n_desc} description(s), {n_array} array items, {n_primitive_arrays} primitive-array override(s), {n_req} path required, {n_path} path fix(es), {n_sizes} image-summary title(s)"
     )
     return 0
 

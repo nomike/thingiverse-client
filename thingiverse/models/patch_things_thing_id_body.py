@@ -1,19 +1,12 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
-
-if TYPE_CHECKING:
-    from ..models.patch_things_thing_id_body_ancestors_item import (
-        PatchThingsThingIdBodyAncestorsItem,
-    )
-    from ..models.patch_things_thing_id_body_tags_item import PatchThingsThingIdBodyTagsItem
-
 
 T = TypeVar("T", bound="PatchThingsThingIdBody")
 
@@ -22,8 +15,8 @@ T = TypeVar("T", bound="PatchThingsThingIdBody")
 class PatchThingsThingIdBody:
     """
     Attributes:
-        ancestors (list[PatchThingsThingIdBodyAncestorsItem] | Unset): array of id's of all things that this was remixed
-            from. Note that is_remix should be set to true as well Example: [2000].
+        ancestors (list[int] | Unset): array of id's of all things that this was remixed from. Note that is_remix should
+            be set to true as well Example: [2000].
         category (int | str | Unset): Replace the category of the thing with an category id. This field also supports
             the old way of providing the full category name (eg. "3D Printer Parts") as string.
         description (str | Unset): Replace the description.
@@ -32,11 +25,10 @@ class PatchThingsThingIdBody:
         is_wip (bool | Unset): Toggle whether this thing is a work in progress.
         license_ (str | Unset): One of cc, cc-sa, cc-nd, cc-nc-sa, cc-nc-nd, pd0, gpl, lgpl, bsd. Replace license
         name (str | Unset): Replace the name of the thing
-        tags (list[PatchThingsThingIdBodyTagsItem] | Unset): An array of strings containing tag names. Replaces all
-            current tags.
+        tags (list[str] | Unset): An array of strings containing tag names. Replaces all current tags.
     """
 
-    ancestors: list[PatchThingsThingIdBodyAncestorsItem] | Unset = UNSET
+    ancestors: list[int] | Unset = UNSET
     category: int | str | Unset = UNSET
     description: str | Unset = UNSET
     instructions: str | Unset = UNSET
@@ -44,16 +36,13 @@ class PatchThingsThingIdBody:
     is_wip: bool | Unset = UNSET
     license_: str | Unset = UNSET
     name: str | Unset = UNSET
-    tags: list[PatchThingsThingIdBodyTagsItem] | Unset = UNSET
+    tags: list[str] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        ancestors: list[dict[str, Any]] | Unset = UNSET
+        ancestors: list[int] | Unset = UNSET
         if not isinstance(self.ancestors, Unset):
-            ancestors = []
-            for ancestors_item_data in self.ancestors:
-                ancestors_item = ancestors_item_data.to_dict()
-                ancestors.append(ancestors_item)
+            ancestors = self.ancestors
 
         category: int | str | Unset
         if isinstance(self.category, Unset):
@@ -73,12 +62,9 @@ class PatchThingsThingIdBody:
 
         name = self.name
 
-        tags: list[dict[str, Any]] | Unset = UNSET
+        tags: list[str] | Unset = UNSET
         if not isinstance(self.tags, Unset):
-            tags = []
-            for tags_item_data in self.tags:
-                tags_item = tags_item_data.to_dict()
-                tags.append(tags_item)
+            tags = self.tags
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -106,20 +92,8 @@ class PatchThingsThingIdBody:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.patch_things_thing_id_body_ancestors_item import (
-            PatchThingsThingIdBodyAncestorsItem,
-        )
-        from ..models.patch_things_thing_id_body_tags_item import PatchThingsThingIdBodyTagsItem
-
         d = dict(src_dict)
-        _ancestors = d.pop("ancestors", UNSET)
-        ancestors: list[PatchThingsThingIdBodyAncestorsItem] | Unset = UNSET
-        if _ancestors is not UNSET:
-            ancestors = []
-            for ancestors_item_data in _ancestors:
-                ancestors_item = PatchThingsThingIdBodyAncestorsItem.from_dict(ancestors_item_data)
-
-                ancestors.append(ancestors_item)
+        ancestors = cast(list[int], d.pop("ancestors", UNSET))
 
         def _parse_category(data: object) -> int | str | Unset:
             if isinstance(data, Unset):
@@ -140,14 +114,7 @@ class PatchThingsThingIdBody:
 
         name = d.pop("name", UNSET)
 
-        _tags = d.pop("tags", UNSET)
-        tags: list[PatchThingsThingIdBodyTagsItem] | Unset = UNSET
-        if _tags is not UNSET:
-            tags = []
-            for tags_item_data in _tags:
-                tags_item = PatchThingsThingIdBodyTagsItem.from_dict(tags_item_data)
-
-                tags.append(tags_item)
+        tags = cast(list[str], d.pop("tags", UNSET))
 
         patch_things_thing_id_body = cls(
             ancestors=ancestors,
