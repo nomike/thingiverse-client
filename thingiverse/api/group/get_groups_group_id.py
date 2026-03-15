@@ -28,13 +28,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    GetGroupsGroupIdResponse401
-    | GetGroupsGroupIdResponse403
-    | GetGroupsGroupIdResponse404
-    | GroupSchema
-    | None
-):
+) -> GetGroupsGroupIdResponse401 | GetGroupsGroupIdResponse403 | GetGroupsGroupIdResponse404 | GroupSchema | None:
     if response.status_code == 200:
         response_200 = GroupSchema.from_dict(response.json())
 
@@ -63,12 +57,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    GetGroupsGroupIdResponse401
-    | GetGroupsGroupIdResponse403
-    | GetGroupsGroupIdResponse404
-    | GroupSchema
-]:
+) -> Response[GetGroupsGroupIdResponse401 | GetGroupsGroupIdResponse403 | GetGroupsGroupIdResponse404 | GroupSchema]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -81,12 +70,7 @@ def sync_detailed(
     group_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[
-    GetGroupsGroupIdResponse401
-    | GetGroupsGroupIdResponse403
-    | GetGroupsGroupIdResponse404
-    | GroupSchema
-]:
+) -> Response[GetGroupsGroupIdResponse401 | GetGroupsGroupIdResponse403 | GetGroupsGroupIdResponse404 | GroupSchema]:
     """Get group by id
 
     Args:
@@ -115,13 +99,7 @@ def sync(
     group_id: int,
     *,
     client: AuthenticatedClient,
-) -> (
-    GetGroupsGroupIdResponse401
-    | GetGroupsGroupIdResponse403
-    | GetGroupsGroupIdResponse404
-    | GroupSchema
-    | None
-):
+) -> GetGroupsGroupIdResponse401 | GetGroupsGroupIdResponse403 | GetGroupsGroupIdResponse404 | GroupSchema | None:
     """Get group by id
 
     Args:
@@ -145,12 +123,7 @@ async def asyncio_detailed(
     group_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[
-    GetGroupsGroupIdResponse401
-    | GetGroupsGroupIdResponse403
-    | GetGroupsGroupIdResponse404
-    | GroupSchema
-]:
+) -> Response[GetGroupsGroupIdResponse401 | GetGroupsGroupIdResponse403 | GetGroupsGroupIdResponse404 | GroupSchema]:
     """Get group by id
 
     Args:
@@ -177,13 +150,7 @@ async def asyncio(
     group_id: int,
     *,
     client: AuthenticatedClient,
-) -> (
-    GetGroupsGroupIdResponse401
-    | GetGroupsGroupIdResponse403
-    | GetGroupsGroupIdResponse404
-    | GroupSchema
-    | None
-):
+) -> GetGroupsGroupIdResponse401 | GetGroupsGroupIdResponse403 | GetGroupsGroupIdResponse404 | GroupSchema | None:
     """Get group by id
 
     Args:

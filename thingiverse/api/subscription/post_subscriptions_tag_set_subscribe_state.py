@@ -6,9 +6,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.post_subscriptions_tag_set_subscribe_state_body import (
-    PostSubscriptionsTagSetSubscribeStateBody,
-)
+from ...models.post_subscriptions_tag_set_subscribe_state_body import PostSubscriptionsTagSetSubscribeStateBody
 from ...models.post_subscriptions_tag_set_subscribe_state_response_401 import (
     PostSubscriptionsTagSetSubscribeStateResponse401,
 )

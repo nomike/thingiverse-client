@@ -6,18 +6,10 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_users_username_event_count_response_200 import (
-    GetUsersUsernameEventCountResponse200,
-)
-from ...models.get_users_username_event_count_response_401 import (
-    GetUsersUsernameEventCountResponse401,
-)
-from ...models.get_users_username_event_count_response_403 import (
-    GetUsersUsernameEventCountResponse403,
-)
-from ...models.get_users_username_event_count_response_404 import (
-    GetUsersUsernameEventCountResponse404,
-)
+from ...models.get_users_username_event_count_response_200 import GetUsersUsernameEventCountResponse200
+from ...models.get_users_username_event_count_response_401 import GetUsersUsernameEventCountResponse401
+from ...models.get_users_username_event_count_response_403 import GetUsersUsernameEventCountResponse403
+from ...models.get_users_username_event_count_response_404 import GetUsersUsernameEventCountResponse404
 from ...types import UNSET, Response, Unset
 
 

@@ -27,13 +27,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    Any
-    | DeleteCopiesCopyIdResponse401
-    | DeleteCopiesCopyIdResponse403
-    | DeleteCopiesCopyIdResponse404
-    | None
-):
+) -> Any | DeleteCopiesCopyIdResponse401 | DeleteCopiesCopyIdResponse403 | DeleteCopiesCopyIdResponse404 | None:
     if response.status_code == 200:
         response_200 = cast(Any, None)
         return response_200
@@ -61,12 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    Any
-    | DeleteCopiesCopyIdResponse401
-    | DeleteCopiesCopyIdResponse403
-    | DeleteCopiesCopyIdResponse404
-]:
+) -> Response[Any | DeleteCopiesCopyIdResponse401 | DeleteCopiesCopyIdResponse403 | DeleteCopiesCopyIdResponse404]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -79,12 +68,7 @@ def sync_detailed(
     copy_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[
-    Any
-    | DeleteCopiesCopyIdResponse401
-    | DeleteCopiesCopyIdResponse403
-    | DeleteCopiesCopyIdResponse404
-]:
+) -> Response[Any | DeleteCopiesCopyIdResponse401 | DeleteCopiesCopyIdResponse403 | DeleteCopiesCopyIdResponse404]:
     """Softdelete copy by id
 
     Args:
@@ -113,13 +97,7 @@ def sync(
     copy_id: int,
     *,
     client: AuthenticatedClient,
-) -> (
-    Any
-    | DeleteCopiesCopyIdResponse401
-    | DeleteCopiesCopyIdResponse403
-    | DeleteCopiesCopyIdResponse404
-    | None
-):
+) -> Any | DeleteCopiesCopyIdResponse401 | DeleteCopiesCopyIdResponse403 | DeleteCopiesCopyIdResponse404 | None:
     """Softdelete copy by id
 
     Args:
@@ -143,12 +121,7 @@ async def asyncio_detailed(
     copy_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[
-    Any
-    | DeleteCopiesCopyIdResponse401
-    | DeleteCopiesCopyIdResponse403
-    | DeleteCopiesCopyIdResponse404
-]:
+) -> Response[Any | DeleteCopiesCopyIdResponse401 | DeleteCopiesCopyIdResponse403 | DeleteCopiesCopyIdResponse404]:
     """Softdelete copy by id
 
     Args:
@@ -175,13 +148,7 @@ async def asyncio(
     copy_id: int,
     *,
     client: AuthenticatedClient,
-) -> (
-    Any
-    | DeleteCopiesCopyIdResponse401
-    | DeleteCopiesCopyIdResponse403
-    | DeleteCopiesCopyIdResponse404
-    | None
-):
+) -> Any | DeleteCopiesCopyIdResponse401 | DeleteCopiesCopyIdResponse403 | DeleteCopiesCopyIdResponse404 | None:
     """Softdelete copy by id
 
     Args:

@@ -57,9 +57,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    GetGroupsResponse401 | GetGroupsResponse403 | GetGroupsResponse404 | list[GroupSchema]
-]:
+) -> Response[GetGroupsResponse401 | GetGroupsResponse403 | GetGroupsResponse404 | list[GroupSchema]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -71,9 +69,7 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-) -> Response[
-    GetGroupsResponse401 | GetGroupsResponse403 | GetGroupsResponse404 | list[GroupSchema]
-]:
+) -> Response[GetGroupsResponse401 | GetGroupsResponse403 | GetGroupsResponse404 | list[GroupSchema]]:
     """List of groups
 
     Raises:
@@ -115,9 +111,7 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-) -> Response[
-    GetGroupsResponse401 | GetGroupsResponse403 | GetGroupsResponse404 | list[GroupSchema]
-]:
+) -> Response[GetGroupsResponse401 | GetGroupsResponse403 | GetGroupsResponse404 | list[GroupSchema]]:
     """List of groups
 
     Raises:

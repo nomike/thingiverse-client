@@ -8,15 +8,9 @@ from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.collection_schema import CollectionSchema
 from ...models.patch_collections_collection_id_body import PatchCollectionsCollectionIdBody
-from ...models.patch_collections_collection_id_response_401 import (
-    PatchCollectionsCollectionIdResponse401,
-)
-from ...models.patch_collections_collection_id_response_403 import (
-    PatchCollectionsCollectionIdResponse403,
-)
-from ...models.patch_collections_collection_id_response_404 import (
-    PatchCollectionsCollectionIdResponse404,
-)
+from ...models.patch_collections_collection_id_response_401 import PatchCollectionsCollectionIdResponse401
+from ...models.patch_collections_collection_id_response_403 import PatchCollectionsCollectionIdResponse403
+from ...models.patch_collections_collection_id_response_404 import PatchCollectionsCollectionIdResponse404
 from ...types import UNSET, Response, Unset
 
 

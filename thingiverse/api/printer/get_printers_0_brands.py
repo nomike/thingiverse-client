@@ -8,12 +8,12 @@ from ...client import AuthenticatedClient, Client
 from ...models.get_printers_0_brands_response_200_item import GetPrinters0BrandsResponse200Item
 from ...models.get_printers_0_brands_response_401 import GetPrinters0BrandsResponse401
 from ...models.get_printers_0_brands_response_403 import GetPrinters0BrandsResponse403
-from ...types import UNSET, Response
+from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     *,
-    include_user_defined: bool,
+    include_user_defined: bool | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -32,12 +32,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    GetPrinters0BrandsResponse401
-    | GetPrinters0BrandsResponse403
-    | list[GetPrinters0BrandsResponse200Item]
-    | None
-):
+) -> GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item] | None:
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -66,11 +61,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    GetPrinters0BrandsResponse401
-    | GetPrinters0BrandsResponse403
-    | list[GetPrinters0BrandsResponse200Item]
-]:
+) -> Response[GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -82,16 +73,12 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    include_user_defined: bool,
-) -> Response[
-    GetPrinters0BrandsResponse401
-    | GetPrinters0BrandsResponse403
-    | list[GetPrinters0BrandsResponse200Item]
-]:
+    include_user_defined: bool | Unset = UNSET,
+) -> Response[GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item]]:
     """Get a list of all known printer brands
 
     Args:
-        include_user_defined (bool):
+        include_user_defined (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -115,17 +102,12 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    include_user_defined: bool,
-) -> (
-    GetPrinters0BrandsResponse401
-    | GetPrinters0BrandsResponse403
-    | list[GetPrinters0BrandsResponse200Item]
-    | None
-):
+    include_user_defined: bool | Unset = UNSET,
+) -> GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item] | None:
     """Get a list of all known printer brands
 
     Args:
-        include_user_defined (bool):
+        include_user_defined (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -144,16 +126,12 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    include_user_defined: bool,
-) -> Response[
-    GetPrinters0BrandsResponse401
-    | GetPrinters0BrandsResponse403
-    | list[GetPrinters0BrandsResponse200Item]
-]:
+    include_user_defined: bool | Unset = UNSET,
+) -> Response[GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item]]:
     """Get a list of all known printer brands
 
     Args:
-        include_user_defined (bool):
+        include_user_defined (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -175,17 +153,12 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    include_user_defined: bool,
-) -> (
-    GetPrinters0BrandsResponse401
-    | GetPrinters0BrandsResponse403
-    | list[GetPrinters0BrandsResponse200Item]
-    | None
-):
+    include_user_defined: bool | Unset = UNSET,
+) -> GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item] | None:
     """Get a list of all known printer brands
 
     Args:
-        include_user_defined (bool):
+        include_user_defined (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

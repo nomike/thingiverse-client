@@ -23,13 +23,7 @@ def _get_kwargs() -> dict[str, Any]:
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    GetTags0PopularResponse401
-    | GetTags0PopularResponse403
-    | GetTags0PopularResponse404
-    | list[TagSchema]
-    | None
-):
+) -> GetTags0PopularResponse401 | GetTags0PopularResponse403 | GetTags0PopularResponse404 | list[TagSchema] | None:
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -63,12 +57,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    GetTags0PopularResponse401
-    | GetTags0PopularResponse403
-    | GetTags0PopularResponse404
-    | list[TagSchema]
-]:
+) -> Response[GetTags0PopularResponse401 | GetTags0PopularResponse403 | GetTags0PopularResponse404 | list[TagSchema]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -80,12 +69,7 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-) -> Response[
-    GetTags0PopularResponse401
-    | GetTags0PopularResponse403
-    | GetTags0PopularResponse404
-    | list[TagSchema]
-]:
+) -> Response[GetTags0PopularResponse401 | GetTags0PopularResponse403 | GetTags0PopularResponse404 | list[TagSchema]]:
     """Get the list of random popular tags.
 
      returns a list of popular tags which reset every day.
@@ -110,13 +94,7 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-) -> (
-    GetTags0PopularResponse401
-    | GetTags0PopularResponse403
-    | GetTags0PopularResponse404
-    | list[TagSchema]
-    | None
-):
+) -> GetTags0PopularResponse401 | GetTags0PopularResponse403 | GetTags0PopularResponse404 | list[TagSchema] | None:
     """Get the list of random popular tags.
 
      returns a list of popular tags which reset every day.
@@ -137,12 +115,7 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-) -> Response[
-    GetTags0PopularResponse401
-    | GetTags0PopularResponse403
-    | GetTags0PopularResponse404
-    | list[TagSchema]
-]:
+) -> Response[GetTags0PopularResponse401 | GetTags0PopularResponse403 | GetTags0PopularResponse404 | list[TagSchema]]:
     """Get the list of random popular tags.
 
      returns a list of popular tags which reset every day.
@@ -165,13 +138,7 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-) -> (
-    GetTags0PopularResponse401
-    | GetTags0PopularResponse403
-    | GetTags0PopularResponse404
-    | list[TagSchema]
-    | None
-):
+) -> GetTags0PopularResponse401 | GetTags0PopularResponse403 | GetTags0PopularResponse404 | list[TagSchema] | None:
     """Get the list of random popular tags.
 
      returns a list of popular tags which reset every day.

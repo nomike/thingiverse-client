@@ -27,13 +27,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    Any
-    | GetSearchTagTagResponse401
-    | GetSearchTagTagResponse403
-    | GetSearchTagTagResponse404
-    | None
-):
+) -> Any | GetSearchTagTagResponse401 | GetSearchTagTagResponse403 | GetSearchTagTagResponse404 | None:
     if response.status_code == 200:
         response_200 = cast(Any, None)
         return response_200
@@ -61,9 +55,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    Any | GetSearchTagTagResponse401 | GetSearchTagTagResponse403 | GetSearchTagTagResponse404
-]:
+) -> Response[Any | GetSearchTagTagResponse401 | GetSearchTagTagResponse403 | GetSearchTagTagResponse404]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -76,9 +68,7 @@ def sync_detailed(
     tag: str,
     *,
     client: AuthenticatedClient,
-) -> Response[
-    Any | GetSearchTagTagResponse401 | GetSearchTagTagResponse403 | GetSearchTagTagResponse404
-]:
+) -> Response[Any | GetSearchTagTagResponse401 | GetSearchTagTagResponse403 | GetSearchTagTagResponse404]:
     """
     Args:
         tag (str):  Example: test.
@@ -106,13 +96,7 @@ def sync(
     tag: str,
     *,
     client: AuthenticatedClient,
-) -> (
-    Any
-    | GetSearchTagTagResponse401
-    | GetSearchTagTagResponse403
-    | GetSearchTagTagResponse404
-    | None
-):
+) -> Any | GetSearchTagTagResponse401 | GetSearchTagTagResponse403 | GetSearchTagTagResponse404 | None:
     """
     Args:
         tag (str):  Example: test.
@@ -135,9 +119,7 @@ async def asyncio_detailed(
     tag: str,
     *,
     client: AuthenticatedClient,
-) -> Response[
-    Any | GetSearchTagTagResponse401 | GetSearchTagTagResponse403 | GetSearchTagTagResponse404
-]:
+) -> Response[Any | GetSearchTagTagResponse401 | GetSearchTagTagResponse403 | GetSearchTagTagResponse404]:
     """
     Args:
         tag (str):  Example: test.
@@ -163,13 +145,7 @@ async def asyncio(
     tag: str,
     *,
     client: AuthenticatedClient,
-) -> (
-    Any
-    | GetSearchTagTagResponse401
-    | GetSearchTagTagResponse403
-    | GetSearchTagTagResponse404
-    | None
-):
+) -> Any | GetSearchTagTagResponse401 | GetSearchTagTagResponse403 | GetSearchTagTagResponse404 | None:
     """
     Args:
         tag (str):  Example: test.

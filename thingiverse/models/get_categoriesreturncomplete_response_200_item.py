@@ -67,9 +67,7 @@ class GetCategoriesreturncompleteResponse200Item:
         if _children is not UNSET:
             children = []
             for children_item_data in _children:
-                children_item = GetCategoriesreturncompleteResponse200ItemChildrenItem.from_dict(
-                    children_item_data
-                )
+                children_item = GetCategoriesreturncompleteResponse200ItemChildrenItem.from_dict(children_item_data)
 
                 children.append(children_item)
 

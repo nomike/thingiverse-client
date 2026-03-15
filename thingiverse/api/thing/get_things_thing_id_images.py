@@ -9,14 +9,14 @@ from ...client import AuthenticatedClient, Client
 from ...models.get_things_thing_id_images_response_401 import GetThingsThingIdImagesResponse401
 from ...models.get_things_thing_id_images_response_403 import GetThingsThingIdImagesResponse403
 from ...models.get_things_thing_id_images_response_404 import GetThingsThingIdImagesResponse404
-from ...types import UNSET, Response
+from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     thing_id: int,
     *,
-    size: str,
-    type_: str,
+    size: str | Unset = UNSET,
+    type_: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -74,10 +74,7 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    Any
-    | GetThingsThingIdImagesResponse401
-    | GetThingsThingIdImagesResponse403
-    | GetThingsThingIdImagesResponse404
+    Any | GetThingsThingIdImagesResponse401 | GetThingsThingIdImagesResponse403 | GetThingsThingIdImagesResponse404
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -91,13 +88,10 @@ def sync_detailed(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-    size: str,
-    type_: str,
+    size: str | Unset = UNSET,
+    type_: str | Unset = UNSET,
 ) -> Response[
-    Any
-    | GetThingsThingIdImagesResponse401
-    | GetThingsThingIdImagesResponse403
-    | GetThingsThingIdImagesResponse404
+    Any | GetThingsThingIdImagesResponse401 | GetThingsThingIdImagesResponse403 | GetThingsThingIdImagesResponse404
 ]:
     """Get image(s) by thing
 
@@ -105,8 +99,8 @@ def sync_detailed(
 
     Args:
         thing_id (int):  Example: 1004996.
-        size (str):
-        type_ (str):
+        size (str | Unset):
+        type_ (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -133,8 +127,8 @@ def sync(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-    size: str,
-    type_: str,
+    size: str | Unset = UNSET,
+    type_: str | Unset = UNSET,
 ) -> (
     Any
     | GetThingsThingIdImagesResponse401
@@ -148,8 +142,8 @@ def sync(
 
     Args:
         thing_id (int):  Example: 1004996.
-        size (str):
-        type_ (str):
+        size (str | Unset):
+        type_ (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -171,13 +165,10 @@ async def asyncio_detailed(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-    size: str,
-    type_: str,
+    size: str | Unset = UNSET,
+    type_: str | Unset = UNSET,
 ) -> Response[
-    Any
-    | GetThingsThingIdImagesResponse401
-    | GetThingsThingIdImagesResponse403
-    | GetThingsThingIdImagesResponse404
+    Any | GetThingsThingIdImagesResponse401 | GetThingsThingIdImagesResponse403 | GetThingsThingIdImagesResponse404
 ]:
     """Get image(s) by thing
 
@@ -185,8 +176,8 @@ async def asyncio_detailed(
 
     Args:
         thing_id (int):  Example: 1004996.
-        size (str):
-        type_ (str):
+        size (str | Unset):
+        type_ (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -211,8 +202,8 @@ async def asyncio(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-    size: str,
-    type_: str,
+    size: str | Unset = UNSET,
+    type_: str | Unset = UNSET,
 ) -> (
     Any
     | GetThingsThingIdImagesResponse401
@@ -226,8 +217,8 @@ async def asyncio(
 
     Args:
         thing_id (int):  Example: 1004996.
-        size (str):
-        type_ (str):
+        size (str | Unset):
+        type_ (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

@@ -9,9 +9,7 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.get_subscriptions_0_analytics_response_200_stats import (
-        GetSubscriptions0AnalyticsResponse200Stats,
-    )
+    from ..models.get_subscriptions_0_analytics_response_200_stats import GetSubscriptions0AnalyticsResponse200Stats
 
 
 T = TypeVar("T", bound="GetSubscriptions0AnalyticsResponse200")
@@ -48,9 +46,7 @@ class GetSubscriptions0AnalyticsResponse200:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.get_subscriptions_0_analytics_response_200_stats import (
-            GetSubscriptions0AnalyticsResponse200Stats,
-        )
+        from ..models.get_subscriptions_0_analytics_response_200_stats import GetSubscriptions0AnalyticsResponse200Stats
 
         d = dict(src_dict)
         _stats = d.pop("stats", UNSET)

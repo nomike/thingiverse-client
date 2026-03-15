@@ -28,13 +28,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    GetUsersUsernameResponse401
-    | GetUsersUsernameResponse403
-    | GetUsersUsernameResponse404
-    | UserSchema
-    | None
-):
+) -> GetUsersUsernameResponse401 | GetUsersUsernameResponse403 | GetUsersUsernameResponse404 | UserSchema | None:
     if response.status_code == 200:
         response_200 = UserSchema.from_dict(response.json())
 
@@ -63,12 +57,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    GetUsersUsernameResponse401
-    | GetUsersUsernameResponse403
-    | GetUsersUsernameResponse404
-    | UserSchema
-]:
+) -> Response[GetUsersUsernameResponse401 | GetUsersUsernameResponse403 | GetUsersUsernameResponse404 | UserSchema]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -81,12 +70,7 @@ def sync_detailed(
     username: str,
     *,
     client: AuthenticatedClient,
-) -> Response[
-    GetUsersUsernameResponse401
-    | GetUsersUsernameResponse403
-    | GetUsersUsernameResponse404
-    | UserSchema
-]:
+) -> Response[GetUsersUsernameResponse401 | GetUsersUsernameResponse403 | GetUsersUsernameResponse404 | UserSchema]:
     """Get the specified user
 
     Args:
@@ -115,13 +99,7 @@ def sync(
     username: str,
     *,
     client: AuthenticatedClient,
-) -> (
-    GetUsersUsernameResponse401
-    | GetUsersUsernameResponse403
-    | GetUsersUsernameResponse404
-    | UserSchema
-    | None
-):
+) -> GetUsersUsernameResponse401 | GetUsersUsernameResponse403 | GetUsersUsernameResponse404 | UserSchema | None:
     """Get the specified user
 
     Args:
@@ -145,12 +123,7 @@ async def asyncio_detailed(
     username: str,
     *,
     client: AuthenticatedClient,
-) -> Response[
-    GetUsersUsernameResponse401
-    | GetUsersUsernameResponse403
-    | GetUsersUsernameResponse404
-    | UserSchema
-]:
+) -> Response[GetUsersUsernameResponse401 | GetUsersUsernameResponse403 | GetUsersUsernameResponse404 | UserSchema]:
     """Get the specified user
 
     Args:
@@ -177,13 +150,7 @@ async def asyncio(
     username: str,
     *,
     client: AuthenticatedClient,
-) -> (
-    GetUsersUsernameResponse401
-    | GetUsersUsernameResponse403
-    | GetUsersUsernameResponse404
-    | UserSchema
-    | None
-):
+) -> GetUsersUsernameResponse401 | GetUsersUsernameResponse403 | GetUsersUsernameResponse404 | UserSchema | None:
     """Get the specified user
 
     Args:

@@ -8,13 +8,13 @@ from ...client import AuthenticatedClient, Client
 from ...models.get_printers_0_models_response_200_item import GetPrinters0ModelsResponse200Item
 from ...models.get_printers_0_models_response_401 import GetPrinters0ModelsResponse401
 from ...models.get_printers_0_models_response_403 import GetPrinters0ModelsResponse403
-from ...types import UNSET, Response
+from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     *,
-    include_user_defined: bool,
-    brand: str,
+    include_user_defined: bool | Unset = UNSET,
+    brand: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -35,12 +35,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    GetPrinters0ModelsResponse401
-    | GetPrinters0ModelsResponse403
-    | list[GetPrinters0ModelsResponse200Item]
-    | None
-):
+) -> GetPrinters0ModelsResponse401 | GetPrinters0ModelsResponse403 | list[GetPrinters0ModelsResponse200Item] | None:
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -69,11 +64,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    GetPrinters0ModelsResponse401
-    | GetPrinters0ModelsResponse403
-    | list[GetPrinters0ModelsResponse200Item]
-]:
+) -> Response[GetPrinters0ModelsResponse401 | GetPrinters0ModelsResponse403 | list[GetPrinters0ModelsResponse200Item]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -85,18 +76,14 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    include_user_defined: bool,
-    brand: str,
-) -> Response[
-    GetPrinters0ModelsResponse401
-    | GetPrinters0ModelsResponse403
-    | list[GetPrinters0ModelsResponse200Item]
-]:
+    include_user_defined: bool | Unset = UNSET,
+    brand: str | Unset = UNSET,
+) -> Response[GetPrinters0ModelsResponse401 | GetPrinters0ModelsResponse403 | list[GetPrinters0ModelsResponse200Item]]:
     """Get a list of known printers
 
     Args:
-        include_user_defined (bool):
-        brand (str):  Example: Ultimaker.
+        include_user_defined (bool | Unset):
+        brand (str | Unset):  Example: Ultimaker.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -121,19 +108,14 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    include_user_defined: bool,
-    brand: str,
-) -> (
-    GetPrinters0ModelsResponse401
-    | GetPrinters0ModelsResponse403
-    | list[GetPrinters0ModelsResponse200Item]
-    | None
-):
+    include_user_defined: bool | Unset = UNSET,
+    brand: str | Unset = UNSET,
+) -> GetPrinters0ModelsResponse401 | GetPrinters0ModelsResponse403 | list[GetPrinters0ModelsResponse200Item] | None:
     """Get a list of known printers
 
     Args:
-        include_user_defined (bool):
-        brand (str):  Example: Ultimaker.
+        include_user_defined (bool | Unset):
+        brand (str | Unset):  Example: Ultimaker.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -153,18 +135,14 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    include_user_defined: bool,
-    brand: str,
-) -> Response[
-    GetPrinters0ModelsResponse401
-    | GetPrinters0ModelsResponse403
-    | list[GetPrinters0ModelsResponse200Item]
-]:
+    include_user_defined: bool | Unset = UNSET,
+    brand: str | Unset = UNSET,
+) -> Response[GetPrinters0ModelsResponse401 | GetPrinters0ModelsResponse403 | list[GetPrinters0ModelsResponse200Item]]:
     """Get a list of known printers
 
     Args:
-        include_user_defined (bool):
-        brand (str):  Example: Ultimaker.
+        include_user_defined (bool | Unset):
+        brand (str | Unset):  Example: Ultimaker.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -187,19 +165,14 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    include_user_defined: bool,
-    brand: str,
-) -> (
-    GetPrinters0ModelsResponse401
-    | GetPrinters0ModelsResponse403
-    | list[GetPrinters0ModelsResponse200Item]
-    | None
-):
+    include_user_defined: bool | Unset = UNSET,
+    brand: str | Unset = UNSET,
+) -> GetPrinters0ModelsResponse401 | GetPrinters0ModelsResponse403 | list[GetPrinters0ModelsResponse200Item] | None:
     """Get a list of known printers
 
     Args:
-        include_user_defined (bool):
-        brand (str):  Example: Ultimaker.
+        include_user_defined (bool | Unset):
+        brand (str | Unset):  Example: Ultimaker.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

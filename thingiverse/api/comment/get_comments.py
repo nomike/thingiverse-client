@@ -36,13 +36,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    GetCommentsResponse401
-    | GetCommentsResponse403
-    | GetCommentsResponse404
-    | list[CommentSchema]
-    | None
-):
+) -> GetCommentsResponse401 | GetCommentsResponse403 | GetCommentsResponse404 | list[CommentSchema] | None:
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -76,9 +70,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    GetCommentsResponse401 | GetCommentsResponse403 | GetCommentsResponse404 | list[CommentSchema]
-]:
+) -> Response[GetCommentsResponse401 | GetCommentsResponse403 | GetCommentsResponse404 | list[CommentSchema]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -92,9 +84,7 @@ def sync_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[
-    GetCommentsResponse401 | GetCommentsResponse403 | GetCommentsResponse404 | list[CommentSchema]
-]:
+) -> Response[GetCommentsResponse401 | GetCommentsResponse403 | GetCommentsResponse404 | list[CommentSchema]]:
     """Get the latest comments
 
     Args:
@@ -126,13 +116,7 @@ def sync(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> (
-    GetCommentsResponse401
-    | GetCommentsResponse403
-    | GetCommentsResponse404
-    | list[CommentSchema]
-    | None
-):
+) -> GetCommentsResponse401 | GetCommentsResponse403 | GetCommentsResponse404 | list[CommentSchema] | None:
     """Get the latest comments
 
     Args:
@@ -159,9 +143,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[
-    GetCommentsResponse401 | GetCommentsResponse403 | GetCommentsResponse404 | list[CommentSchema]
-]:
+) -> Response[GetCommentsResponse401 | GetCommentsResponse403 | GetCommentsResponse404 | list[CommentSchema]]:
     """Get the latest comments
 
     Args:
@@ -191,13 +173,7 @@ async def asyncio(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> (
-    GetCommentsResponse401
-    | GetCommentsResponse403
-    | GetCommentsResponse404
-    | list[CommentSchema]
-    | None
-):
+) -> GetCommentsResponse401 | GetCommentsResponse403 | GetCommentsResponse404 | list[CommentSchema] | None:
     """Get the latest comments
 
     Args:

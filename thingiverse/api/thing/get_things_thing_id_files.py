@@ -10,13 +10,13 @@ from ...models.file_schema import FileSchema
 from ...models.get_things_thing_id_files_response_401 import GetThingsThingIdFilesResponse401
 from ...models.get_things_thing_id_files_response_403 import GetThingsThingIdFilesResponse403
 from ...models.get_things_thing_id_files_response_404 import GetThingsThingIdFilesResponse404
-from ...types import UNSET, Response
+from ...types import UNSET, Response, Unset
 
 
 def _get_kwargs(
     thing_id: int,
     *,
-    file_id: int,
+    file_id: int | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -95,7 +95,7 @@ def sync_detailed(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-    file_id: int,
+    file_id: int | Unset = UNSET,
 ) -> Response[
     GetThingsThingIdFilesResponse401
     | GetThingsThingIdFilesResponse403
@@ -108,7 +108,7 @@ def sync_detailed(
 
     Args:
         thing_id (int):  Example: 1004996.
-        file_id (int):
+        file_id (int | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -134,7 +134,7 @@ def sync(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-    file_id: int,
+    file_id: int | Unset = UNSET,
 ) -> (
     GetThingsThingIdFilesResponse401
     | GetThingsThingIdFilesResponse403
@@ -148,7 +148,7 @@ def sync(
 
     Args:
         thing_id (int):  Example: 1004996.
-        file_id (int):
+        file_id (int | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -169,7 +169,7 @@ async def asyncio_detailed(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-    file_id: int,
+    file_id: int | Unset = UNSET,
 ) -> Response[
     GetThingsThingIdFilesResponse401
     | GetThingsThingIdFilesResponse403
@@ -182,7 +182,7 @@ async def asyncio_detailed(
 
     Args:
         thing_id (int):  Example: 1004996.
-        file_id (int):
+        file_id (int | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -206,7 +206,7 @@ async def asyncio(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-    file_id: int,
+    file_id: int | Unset = UNSET,
 ) -> (
     GetThingsThingIdFilesResponse401
     | GetThingsThingIdFilesResponse403
@@ -220,7 +220,7 @@ async def asyncio(
 
     Args:
         thing_id (int):  Example: 1004996.
-        file_id (int):
+        file_id (int | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

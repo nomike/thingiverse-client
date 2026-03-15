@@ -7,15 +7,9 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.collection_schema import CollectionSchema
-from ...models.get_collections_collection_id_response_401 import (
-    GetCollectionsCollectionIdResponse401,
-)
-from ...models.get_collections_collection_id_response_403 import (
-    GetCollectionsCollectionIdResponse403,
-)
-from ...models.get_collections_collection_id_response_404 import (
-    GetCollectionsCollectionIdResponse404,
-)
+from ...models.get_collections_collection_id_response_401 import GetCollectionsCollectionIdResponse401
+from ...models.get_collections_collection_id_response_403 import GetCollectionsCollectionIdResponse403
+from ...models.get_collections_collection_id_response_404 import GetCollectionsCollectionIdResponse404
 from ...types import Response
 
 

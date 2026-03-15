@@ -6,9 +6,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.post_groups_group_id_group_topics_forum_slug_body import (
-    PostGroupsGroupIdGroupTopicsForumSlugBody,
-)
+from ...models.post_groups_group_id_group_topics_forum_slug_body import PostGroupsGroupIdGroupTopicsForumSlugBody
 from ...models.post_groups_group_id_group_topics_forum_slug_response_401 import (
     PostGroupsGroupIdGroupTopicsForumSlugResponse401,
 )

@@ -7,9 +7,7 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.comment_schema import CommentSchema
-from ...models.post_grouptopics_grouptopic_id_comments_body import (
-    PostGrouptopicsGrouptopicIdCommentsBody,
-)
+from ...models.post_grouptopics_grouptopic_id_comments_body import PostGrouptopicsGrouptopicIdCommentsBody
 from ...models.post_grouptopics_grouptopic_id_comments_response_401 import (
     PostGrouptopicsGrouptopicIdCommentsResponse401,
 )

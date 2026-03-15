@@ -36,13 +36,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    GetPopularResponse401
-    | GetPopularResponse403
-    | GetPopularResponse404
-    | list[ShortThingSchema]
-    | None
-):
+) -> GetPopularResponse401 | GetPopularResponse403 | GetPopularResponse404 | list[ShortThingSchema] | None:
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -76,9 +70,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    GetPopularResponse401 | GetPopularResponse403 | GetPopularResponse404 | list[ShortThingSchema]
-]:
+) -> Response[GetPopularResponse401 | GetPopularResponse403 | GetPopularResponse404 | list[ShortThingSchema]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -92,9 +84,7 @@ def sync_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[
-    GetPopularResponse401 | GetPopularResponse403 | GetPopularResponse404 | list[ShortThingSchema]
-]:
+) -> Response[GetPopularResponse401 | GetPopularResponse403 | GetPopularResponse404 | list[ShortThingSchema]]:
     """Get the most popular things
 
      You can use `GET /search` with the `sort=popular` parameter now.
@@ -128,13 +118,7 @@ def sync(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> (
-    GetPopularResponse401
-    | GetPopularResponse403
-    | GetPopularResponse404
-    | list[ShortThingSchema]
-    | None
-):
+) -> GetPopularResponse401 | GetPopularResponse403 | GetPopularResponse404 | list[ShortThingSchema] | None:
     """Get the most popular things
 
      You can use `GET /search` with the `sort=popular` parameter now.
@@ -163,9 +147,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[
-    GetPopularResponse401 | GetPopularResponse403 | GetPopularResponse404 | list[ShortThingSchema]
-]:
+) -> Response[GetPopularResponse401 | GetPopularResponse403 | GetPopularResponse404 | list[ShortThingSchema]]:
     """Get the most popular things
 
      You can use `GET /search` with the `sort=popular` parameter now.
@@ -197,13 +179,7 @@ async def asyncio(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> (
-    GetPopularResponse401
-    | GetPopularResponse403
-    | GetPopularResponse404
-    | list[ShortThingSchema]
-    | None
-):
+) -> GetPopularResponse401 | GetPopularResponse403 | GetPopularResponse404 | list[ShortThingSchema] | None:
     """Get the most popular things
 
      You can use `GET /search` with the `sort=popular` parameter now.

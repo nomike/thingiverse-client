@@ -6,15 +6,9 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.post_grouptopics_grouptopic_id_watch_response_401 import (
-    PostGrouptopicsGrouptopicIdWatchResponse401,
-)
-from ...models.post_grouptopics_grouptopic_id_watch_response_403 import (
-    PostGrouptopicsGrouptopicIdWatchResponse403,
-)
-from ...models.post_grouptopics_grouptopic_id_watch_response_404 import (
-    PostGrouptopicsGrouptopicIdWatchResponse404,
-)
+from ...models.post_grouptopics_grouptopic_id_watch_response_401 import PostGrouptopicsGrouptopicIdWatchResponse401
+from ...models.post_grouptopics_grouptopic_id_watch_response_403 import PostGrouptopicsGrouptopicIdWatchResponse403
+from ...models.post_grouptopics_grouptopic_id_watch_response_404 import PostGrouptopicsGrouptopicIdWatchResponse404
 from ...models.topic_schema import TopicSchema
 from ...types import Response
 

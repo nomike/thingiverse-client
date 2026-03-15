@@ -6,15 +6,9 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_things_thing_id_derivatives_response_401 import (
-    GetThingsThingIdDerivativesResponse401,
-)
-from ...models.get_things_thing_id_derivatives_response_403 import (
-    GetThingsThingIdDerivativesResponse403,
-)
-from ...models.get_things_thing_id_derivatives_response_404 import (
-    GetThingsThingIdDerivativesResponse404,
-)
+from ...models.get_things_thing_id_derivatives_response_401 import GetThingsThingIdDerivativesResponse401
+from ...models.get_things_thing_id_derivatives_response_403 import GetThingsThingIdDerivativesResponse403
+from ...models.get_things_thing_id_derivatives_response_404 import GetThingsThingIdDerivativesResponse404
 from ...models.thing_schema import ThingSchema
 from ...types import UNSET, Response, Unset
 

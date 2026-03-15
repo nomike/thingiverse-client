@@ -23,9 +23,7 @@ class GetCopiesCopyIdThreadedCommentsResponse200UsersAdditionalProperty:
         user_name (str | Unset):
     """
 
-    is_admin: GetCopiesCopyIdThreadedCommentsResponse200UsersAdditionalPropertyIsAdmin | Unset = (
-        UNSET
-    )
+    is_admin: GetCopiesCopyIdThreadedCommentsResponse200UsersAdditionalPropertyIsAdmin | Unset = UNSET
     user_avatar: str | Unset = UNSET
     user_name: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -59,9 +57,7 @@ class GetCopiesCopyIdThreadedCommentsResponse200UsersAdditionalProperty:
         if isinstance(_is_admin, Unset):
             is_admin = UNSET
         else:
-            is_admin = GetCopiesCopyIdThreadedCommentsResponse200UsersAdditionalPropertyIsAdmin(
-                _is_admin
-            )
+            is_admin = GetCopiesCopyIdThreadedCommentsResponse200UsersAdditionalPropertyIsAdmin(_is_admin)
 
         user_avatar = d.pop("user_avatar", UNSET)
 

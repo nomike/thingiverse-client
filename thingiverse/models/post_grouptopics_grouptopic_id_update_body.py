@@ -1,27 +1,12 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..types import UNSET, Unset
-
-if TYPE_CHECKING:
-    from ..models.post_grouptopics_grouptopic_id_update_body_attachments_item import (
-        PostGrouptopicsGrouptopicIdUpdateBodyAttachmentsItem,
-    )
-    from ..models.post_grouptopics_grouptopic_id_update_body_filenames_item import (
-        PostGrouptopicsGrouptopicIdUpdateBodyFilenamesItem,
-    )
-    from ..models.post_grouptopics_grouptopic_id_update_body_files_item import (
-        PostGrouptopicsGrouptopicIdUpdateBodyFilesItem,
-    )
-    from ..models.post_grouptopics_grouptopic_id_update_body_tags_item import (
-        PostGrouptopicsGrouptopicIdUpdateBodyTagsItem,
-    )
-
 
 T = TypeVar("T", bound="PostGrouptopicsGrouptopicIdUpdateBody")
 
@@ -30,58 +15,43 @@ T = TypeVar("T", bound="PostGrouptopicsGrouptopicIdUpdateBody")
 class PostGrouptopicsGrouptopicIdUpdateBody:
     """
     Attributes:
-        attachments (list[PostGrouptopicsGrouptopicIdUpdateBodyAttachmentsItem] | Unset): Array of atachments ids to
-            update Example: ['80111'].
+        attachments (list[str] | Unset): Array of atachments ids to update Example: ['80111'].
         body (str | Unset): Set the body of the topic
-        filenames (list[PostGrouptopicsGrouptopicIdUpdateBodyFilenamesItem] | Unset): Array of names of the files
-            Example: ['File1.jpg', 'File2.jpg'].
-        files (list[PostGrouptopicsGrouptopicIdUpdateBodyFilesItem] | Unset): Array of files Example: ['File1.jpg',
-            'File2.jpg'].
+        filenames (list[str] | Unset): Array of names of the files Example: ['File1.jpg', 'File2.jpg'].
+        files (list[str] | Unset): Array of files Example: ['File1.jpg', 'File2.jpg'].
         name (str | Unset): Set the name of the topic
-        tags (list[PostGrouptopicsGrouptopicIdUpdateBodyTagsItem] | Unset): Set the category of the thing. Uses full
-            category name (eg. "3D Printer Parts") Example: ['tag1', 'tag2', 'tag3'].
+        tags (list[str] | Unset): Set the category of the thing. Uses full category name (eg. "3D Printer Parts")
+            Example: ['tag1', 'tag2', 'tag3'].
     """
 
-    attachments: list[PostGrouptopicsGrouptopicIdUpdateBodyAttachmentsItem] | Unset = UNSET
+    attachments: list[str] | Unset = UNSET
     body: str | Unset = UNSET
-    filenames: list[PostGrouptopicsGrouptopicIdUpdateBodyFilenamesItem] | Unset = UNSET
-    files: list[PostGrouptopicsGrouptopicIdUpdateBodyFilesItem] | Unset = UNSET
+    filenames: list[str] | Unset = UNSET
+    files: list[str] | Unset = UNSET
     name: str | Unset = UNSET
-    tags: list[PostGrouptopicsGrouptopicIdUpdateBodyTagsItem] | Unset = UNSET
+    tags: list[str] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        attachments: list[dict[str, Any]] | Unset = UNSET
+        attachments: list[str] | Unset = UNSET
         if not isinstance(self.attachments, Unset):
-            attachments = []
-            for attachments_item_data in self.attachments:
-                attachments_item = attachments_item_data.to_dict()
-                attachments.append(attachments_item)
+            attachments = self.attachments
 
         body = self.body
 
-        filenames: list[dict[str, Any]] | Unset = UNSET
+        filenames: list[str] | Unset = UNSET
         if not isinstance(self.filenames, Unset):
-            filenames = []
-            for filenames_item_data in self.filenames:
-                filenames_item = filenames_item_data.to_dict()
-                filenames.append(filenames_item)
+            filenames = self.filenames
 
-        files: list[dict[str, Any]] | Unset = UNSET
+        files: list[str] | Unset = UNSET
         if not isinstance(self.files, Unset):
-            files = []
-            for files_item_data in self.files:
-                files_item = files_item_data.to_dict()
-                files.append(files_item)
+            files = self.files
 
         name = self.name
 
-        tags: list[dict[str, Any]] | Unset = UNSET
+        tags: list[str] | Unset = UNSET
         if not isinstance(self.tags, Unset):
-            tags = []
-            for tags_item_data in self.tags:
-                tags_item = tags_item_data.to_dict()
-                tags.append(tags_item)
+            tags = self.tags
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -103,65 +73,18 @@ class PostGrouptopicsGrouptopicIdUpdateBody:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.post_grouptopics_grouptopic_id_update_body_attachments_item import (
-            PostGrouptopicsGrouptopicIdUpdateBodyAttachmentsItem,
-        )
-        from ..models.post_grouptopics_grouptopic_id_update_body_filenames_item import (
-            PostGrouptopicsGrouptopicIdUpdateBodyFilenamesItem,
-        )
-        from ..models.post_grouptopics_grouptopic_id_update_body_files_item import (
-            PostGrouptopicsGrouptopicIdUpdateBodyFilesItem,
-        )
-        from ..models.post_grouptopics_grouptopic_id_update_body_tags_item import (
-            PostGrouptopicsGrouptopicIdUpdateBodyTagsItem,
-        )
-
         d = dict(src_dict)
-        _attachments = d.pop("attachments", UNSET)
-        attachments: list[PostGrouptopicsGrouptopicIdUpdateBodyAttachmentsItem] | Unset = UNSET
-        if _attachments is not UNSET:
-            attachments = []
-            for attachments_item_data in _attachments:
-                attachments_item = PostGrouptopicsGrouptopicIdUpdateBodyAttachmentsItem.from_dict(
-                    attachments_item_data
-                )
-
-                attachments.append(attachments_item)
+        attachments = cast(list[str], d.pop("attachments", UNSET))
 
         body = d.pop("body", UNSET)
 
-        _filenames = d.pop("filenames", UNSET)
-        filenames: list[PostGrouptopicsGrouptopicIdUpdateBodyFilenamesItem] | Unset = UNSET
-        if _filenames is not UNSET:
-            filenames = []
-            for filenames_item_data in _filenames:
-                filenames_item = PostGrouptopicsGrouptopicIdUpdateBodyFilenamesItem.from_dict(
-                    filenames_item_data
-                )
+        filenames = cast(list[str], d.pop("filenames", UNSET))
 
-                filenames.append(filenames_item)
-
-        _files = d.pop("files", UNSET)
-        files: list[PostGrouptopicsGrouptopicIdUpdateBodyFilesItem] | Unset = UNSET
-        if _files is not UNSET:
-            files = []
-            for files_item_data in _files:
-                files_item = PostGrouptopicsGrouptopicIdUpdateBodyFilesItem.from_dict(
-                    files_item_data
-                )
-
-                files.append(files_item)
+        files = cast(list[str], d.pop("files", UNSET))
 
         name = d.pop("name", UNSET)
 
-        _tags = d.pop("tags", UNSET)
-        tags: list[PostGrouptopicsGrouptopicIdUpdateBodyTagsItem] | Unset = UNSET
-        if _tags is not UNSET:
-            tags = []
-            for tags_item_data in _tags:
-                tags_item = PostGrouptopicsGrouptopicIdUpdateBodyTagsItem.from_dict(tags_item_data)
-
-                tags.append(tags_item)
+        tags = cast(list[str], d.pop("tags", UNSET))
 
         post_grouptopics_grouptopic_id_update_body = cls(
             attachments=attachments,

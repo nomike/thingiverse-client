@@ -6,18 +6,10 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.delete_collections_collection_id_response_200 import (
-    DeleteCollectionsCollectionIdResponse200,
-)
-from ...models.delete_collections_collection_id_response_401 import (
-    DeleteCollectionsCollectionIdResponse401,
-)
-from ...models.delete_collections_collection_id_response_403 import (
-    DeleteCollectionsCollectionIdResponse403,
-)
-from ...models.delete_collections_collection_id_response_404 import (
-    DeleteCollectionsCollectionIdResponse404,
-)
+from ...models.delete_collections_collection_id_response_200 import DeleteCollectionsCollectionIdResponse200
+from ...models.delete_collections_collection_id_response_401 import DeleteCollectionsCollectionIdResponse401
+from ...models.delete_collections_collection_id_response_403 import DeleteCollectionsCollectionIdResponse403
+from ...models.delete_collections_collection_id_response_404 import DeleteCollectionsCollectionIdResponse404
 from ...types import Response
 
 

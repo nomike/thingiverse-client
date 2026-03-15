@@ -6,9 +6,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_users_username_favorites_response_200_item import (
-    GetUsersUsernameFavoritesResponse200Item,
-)
+from ...models.get_users_username_favorites_response_200_item import GetUsersUsernameFavoritesResponse200Item
 from ...models.get_users_username_favorites_response_401 import GetUsersUsernameFavoritesResponse401
 from ...models.get_users_username_favorites_response_403 import GetUsersUsernameFavoritesResponse403
 from ...models.get_users_username_favorites_response_404 import GetUsersUsernameFavoritesResponse404
@@ -53,9 +51,7 @@ def _parse_response(
         response_200 = []
         _response_200 = response.json()
         for response_200_item_data in _response_200:
-            response_200_item = GetUsersUsernameFavoritesResponse200Item.from_dict(
-                response_200_item_data
-            )
+            response_200_item = GetUsersUsernameFavoritesResponse200Item.from_dict(response_200_item_data)
 
             response_200.append(response_200_item)
 

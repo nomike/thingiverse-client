@@ -36,13 +36,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    GetCollectionsResponse401
-    | GetCollectionsResponse403
-    | GetCollectionsResponse404
-    | list[CollectionSchema]
-    | None
-):
+) -> GetCollectionsResponse401 | GetCollectionsResponse403 | GetCollectionsResponse404 | list[CollectionSchema] | None:
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -77,10 +71,7 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    GetCollectionsResponse401
-    | GetCollectionsResponse403
-    | GetCollectionsResponse404
-    | list[CollectionSchema]
+    GetCollectionsResponse401 | GetCollectionsResponse403 | GetCollectionsResponse404 | list[CollectionSchema]
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -96,10 +87,7 @@ def sync_detailed(
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
 ) -> Response[
-    GetCollectionsResponse401
-    | GetCollectionsResponse403
-    | GetCollectionsResponse404
-    | list[CollectionSchema]
+    GetCollectionsResponse401 | GetCollectionsResponse403 | GetCollectionsResponse404 | list[CollectionSchema]
 ]:
     """Get list of the latest collections
 
@@ -132,13 +120,7 @@ def sync(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> (
-    GetCollectionsResponse401
-    | GetCollectionsResponse403
-    | GetCollectionsResponse404
-    | list[CollectionSchema]
-    | None
-):
+) -> GetCollectionsResponse401 | GetCollectionsResponse403 | GetCollectionsResponse404 | list[CollectionSchema] | None:
     """Get list of the latest collections
 
     Args:
@@ -166,10 +148,7 @@ async def asyncio_detailed(
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
 ) -> Response[
-    GetCollectionsResponse401
-    | GetCollectionsResponse403
-    | GetCollectionsResponse404
-    | list[CollectionSchema]
+    GetCollectionsResponse401 | GetCollectionsResponse403 | GetCollectionsResponse404 | list[CollectionSchema]
 ]:
     """Get list of the latest collections
 
@@ -200,13 +179,7 @@ async def asyncio(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> (
-    GetCollectionsResponse401
-    | GetCollectionsResponse403
-    | GetCollectionsResponse404
-    | list[CollectionSchema]
-    | None
-):
+) -> GetCollectionsResponse401 | GetCollectionsResponse403 | GetCollectionsResponse404 | list[CollectionSchema] | None:
     """Get list of the latest collections
 
     Args:

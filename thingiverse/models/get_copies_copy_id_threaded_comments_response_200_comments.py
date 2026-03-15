@@ -19,9 +19,9 @@ T = TypeVar("T", bound="GetCopiesCopyIdThreadedCommentsResponse200Comments")
 class GetCopiesCopyIdThreadedCommentsResponse200Comments:
     """ """
 
-    additional_properties: dict[
-        str, GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalProperty
-    ] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalProperty] = (
+        _attrs_field(init=False, factory=dict)
+    )
 
     def to_dict(self) -> dict[str, Any]:
         field_dict: dict[str, Any] = {}
@@ -41,26 +41,20 @@ class GetCopiesCopyIdThreadedCommentsResponse200Comments:
 
         additional_properties = {}
         for prop_name, prop_dict in d.items():
-            additional_property = (
-                GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalProperty.from_dict(
-                    prop_dict
-                )
+            additional_property = GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalProperty.from_dict(
+                prop_dict
             )
 
             additional_properties[prop_name] = additional_property
 
-        get_copies_copy_id_threaded_comments_response_200_comments.additional_properties = (
-            additional_properties
-        )
+        get_copies_copy_id_threaded_comments_response_200_comments.additional_properties = additional_properties
         return get_copies_copy_id_threaded_comments_response_200_comments
 
     @property
     def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
-    def __getitem__(
-        self, key: str
-    ) -> GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalProperty:
+    def __getitem__(self, key: str) -> GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalProperty:
         return self.additional_properties[key]
 
     def __setitem__(

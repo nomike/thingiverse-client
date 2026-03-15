@@ -6,21 +6,11 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.post_things_thing_id_toggle_watch_response_200 import (
-    PostThingsThingIdToggleWatchResponse200,
-)
-from ...models.post_things_thing_id_toggle_watch_response_400 import (
-    PostThingsThingIdToggleWatchResponse400,
-)
-from ...models.post_things_thing_id_toggle_watch_response_401 import (
-    PostThingsThingIdToggleWatchResponse401,
-)
-from ...models.post_things_thing_id_toggle_watch_response_403 import (
-    PostThingsThingIdToggleWatchResponse403,
-)
-from ...models.post_things_thing_id_toggle_watch_response_404 import (
-    PostThingsThingIdToggleWatchResponse404,
-)
+from ...models.post_things_thing_id_toggle_watch_response_200 import PostThingsThingIdToggleWatchResponse200
+from ...models.post_things_thing_id_toggle_watch_response_400 import PostThingsThingIdToggleWatchResponse400
+from ...models.post_things_thing_id_toggle_watch_response_401 import PostThingsThingIdToggleWatchResponse401
+from ...models.post_things_thing_id_toggle_watch_response_403 import PostThingsThingIdToggleWatchResponse403
+from ...models.post_things_thing_id_toggle_watch_response_404 import PostThingsThingIdToggleWatchResponse404
 from ...types import Response
 
 

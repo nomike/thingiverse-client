@@ -171,9 +171,7 @@ class GroupSchema:
         if _featured_images is not UNSET:
             featured_images = []
             for featured_images_item_data in _featured_images:
-                featured_images_item = GroupSchemaFeaturedImagesItem.from_dict(
-                    featured_images_item_data
-                )
+                featured_images_item = GroupSchemaFeaturedImagesItem.from_dict(featured_images_item_data)
 
                 featured_images.append(featured_images_item)
 

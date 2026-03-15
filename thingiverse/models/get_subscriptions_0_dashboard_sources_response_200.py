@@ -29,9 +29,9 @@ class GetSubscriptions0DashboardSourcesResponse200:
 
     """
 
-    additional_properties: dict[
-        str, list[GetSubscriptions0DashboardSourcesResponse200AdditionalPropertyItem]
-    ] = _attrs_field(init=False, factory=dict)
+    additional_properties: dict[str, list[GetSubscriptions0DashboardSourcesResponse200AdditionalPropertyItem]] = (
+        _attrs_field(init=False, factory=dict)
+    )
 
     def to_dict(self) -> dict[str, Any]:
         field_dict: dict[str, Any] = {}
@@ -57,34 +57,26 @@ class GetSubscriptions0DashboardSourcesResponse200:
             additional_property = []
             _additional_property = prop_dict
             for additional_property_item_data in _additional_property:
-                additional_property_item = (
-                    GetSubscriptions0DashboardSourcesResponse200AdditionalPropertyItem.from_dict(
-                        additional_property_item_data
-                    )
+                additional_property_item = GetSubscriptions0DashboardSourcesResponse200AdditionalPropertyItem.from_dict(
+                    additional_property_item_data
                 )
 
                 additional_property.append(additional_property_item)
 
             additional_properties[prop_name] = additional_property
 
-        get_subscriptions_0_dashboard_sources_response_200.additional_properties = (
-            additional_properties
-        )
+        get_subscriptions_0_dashboard_sources_response_200.additional_properties = additional_properties
         return get_subscriptions_0_dashboard_sources_response_200
 
     @property
     def additional_keys(self) -> list[str]:
         return list(self.additional_properties.keys())
 
-    def __getitem__(
-        self, key: str
-    ) -> list[GetSubscriptions0DashboardSourcesResponse200AdditionalPropertyItem]:
+    def __getitem__(self, key: str) -> list[GetSubscriptions0DashboardSourcesResponse200AdditionalPropertyItem]:
         return self.additional_properties[key]
 
     def __setitem__(
-        self,
-        key: str,
-        value: list[GetSubscriptions0DashboardSourcesResponse200AdditionalPropertyItem],
+        self, key: str, value: list[GetSubscriptions0DashboardSourcesResponse200AdditionalPropertyItem]
     ) -> None:
         self.additional_properties[key] = value
 

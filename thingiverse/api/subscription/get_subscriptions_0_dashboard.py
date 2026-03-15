@@ -5,18 +5,10 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_subscriptions_0_dashboard_response_200 import (
-    GetSubscriptions0DashboardResponse200,
-)
-from ...models.get_subscriptions_0_dashboard_response_401 import (
-    GetSubscriptions0DashboardResponse401,
-)
-from ...models.get_subscriptions_0_dashboard_response_403 import (
-    GetSubscriptions0DashboardResponse403,
-)
-from ...models.get_subscriptions_0_dashboard_response_404 import (
-    GetSubscriptions0DashboardResponse404,
-)
+from ...models.get_subscriptions_0_dashboard_response_200 import GetSubscriptions0DashboardResponse200
+from ...models.get_subscriptions_0_dashboard_response_401 import GetSubscriptions0DashboardResponse401
+from ...models.get_subscriptions_0_dashboard_response_403 import GetSubscriptions0DashboardResponse403
+from ...models.get_subscriptions_0_dashboard_response_404 import GetSubscriptions0DashboardResponse404
 from ...models.get_subscriptions_0_dashboard_type import GetSubscriptions0DashboardType
 from ...types import UNSET, Response, Unset
 

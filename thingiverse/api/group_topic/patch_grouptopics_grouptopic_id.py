@@ -8,15 +8,9 @@ from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.grouptopic_schema import GrouptopicSchema
 from ...models.patch_grouptopics_grouptopic_id_body import PatchGrouptopicsGrouptopicIdBody
-from ...models.patch_grouptopics_grouptopic_id_response_401 import (
-    PatchGrouptopicsGrouptopicIdResponse401,
-)
-from ...models.patch_grouptopics_grouptopic_id_response_403 import (
-    PatchGrouptopicsGrouptopicIdResponse403,
-)
-from ...models.patch_grouptopics_grouptopic_id_response_404 import (
-    PatchGrouptopicsGrouptopicIdResponse404,
-)
+from ...models.patch_grouptopics_grouptopic_id_response_401 import PatchGrouptopicsGrouptopicIdResponse401
+from ...models.patch_grouptopics_grouptopic_id_response_403 import PatchGrouptopicsGrouptopicIdResponse403
+from ...models.patch_grouptopics_grouptopic_id_response_404 import PatchGrouptopicsGrouptopicIdResponse404
 from ...types import UNSET, Response, Unset
 
 

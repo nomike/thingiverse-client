@@ -6,18 +6,10 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_users_username_all_collected_things_response_200 import (
-    GetUsersUsernameAllCollectedThingsResponse200,
-)
-from ...models.get_users_username_all_collected_things_response_401 import (
-    GetUsersUsernameAllCollectedThingsResponse401,
-)
-from ...models.get_users_username_all_collected_things_response_403 import (
-    GetUsersUsernameAllCollectedThingsResponse403,
-)
-from ...models.get_users_username_all_collected_things_response_404 import (
-    GetUsersUsernameAllCollectedThingsResponse404,
-)
+from ...models.get_users_username_all_collected_things_response_200 import GetUsersUsernameAllCollectedThingsResponse200
+from ...models.get_users_username_all_collected_things_response_401 import GetUsersUsernameAllCollectedThingsResponse401
+from ...models.get_users_username_all_collected_things_response_403 import GetUsersUsernameAllCollectedThingsResponse403
+from ...models.get_users_username_all_collected_things_response_404 import GetUsersUsernameAllCollectedThingsResponse404
 from ...types import Response
 
 

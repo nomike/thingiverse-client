@@ -29,11 +29,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> (
-    DeleteEventsIdResponse200
-    | DeleteEventsIdResponse401
-    | DeleteEventsIdResponse403
-    | DeleteEventsIdResponse404
-    | None
+    DeleteEventsIdResponse200 | DeleteEventsIdResponse401 | DeleteEventsIdResponse403 | DeleteEventsIdResponse404 | None
 ):
     if response.status_code == 200:
         response_200 = DeleteEventsIdResponse200.from_dict(response.json())
@@ -64,10 +60,7 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    DeleteEventsIdResponse200
-    | DeleteEventsIdResponse401
-    | DeleteEventsIdResponse403
-    | DeleteEventsIdResponse404
+    DeleteEventsIdResponse200 | DeleteEventsIdResponse401 | DeleteEventsIdResponse403 | DeleteEventsIdResponse404
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -82,10 +75,7 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    DeleteEventsIdResponse200
-    | DeleteEventsIdResponse401
-    | DeleteEventsIdResponse403
-    | DeleteEventsIdResponse404
+    DeleteEventsIdResponse200 | DeleteEventsIdResponse401 | DeleteEventsIdResponse403 | DeleteEventsIdResponse404
 ]:
     """Delete event by id
 
@@ -116,11 +106,7 @@ def sync(
     *,
     client: AuthenticatedClient,
 ) -> (
-    DeleteEventsIdResponse200
-    | DeleteEventsIdResponse401
-    | DeleteEventsIdResponse403
-    | DeleteEventsIdResponse404
-    | None
+    DeleteEventsIdResponse200 | DeleteEventsIdResponse401 | DeleteEventsIdResponse403 | DeleteEventsIdResponse404 | None
 ):
     """Delete event by id
 
@@ -146,10 +132,7 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    DeleteEventsIdResponse200
-    | DeleteEventsIdResponse401
-    | DeleteEventsIdResponse403
-    | DeleteEventsIdResponse404
+    DeleteEventsIdResponse200 | DeleteEventsIdResponse401 | DeleteEventsIdResponse403 | DeleteEventsIdResponse404
 ]:
     """Delete event by id
 
@@ -178,11 +161,7 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
 ) -> (
-    DeleteEventsIdResponse200
-    | DeleteEventsIdResponse401
-    | DeleteEventsIdResponse403
-    | DeleteEventsIdResponse404
-    | None
+    DeleteEventsIdResponse200 | DeleteEventsIdResponse401 | DeleteEventsIdResponse403 | DeleteEventsIdResponse404 | None
 ):
     """Delete event by id
 

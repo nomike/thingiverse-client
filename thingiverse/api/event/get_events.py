@@ -70,9 +70,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    GetEventsResponse401 | GetEventsResponse403 | GetEventsResponse404 | list[EventSchema]
-]:
+) -> Response[GetEventsResponse401 | GetEventsResponse403 | GetEventsResponse404 | list[EventSchema]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -86,9 +84,7 @@ def sync_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[
-    GetEventsResponse401 | GetEventsResponse403 | GetEventsResponse404 | list[EventSchema]
-]:
+) -> Response[GetEventsResponse401 | GetEventsResponse403 | GetEventsResponse404 | list[EventSchema]]:
     """List of events
 
     Args:
@@ -147,9 +143,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[
-    GetEventsResponse401 | GetEventsResponse403 | GetEventsResponse404 | list[EventSchema]
-]:
+) -> Response[GetEventsResponse401 | GetEventsResponse403 | GetEventsResponse404 | list[EventSchema]]:
     """List of events
 
     Args:

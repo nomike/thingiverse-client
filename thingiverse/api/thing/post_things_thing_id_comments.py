@@ -7,21 +7,11 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.post_things_thing_id_comments_body import PostThingsThingIdCommentsBody
-from ...models.post_things_thing_id_comments_response_200 import (
-    PostThingsThingIdCommentsResponse200,
-)
-from ...models.post_things_thing_id_comments_response_400 import (
-    PostThingsThingIdCommentsResponse400,
-)
-from ...models.post_things_thing_id_comments_response_401 import (
-    PostThingsThingIdCommentsResponse401,
-)
-from ...models.post_things_thing_id_comments_response_403 import (
-    PostThingsThingIdCommentsResponse403,
-)
-from ...models.post_things_thing_id_comments_response_404 import (
-    PostThingsThingIdCommentsResponse404,
-)
+from ...models.post_things_thing_id_comments_response_200 import PostThingsThingIdCommentsResponse200
+from ...models.post_things_thing_id_comments_response_400 import PostThingsThingIdCommentsResponse400
+from ...models.post_things_thing_id_comments_response_401 import PostThingsThingIdCommentsResponse401
+from ...models.post_things_thing_id_comments_response_403 import PostThingsThingIdCommentsResponse403
+from ...models.post_things_thing_id_comments_response_404 import PostThingsThingIdCommentsResponse404
 from ...types import UNSET, Response, Unset
 
 

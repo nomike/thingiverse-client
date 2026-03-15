@@ -28,13 +28,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    FileSchema
-    | GetFilesFileIdResponse401
-    | GetFilesFileIdResponse403
-    | GetFilesFileIdResponse404
-    | None
-):
+) -> FileSchema | GetFilesFileIdResponse401 | GetFilesFileIdResponse403 | GetFilesFileIdResponse404 | None:
     if response.status_code == 200:
         response_200 = FileSchema.from_dict(response.json())
 
@@ -63,9 +57,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    FileSchema | GetFilesFileIdResponse401 | GetFilesFileIdResponse403 | GetFilesFileIdResponse404
-]:
+) -> Response[FileSchema | GetFilesFileIdResponse401 | GetFilesFileIdResponse403 | GetFilesFileIdResponse404]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -78,9 +70,7 @@ def sync_detailed(
     file_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[
-    FileSchema | GetFilesFileIdResponse401 | GetFilesFileIdResponse403 | GetFilesFileIdResponse404
-]:
+) -> Response[FileSchema | GetFilesFileIdResponse401 | GetFilesFileIdResponse403 | GetFilesFileIdResponse404]:
     """Get info about a file by id
 
      Get basic information about how to access a file. For relevant files, a thumbnail image or three.js
@@ -112,13 +102,7 @@ def sync(
     file_id: int,
     *,
     client: AuthenticatedClient,
-) -> (
-    FileSchema
-    | GetFilesFileIdResponse401
-    | GetFilesFileIdResponse403
-    | GetFilesFileIdResponse404
-    | None
-):
+) -> FileSchema | GetFilesFileIdResponse401 | GetFilesFileIdResponse403 | GetFilesFileIdResponse404 | None:
     """Get info about a file by id
 
      Get basic information about how to access a file. For relevant files, a thumbnail image or three.js
@@ -145,9 +129,7 @@ async def asyncio_detailed(
     file_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[
-    FileSchema | GetFilesFileIdResponse401 | GetFilesFileIdResponse403 | GetFilesFileIdResponse404
-]:
+) -> Response[FileSchema | GetFilesFileIdResponse401 | GetFilesFileIdResponse403 | GetFilesFileIdResponse404]:
     """Get info about a file by id
 
      Get basic information about how to access a file. For relevant files, a thumbnail image or three.js
@@ -177,13 +159,7 @@ async def asyncio(
     file_id: int,
     *,
     client: AuthenticatedClient,
-) -> (
-    FileSchema
-    | GetFilesFileIdResponse401
-    | GetFilesFileIdResponse403
-    | GetFilesFileIdResponse404
-    | None
-):
+) -> FileSchema | GetFilesFileIdResponse401 | GetFilesFileIdResponse403 | GetFilesFileIdResponse404 | None:
     """Get info about a file by id
 
      Get basic information about how to access a file. For relevant files, a thumbnail image or three.js

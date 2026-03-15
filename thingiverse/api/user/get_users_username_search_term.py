@@ -6,18 +6,10 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_users_username_search_term_response_200 import (
-    GetUsersUsernameSearchTermResponse200,
-)
-from ...models.get_users_username_search_term_response_401 import (
-    GetUsersUsernameSearchTermResponse401,
-)
-from ...models.get_users_username_search_term_response_403 import (
-    GetUsersUsernameSearchTermResponse403,
-)
-from ...models.get_users_username_search_term_response_404 import (
-    GetUsersUsernameSearchTermResponse404,
-)
+from ...models.get_users_username_search_term_response_200 import GetUsersUsernameSearchTermResponse200
+from ...models.get_users_username_search_term_response_401 import GetUsersUsernameSearchTermResponse401
+from ...models.get_users_username_search_term_response_403 import GetUsersUsernameSearchTermResponse403
+from ...models.get_users_username_search_term_response_404 import GetUsersUsernameSearchTermResponse404
 from ...types import Response
 
 

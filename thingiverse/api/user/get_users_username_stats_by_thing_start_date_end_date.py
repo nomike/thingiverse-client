@@ -47,10 +47,8 @@ def _parse_response(
         response_200 = []
         _response_200 = response.json()
         for response_200_item_data in _response_200:
-            response_200_item = (
-                GetUsersUsernameStatsByThingStartDateEndDateResponse200Item.from_dict(
-                    response_200_item_data
-                )
+            response_200_item = GetUsersUsernameStatsByThingStartDateEndDateResponse200Item.from_dict(
+                response_200_item_data
             )
 
             response_200.append(response_200_item)
@@ -58,16 +56,12 @@ def _parse_response(
         return response_200
 
     if response.status_code == 401:
-        response_401 = GetUsersUsernameStatsByThingStartDateEndDateResponse401.from_dict(
-            response.json()
-        )
+        response_401 = GetUsersUsernameStatsByThingStartDateEndDateResponse401.from_dict(response.json())
 
         return response_401
 
     if response.status_code == 404:
-        response_404 = GetUsersUsernameStatsByThingStartDateEndDateResponse404.from_dict(
-            response.json()
-        )
+        response_404 = GetUsersUsernameStatsByThingStartDateEndDateResponse404.from_dict(response.json())
 
         return response_404
 

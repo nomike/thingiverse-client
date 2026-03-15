@@ -6,18 +6,10 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.patch_copies_copy_id_images_image_id_response_200 import (
-    PatchCopiesCopyIdImagesImageIdResponse200,
-)
-from ...models.patch_copies_copy_id_images_image_id_response_401 import (
-    PatchCopiesCopyIdImagesImageIdResponse401,
-)
-from ...models.patch_copies_copy_id_images_image_id_response_403 import (
-    PatchCopiesCopyIdImagesImageIdResponse403,
-)
-from ...models.patch_copies_copy_id_images_image_id_response_404 import (
-    PatchCopiesCopyIdImagesImageIdResponse404,
-)
+from ...models.patch_copies_copy_id_images_image_id_response_200 import PatchCopiesCopyIdImagesImageIdResponse200
+from ...models.patch_copies_copy_id_images_image_id_response_401 import PatchCopiesCopyIdImagesImageIdResponse401
+from ...models.patch_copies_copy_id_images_image_id_response_403 import PatchCopiesCopyIdImagesImageIdResponse403
+from ...models.patch_copies_copy_id_images_image_id_response_404 import PatchCopiesCopyIdImagesImageIdResponse404
 from ...types import Response
 
 

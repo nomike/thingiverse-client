@@ -6,15 +6,9 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_users_username_recommended_things_response_401 import (
-    GetUsersUsernameRecommendedThingsResponse401,
-)
-from ...models.get_users_username_recommended_things_response_403 import (
-    GetUsersUsernameRecommendedThingsResponse403,
-)
-from ...models.get_users_username_recommended_things_response_404 import (
-    GetUsersUsernameRecommendedThingsResponse404,
-)
+from ...models.get_users_username_recommended_things_response_401 import GetUsersUsernameRecommendedThingsResponse401
+from ...models.get_users_username_recommended_things_response_403 import GetUsersUsernameRecommendedThingsResponse403
+from ...models.get_users_username_recommended_things_response_404 import GetUsersUsernameRecommendedThingsResponse404
 from ...models.thing_schema import ThingSchema
 from ...types import UNSET, Response, Unset
 

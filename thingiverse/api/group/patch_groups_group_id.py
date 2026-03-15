@@ -39,13 +39,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    GroupSchema
-    | PatchGroupsGroupIdResponse401
-    | PatchGroupsGroupIdResponse403
-    | PatchGroupsGroupIdResponse404
-    | None
-):
+) -> GroupSchema | PatchGroupsGroupIdResponse401 | PatchGroupsGroupIdResponse403 | PatchGroupsGroupIdResponse404 | None:
     if response.status_code == 200:
         response_200 = GroupSchema.from_dict(response.json())
 
@@ -75,10 +69,7 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    GroupSchema
-    | PatchGroupsGroupIdResponse401
-    | PatchGroupsGroupIdResponse403
-    | PatchGroupsGroupIdResponse404
+    GroupSchema | PatchGroupsGroupIdResponse401 | PatchGroupsGroupIdResponse403 | PatchGroupsGroupIdResponse404
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -94,10 +85,7 @@ def sync_detailed(
     client: AuthenticatedClient,
     body: PatchGroupsGroupIdBody | Unset = UNSET,
 ) -> Response[
-    GroupSchema
-    | PatchGroupsGroupIdResponse401
-    | PatchGroupsGroupIdResponse403
-    | PatchGroupsGroupIdResponse404
+    GroupSchema | PatchGroupsGroupIdResponse401 | PatchGroupsGroupIdResponse403 | PatchGroupsGroupIdResponse404
 ]:
     """Update an existing group
 
@@ -130,13 +118,7 @@ def sync(
     *,
     client: AuthenticatedClient,
     body: PatchGroupsGroupIdBody | Unset = UNSET,
-) -> (
-    GroupSchema
-    | PatchGroupsGroupIdResponse401
-    | PatchGroupsGroupIdResponse403
-    | PatchGroupsGroupIdResponse404
-    | None
-):
+) -> GroupSchema | PatchGroupsGroupIdResponse401 | PatchGroupsGroupIdResponse403 | PatchGroupsGroupIdResponse404 | None:
     """Update an existing group
 
     Args:
@@ -164,10 +146,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     body: PatchGroupsGroupIdBody | Unset = UNSET,
 ) -> Response[
-    GroupSchema
-    | PatchGroupsGroupIdResponse401
-    | PatchGroupsGroupIdResponse403
-    | PatchGroupsGroupIdResponse404
+    GroupSchema | PatchGroupsGroupIdResponse401 | PatchGroupsGroupIdResponse403 | PatchGroupsGroupIdResponse404
 ]:
     """Update an existing group
 
@@ -198,13 +177,7 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     body: PatchGroupsGroupIdBody | Unset = UNSET,
-) -> (
-    GroupSchema
-    | PatchGroupsGroupIdResponse401
-    | PatchGroupsGroupIdResponse403
-    | PatchGroupsGroupIdResponse404
-    | None
-):
+) -> GroupSchema | PatchGroupsGroupIdResponse401 | PatchGroupsGroupIdResponse403 | PatchGroupsGroupIdResponse404 | None:
     """Update an existing group
 
     Args:

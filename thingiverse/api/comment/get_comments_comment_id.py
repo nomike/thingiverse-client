@@ -64,10 +64,7 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    CommentSchema
-    | GetCommentsCommentIdResponse401
-    | GetCommentsCommentIdResponse403
-    | GetCommentsCommentIdResponse404
+    CommentSchema | GetCommentsCommentIdResponse401 | GetCommentsCommentIdResponse403 | GetCommentsCommentIdResponse404
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -82,10 +79,7 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    CommentSchema
-    | GetCommentsCommentIdResponse401
-    | GetCommentsCommentIdResponse403
-    | GetCommentsCommentIdResponse404
+    CommentSchema | GetCommentsCommentIdResponse401 | GetCommentsCommentIdResponse403 | GetCommentsCommentIdResponse404
 ]:
     """Get a comment by id
 
@@ -146,10 +140,7 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    CommentSchema
-    | GetCommentsCommentIdResponse401
-    | GetCommentsCommentIdResponse403
-    | GetCommentsCommentIdResponse404
+    CommentSchema | GetCommentsCommentIdResponse401 | GetCommentsCommentIdResponse403 | GetCommentsCommentIdResponse404
 ]:
     """Get a comment by id
 

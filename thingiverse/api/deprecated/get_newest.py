@@ -36,13 +36,7 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> (
-    GetNewestResponse401
-    | GetNewestResponse403
-    | GetNewestResponse404
-    | list[ShortThingSchema]
-    | None
-):
+) -> GetNewestResponse401 | GetNewestResponse403 | GetNewestResponse404 | list[ShortThingSchema] | None:
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -76,9 +70,7 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[
-    GetNewestResponse401 | GetNewestResponse403 | GetNewestResponse404 | list[ShortThingSchema]
-]:
+) -> Response[GetNewestResponse401 | GetNewestResponse403 | GetNewestResponse404 | list[ShortThingSchema]]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -92,9 +84,7 @@ def sync_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[
-    GetNewestResponse401 | GetNewestResponse403 | GetNewestResponse404 | list[ShortThingSchema]
-]:
+) -> Response[GetNewestResponse401 | GetNewestResponse403 | GetNewestResponse404 | list[ShortThingSchema]]:
     """Get a list of the latest things
 
      You can use `GET /search` with the `sort=newest` parameter now.
@@ -128,13 +118,7 @@ def sync(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> (
-    GetNewestResponse401
-    | GetNewestResponse403
-    | GetNewestResponse404
-    | list[ShortThingSchema]
-    | None
-):
+) -> GetNewestResponse401 | GetNewestResponse403 | GetNewestResponse404 | list[ShortThingSchema] | None:
     """Get a list of the latest things
 
      You can use `GET /search` with the `sort=newest` parameter now.
@@ -163,9 +147,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[
-    GetNewestResponse401 | GetNewestResponse403 | GetNewestResponse404 | list[ShortThingSchema]
-]:
+) -> Response[GetNewestResponse401 | GetNewestResponse403 | GetNewestResponse404 | list[ShortThingSchema]]:
     """Get a list of the latest things
 
      You can use `GET /search` with the `sort=newest` parameter now.
@@ -197,13 +179,7 @@ async def asyncio(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> (
-    GetNewestResponse401
-    | GetNewestResponse403
-    | GetNewestResponse404
-    | list[ShortThingSchema]
-    | None
-):
+) -> GetNewestResponse401 | GetNewestResponse403 | GetNewestResponse404 | list[ShortThingSchema] | None:
     """Get a list of the latest things
 
      You can use `GET /search` with the `sort=newest` parameter now.

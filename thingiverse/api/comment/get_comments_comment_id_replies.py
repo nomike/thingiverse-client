@@ -7,15 +7,9 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.comment_schema import CommentSchema
-from ...models.get_comments_comment_id_replies_response_401 import (
-    GetCommentsCommentIdRepliesResponse401,
-)
-from ...models.get_comments_comment_id_replies_response_403 import (
-    GetCommentsCommentIdRepliesResponse403,
-)
-from ...models.get_comments_comment_id_replies_response_404 import (
-    GetCommentsCommentIdRepliesResponse404,
-)
+from ...models.get_comments_comment_id_replies_response_401 import GetCommentsCommentIdRepliesResponse401
+from ...models.get_comments_comment_id_replies_response_403 import GetCommentsCommentIdRepliesResponse403
+from ...models.get_comments_comment_id_replies_response_404 import GetCommentsCommentIdRepliesResponse404
 from ...types import Response
 
 

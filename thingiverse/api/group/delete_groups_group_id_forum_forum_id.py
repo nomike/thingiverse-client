@@ -6,15 +6,9 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.delete_groups_group_id_forum_forum_id_response_401 import (
-    DeleteGroupsGroupIdForumForumIdResponse401,
-)
-from ...models.delete_groups_group_id_forum_forum_id_response_403 import (
-    DeleteGroupsGroupIdForumForumIdResponse403,
-)
-from ...models.delete_groups_group_id_forum_forum_id_response_404 import (
-    DeleteGroupsGroupIdForumForumIdResponse404,
-)
+from ...models.delete_groups_group_id_forum_forum_id_response_401 import DeleteGroupsGroupIdForumForumIdResponse401
+from ...models.delete_groups_group_id_forum_forum_id_response_403 import DeleteGroupsGroupIdForumForumIdResponse403
+from ...models.delete_groups_group_id_forum_forum_id_response_404 import DeleteGroupsGroupIdForumForumIdResponse404
 from ...types import Response
 
 

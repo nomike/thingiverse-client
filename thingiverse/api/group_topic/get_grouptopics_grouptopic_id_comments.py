@@ -7,15 +7,9 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.comment_schema import CommentSchema
-from ...models.get_grouptopics_grouptopic_id_comments_response_401 import (
-    GetGrouptopicsGrouptopicIdCommentsResponse401,
-)
-from ...models.get_grouptopics_grouptopic_id_comments_response_403 import (
-    GetGrouptopicsGrouptopicIdCommentsResponse403,
-)
-from ...models.get_grouptopics_grouptopic_id_comments_response_404 import (
-    GetGrouptopicsGrouptopicIdCommentsResponse404,
-)
+from ...models.get_grouptopics_grouptopic_id_comments_response_401 import GetGrouptopicsGrouptopicIdCommentsResponse401
+from ...models.get_grouptopics_grouptopic_id_comments_response_403 import GetGrouptopicsGrouptopicIdCommentsResponse403
+from ...models.get_grouptopics_grouptopic_id_comments_response_404 import GetGrouptopicsGrouptopicIdCommentsResponse404
 from ...types import Response
 
 

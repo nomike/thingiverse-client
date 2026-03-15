@@ -83,22 +83,11 @@ class PostGroupsGroupIdGroupTopicsForumSlugBody:
 
         if not isinstance(self.filenames, Unset):
             for filenames_item_element in self.filenames:
-                files.append(
-                    ("filenames", (None, str(filenames_item_element).encode(), "text/plain"))
-                )
+                files.append(("filenames", (None, str(filenames_item_element).encode(), "text/plain")))
 
         if not isinstance(self.files, Unset):
             for files_item_element in self.files:
-                files.append(
-                    (
-                        "files",
-                        (
-                            None,
-                            json.dumps(files_item_element.to_dict()).encode(),
-                            "application/json",
-                        ),
-                    )
-                )
+                files.append(("files", (None, json.dumps(files_item_element.to_dict()).encode(), "application/json")))
 
         if not isinstance(self.tags, Unset):
             for tags_item_element in self.tags:
@@ -127,9 +116,7 @@ class PostGroupsGroupIdGroupTopicsForumSlugBody:
         if _files is not UNSET:
             files = []
             for files_item_data in _files:
-                files_item = PostGroupsGroupIdGroupTopicsForumSlugBodyFilesItem.from_dict(
-                    files_item_data
-                )
+                files_item = PostGroupsGroupIdGroupTopicsForumSlugBodyFilesItem.from_dict(files_item_data)
 
                 files.append(files_item)
 

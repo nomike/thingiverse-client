@@ -39,10 +39,7 @@ def _get_kwargs(
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> (
-    PostThingsThingIdCopiesResponse200
-    | PostThingsThingIdCopiesResponse403
-    | PostThingsThingIdCopiesResponse404
-    | None
+    PostThingsThingIdCopiesResponse200 | PostThingsThingIdCopiesResponse403 | PostThingsThingIdCopiesResponse404 | None
 ):
     if response.status_code == 200:
         response_200 = PostThingsThingIdCopiesResponse200.from_dict(response.json())
@@ -68,9 +65,7 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    PostThingsThingIdCopiesResponse200
-    | PostThingsThingIdCopiesResponse403
-    | PostThingsThingIdCopiesResponse404
+    PostThingsThingIdCopiesResponse200 | PostThingsThingIdCopiesResponse403 | PostThingsThingIdCopiesResponse404
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -86,9 +81,7 @@ def sync_detailed(
     client: AuthenticatedClient,
     body: PostThingsThingIdCopiesBody | Unset = UNSET,
 ) -> Response[
-    PostThingsThingIdCopiesResponse200
-    | PostThingsThingIdCopiesResponse403
-    | PostThingsThingIdCopiesResponse404
+    PostThingsThingIdCopiesResponse200 | PostThingsThingIdCopiesResponse403 | PostThingsThingIdCopiesResponse404
 ]:
     """Upload image for new copy
 
@@ -124,10 +117,7 @@ def sync(
     client: AuthenticatedClient,
     body: PostThingsThingIdCopiesBody | Unset = UNSET,
 ) -> (
-    PostThingsThingIdCopiesResponse200
-    | PostThingsThingIdCopiesResponse403
-    | PostThingsThingIdCopiesResponse404
-    | None
+    PostThingsThingIdCopiesResponse200 | PostThingsThingIdCopiesResponse403 | PostThingsThingIdCopiesResponse404 | None
 ):
     """Upload image for new copy
 
@@ -158,9 +148,7 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     body: PostThingsThingIdCopiesBody | Unset = UNSET,
 ) -> Response[
-    PostThingsThingIdCopiesResponse200
-    | PostThingsThingIdCopiesResponse403
-    | PostThingsThingIdCopiesResponse404
+    PostThingsThingIdCopiesResponse200 | PostThingsThingIdCopiesResponse403 | PostThingsThingIdCopiesResponse404
 ]:
     """Upload image for new copy
 
@@ -194,10 +182,7 @@ async def asyncio(
     client: AuthenticatedClient,
     body: PostThingsThingIdCopiesBody | Unset = UNSET,
 ) -> (
-    PostThingsThingIdCopiesResponse200
-    | PostThingsThingIdCopiesResponse403
-    | PostThingsThingIdCopiesResponse404
-    | None
+    PostThingsThingIdCopiesResponse200 | PostThingsThingIdCopiesResponse403 | PostThingsThingIdCopiesResponse404 | None
 ):
     """Upload image for new copy
 
