@@ -1,7 +1,11 @@
 name: autoupdate
 on:
-  # This will trigger on all pushes to all branches.
-  push: {}
+  # This will trigger on all pushes to all branches (but not tags).
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '*'
   # Alternatively, you can only trigger if commits are pushed to certain branches, e.g.:
   # push:
   #   branches:
@@ -10,6 +14,9 @@ jobs:
   autoupdate:
     name: autoupdate
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: docker://chinthakagodawita/autoupdate-action:v1
         env:
