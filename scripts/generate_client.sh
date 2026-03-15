@@ -70,6 +70,9 @@ echo "Applying Ruff (check --fix and format) so generated code matches repo conf
 ruff check thingiverse --fix && ruff format thingiverse
 
 echo "Running pre-commit on generated code (fixes trailing newlines, etc.)..."
+# First run: ignore exit code so fixes are applied without failing the script
+pre-commit run --all-files || true
+# Second run: respect exit code so script fails on any remaining/serious errors
 pre-commit run --all-files
 
 echo "Done. Client is in $OUTPUT_DIR"
