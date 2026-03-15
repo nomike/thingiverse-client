@@ -39,7 +39,13 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> PatchUsersUsernameResponse401 | PatchUsersUsernameResponse403 | PatchUsersUsernameResponse404 | UserSchema | None:
+) -> (
+    PatchUsersUsernameResponse401
+    | PatchUsersUsernameResponse403
+    | PatchUsersUsernameResponse404
+    | UserSchema
+    | None
+):
     if response.status_code == 200:
         response_200 = UserSchema.from_dict(response.json())
 
@@ -69,7 +75,10 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    PatchUsersUsernameResponse401 | PatchUsersUsernameResponse403 | PatchUsersUsernameResponse404 | UserSchema
+    PatchUsersUsernameResponse401
+    | PatchUsersUsernameResponse403
+    | PatchUsersUsernameResponse404
+    | UserSchema
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -85,7 +94,10 @@ def sync_detailed(
     client: AuthenticatedClient,
     body: PatchUsersUsernameBody | Unset = UNSET,
 ) -> Response[
-    PatchUsersUsernameResponse401 | PatchUsersUsernameResponse403 | PatchUsersUsernameResponse404 | UserSchema
+    PatchUsersUsernameResponse401
+    | PatchUsersUsernameResponse403
+    | PatchUsersUsernameResponse404
+    | UserSchema
 ]:
     """Update the user's profile
 
@@ -118,7 +130,13 @@ def sync(
     *,
     client: AuthenticatedClient,
     body: PatchUsersUsernameBody | Unset = UNSET,
-) -> PatchUsersUsernameResponse401 | PatchUsersUsernameResponse403 | PatchUsersUsernameResponse404 | UserSchema | None:
+) -> (
+    PatchUsersUsernameResponse401
+    | PatchUsersUsernameResponse403
+    | PatchUsersUsernameResponse404
+    | UserSchema
+    | None
+):
     """Update the user's profile
 
     Args:
@@ -146,7 +164,10 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     body: PatchUsersUsernameBody | Unset = UNSET,
 ) -> Response[
-    PatchUsersUsernameResponse401 | PatchUsersUsernameResponse403 | PatchUsersUsernameResponse404 | UserSchema
+    PatchUsersUsernameResponse401
+    | PatchUsersUsernameResponse403
+    | PatchUsersUsernameResponse404
+    | UserSchema
 ]:
     """Update the user's profile
 
@@ -177,7 +198,13 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     body: PatchUsersUsernameBody | Unset = UNSET,
-) -> PatchUsersUsernameResponse401 | PatchUsersUsernameResponse403 | PatchUsersUsernameResponse404 | UserSchema | None:
+) -> (
+    PatchUsersUsernameResponse401
+    | PatchUsersUsernameResponse403
+    | PatchUsersUsernameResponse404
+    | UserSchema
+    | None
+):
     """Update the user's profile
 
     Args:

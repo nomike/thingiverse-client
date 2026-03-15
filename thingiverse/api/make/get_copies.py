@@ -70,7 +70,9 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[GetCopiesResponse401 | GetCopiesResponse403 | GetCopiesResponse404 | list[CopySchema]]:
+) -> Response[
+    GetCopiesResponse401 | GetCopiesResponse403 | GetCopiesResponse404 | list[CopySchema]
+]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -84,7 +86,9 @@ def sync_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[GetCopiesResponse401 | GetCopiesResponse403 | GetCopiesResponse404 | list[CopySchema]]:
+) -> Response[
+    GetCopiesResponse401 | GetCopiesResponse403 | GetCopiesResponse404 | list[CopySchema]
+]:
     """Get the list of latest makes (copies).
 
     Args:
@@ -143,7 +147,9 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[GetCopiesResponse401 | GetCopiesResponse403 | GetCopiesResponse404 | list[CopySchema]]:
+) -> Response[
+    GetCopiesResponse401 | GetCopiesResponse403 | GetCopiesResponse404 | list[CopySchema]
+]:
     """Get the list of latest makes (copies).
 
     Args:

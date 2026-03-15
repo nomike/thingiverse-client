@@ -59,22 +59,30 @@ def _parse_response(
     | None
 ):
     if response.status_code == 200:
-        response_200 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200.from_dict(response.json())
+        response_200 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse200.from_dict(
+            response.json()
+        )
 
         return response_200
 
     if response.status_code == 401:
-        response_401 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401.from_dict(response.json())
+        response_401 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse401.from_dict(
+            response.json()
+        )
 
         return response_401
 
     if response.status_code == 403:
-        response_403 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403.from_dict(response.json())
+        response_403 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse403.from_dict(
+            response.json()
+        )
 
         return response_403
 
     if response.status_code == 404:
-        response_404 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404.from_dict(response.json())
+        response_404 = GetGrouptopicsGrouptopicIdForumtopicsCommentsResponse404.from_dict(
+            response.json()
+        )
 
         return response_404
 

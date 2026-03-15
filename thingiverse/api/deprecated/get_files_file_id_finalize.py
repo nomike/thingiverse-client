@@ -62,7 +62,10 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    Any | GetFilesFileIdFinalizeResponse401 | GetFilesFileIdFinalizeResponse403 | GetFilesFileIdFinalizeResponse404
+    Any
+    | GetFilesFileIdFinalizeResponse401
+    | GetFilesFileIdFinalizeResponse403
+    | GetFilesFileIdFinalizeResponse404
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -77,7 +80,10 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    Any | GetFilesFileIdFinalizeResponse401 | GetFilesFileIdFinalizeResponse403 | GetFilesFileIdFinalizeResponse404
+    Any
+    | GetFilesFileIdFinalizeResponse401
+    | GetFilesFileIdFinalizeResponse403
+    | GetFilesFileIdFinalizeResponse404
 ]:
     """Finalize an uploaded file. DEPRECATED.
 
@@ -138,7 +144,10 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    Any | GetFilesFileIdFinalizeResponse401 | GetFilesFileIdFinalizeResponse403 | GetFilesFileIdFinalizeResponse404
+    Any
+    | GetFilesFileIdFinalizeResponse401
+    | GetFilesFileIdFinalizeResponse403
+    | GetFilesFileIdFinalizeResponse404
 ]:
     """Finalize an uploaded file. DEPRECATED.
 

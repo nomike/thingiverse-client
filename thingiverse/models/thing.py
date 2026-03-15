@@ -539,7 +539,9 @@ class Thing:
             try:
                 if not isinstance(data, dict):
                     raise TypeError()
-                componentsschemasimage_summary_schema_type_0 = ImageSummarySchemaType0.from_dict(data)
+                componentsschemasimage_summary_schema_type_0 = ImageSummarySchemaType0.from_dict(
+                    data
+                )
 
                 return componentsschemasimage_summary_schema_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
@@ -569,7 +571,9 @@ class Thing:
 
         edu_details = d.pop("edu_details", UNSET)
 
-        def _parse_edu_details_parts(data: object) -> list[ThingEduDetailsPartsType0Item] | None | Unset:
+        def _parse_edu_details_parts(
+            data: object,
+        ) -> list[ThingEduDetailsPartsType0Item] | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):

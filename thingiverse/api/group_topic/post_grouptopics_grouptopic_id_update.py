@@ -6,11 +6,21 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.post_grouptopics_grouptopic_id_update_body import PostGrouptopicsGrouptopicIdUpdateBody
-from ...models.post_grouptopics_grouptopic_id_update_response_200 import PostGrouptopicsGrouptopicIdUpdateResponse200
-from ...models.post_grouptopics_grouptopic_id_update_response_401 import PostGrouptopicsGrouptopicIdUpdateResponse401
-from ...models.post_grouptopics_grouptopic_id_update_response_403 import PostGrouptopicsGrouptopicIdUpdateResponse403
-from ...models.post_grouptopics_grouptopic_id_update_response_404 import PostGrouptopicsGrouptopicIdUpdateResponse404
+from ...models.post_grouptopics_grouptopic_id_update_body import (
+    PostGrouptopicsGrouptopicIdUpdateBody,
+)
+from ...models.post_grouptopics_grouptopic_id_update_response_200 import (
+    PostGrouptopicsGrouptopicIdUpdateResponse200,
+)
+from ...models.post_grouptopics_grouptopic_id_update_response_401 import (
+    PostGrouptopicsGrouptopicIdUpdateResponse401,
+)
+from ...models.post_grouptopics_grouptopic_id_update_response_403 import (
+    PostGrouptopicsGrouptopicIdUpdateResponse403,
+)
+from ...models.post_grouptopics_grouptopic_id_update_response_404 import (
+    PostGrouptopicsGrouptopicIdUpdateResponse404,
+)
 from ...types import UNSET, Response, Unset
 
 

@@ -35,7 +35,11 @@ def _get_kwargs(
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> (
-    PostComments0MarkdownResponse401 | PostComments0MarkdownResponse403 | PostComments0MarkdownResponse404 | str | None
+    PostComments0MarkdownResponse401
+    | PostComments0MarkdownResponse403
+    | PostComments0MarkdownResponse404
+    | str
+    | None
 ):
     if response.status_code == 200:
         response_200 = cast(str, response.json())
@@ -65,7 +69,10 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    PostComments0MarkdownResponse401 | PostComments0MarkdownResponse403 | PostComments0MarkdownResponse404 | str
+    PostComments0MarkdownResponse401
+    | PostComments0MarkdownResponse403
+    | PostComments0MarkdownResponse404
+    | str
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -80,7 +87,10 @@ def sync_detailed(
     client: AuthenticatedClient,
     body: PostComments0MarkdownBody | Unset = UNSET,
 ) -> Response[
-    PostComments0MarkdownResponse401 | PostComments0MarkdownResponse403 | PostComments0MarkdownResponse404 | str
+    PostComments0MarkdownResponse401
+    | PostComments0MarkdownResponse403
+    | PostComments0MarkdownResponse404
+    | str
 ]:
     """Convert text to markdown
 
@@ -111,7 +121,11 @@ def sync(
     client: AuthenticatedClient,
     body: PostComments0MarkdownBody | Unset = UNSET,
 ) -> (
-    PostComments0MarkdownResponse401 | PostComments0MarkdownResponse403 | PostComments0MarkdownResponse404 | str | None
+    PostComments0MarkdownResponse401
+    | PostComments0MarkdownResponse403
+    | PostComments0MarkdownResponse404
+    | str
+    | None
 ):
     """Convert text to markdown
 
@@ -137,7 +151,10 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     body: PostComments0MarkdownBody | Unset = UNSET,
 ) -> Response[
-    PostComments0MarkdownResponse401 | PostComments0MarkdownResponse403 | PostComments0MarkdownResponse404 | str
+    PostComments0MarkdownResponse401
+    | PostComments0MarkdownResponse403
+    | PostComments0MarkdownResponse404
+    | str
 ]:
     """Convert text to markdown
 
@@ -166,7 +183,11 @@ async def asyncio(
     client: AuthenticatedClient,
     body: PostComments0MarkdownBody | Unset = UNSET,
 ) -> (
-    PostComments0MarkdownResponse401 | PostComments0MarkdownResponse403 | PostComments0MarkdownResponse404 | str | None
+    PostComments0MarkdownResponse401
+    | PostComments0MarkdownResponse403
+    | PostComments0MarkdownResponse404
+    | str
+    | None
 ):
     """Convert text to markdown
 

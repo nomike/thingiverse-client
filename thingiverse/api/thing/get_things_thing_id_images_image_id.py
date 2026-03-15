@@ -6,10 +6,18 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_things_thing_id_images_image_id_response_200 import GetThingsThingIdImagesImageIdResponse200
-from ...models.get_things_thing_id_images_image_id_response_401 import GetThingsThingIdImagesImageIdResponse401
-from ...models.get_things_thing_id_images_image_id_response_403 import GetThingsThingIdImagesImageIdResponse403
-from ...models.get_things_thing_id_images_image_id_response_404 import GetThingsThingIdImagesImageIdResponse404
+from ...models.get_things_thing_id_images_image_id_response_200 import (
+    GetThingsThingIdImagesImageIdResponse200,
+)
+from ...models.get_things_thing_id_images_image_id_response_401 import (
+    GetThingsThingIdImagesImageIdResponse401,
+)
+from ...models.get_things_thing_id_images_image_id_response_403 import (
+    GetThingsThingIdImagesImageIdResponse403,
+)
+from ...models.get_things_thing_id_images_image_id_response_404 import (
+    GetThingsThingIdImagesImageIdResponse404,
+)
 from ...types import UNSET, Response, Unset
 
 

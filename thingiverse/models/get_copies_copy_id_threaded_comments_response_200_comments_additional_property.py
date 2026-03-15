@@ -41,14 +41,16 @@ class GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalProperty:
     """
 
     add_date: datetime.datetime | Unset = UNSET
-    assets: list[GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalPropertyAssetsItem] | Unset = UNSET
+    assets: (
+        list[GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalPropertyAssetsItem] | Unset
+    ) = UNSET
     body: str | Unset = UNSET
     id: int | Unset = UNSET
     is_deleted: bool | Unset = UNSET
     modified_date: datetime.datetime | str | Unset = UNSET
-    needs_moderation: GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalPropertyNeedsModeration | Unset = (
-        UNSET
-    )
+    needs_moderation: (
+        GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalPropertyNeedsModeration | Unset
+    ) = UNSET
     parent_id: int | Unset = UNSET
     parent_url: str | Unset = UNSET
     parent_user_name: str | Unset = UNSET
@@ -141,7 +143,10 @@ class GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalProperty:
             add_date = isoparse(_add_date)
 
         _assets = d.pop("assets", UNSET)
-        assets: list[GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalPropertyAssetsItem] | Unset = UNSET
+        assets: (
+            list[GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalPropertyAssetsItem]
+            | Unset
+        ) = UNSET
         if _assets is not UNSET:
             assets = []
             for assets_item_data in _assets:
@@ -173,12 +178,17 @@ class GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalProperty:
         modified_date = _parse_modified_date(d.pop("modified_date", UNSET))
 
         _needs_moderation = d.pop("needs_moderation", UNSET)
-        needs_moderation: GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalPropertyNeedsModeration | Unset
+        needs_moderation: (
+            GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalPropertyNeedsModeration
+            | Unset
+        )
         if isinstance(_needs_moderation, Unset):
             needs_moderation = UNSET
         else:
-            needs_moderation = GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalPropertyNeedsModeration(
-                _needs_moderation
+            needs_moderation = (
+                GetCopiesCopyIdThreadedCommentsResponse200CommentsAdditionalPropertyNeedsModeration(
+                    _needs_moderation
+                )
             )
 
         parent_id = d.pop("parent_id", UNSET)

@@ -36,7 +36,13 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> GetFeaturedResponse401 | GetFeaturedResponse403 | GetFeaturedResponse404 | list[FeaturedSchema] | None:
+) -> (
+    GetFeaturedResponse401
+    | GetFeaturedResponse403
+    | GetFeaturedResponse404
+    | list[FeaturedSchema]
+    | None
+):
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -70,7 +76,9 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[GetFeaturedResponse401 | GetFeaturedResponse403 | GetFeaturedResponse404 | list[FeaturedSchema]]:
+) -> Response[
+    GetFeaturedResponse401 | GetFeaturedResponse403 | GetFeaturedResponse404 | list[FeaturedSchema]
+]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -84,7 +92,9 @@ def sync_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[GetFeaturedResponse401 | GetFeaturedResponse403 | GetFeaturedResponse404 | list[FeaturedSchema]]:
+) -> Response[
+    GetFeaturedResponse401 | GetFeaturedResponse403 | GetFeaturedResponse404 | list[FeaturedSchema]
+]:
     """Get the list of featured things
 
      You can use `GET /search` with the `is_featured=1` parameter now.
@@ -118,7 +128,13 @@ def sync(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> GetFeaturedResponse401 | GetFeaturedResponse403 | GetFeaturedResponse404 | list[FeaturedSchema] | None:
+) -> (
+    GetFeaturedResponse401
+    | GetFeaturedResponse403
+    | GetFeaturedResponse404
+    | list[FeaturedSchema]
+    | None
+):
     """Get the list of featured things
 
      You can use `GET /search` with the `is_featured=1` parameter now.
@@ -147,7 +163,9 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> Response[GetFeaturedResponse401 | GetFeaturedResponse403 | GetFeaturedResponse404 | list[FeaturedSchema]]:
+) -> Response[
+    GetFeaturedResponse401 | GetFeaturedResponse403 | GetFeaturedResponse404 | list[FeaturedSchema]
+]:
     """Get the list of featured things
 
      You can use `GET /search` with the `is_featured=1` parameter now.
@@ -179,7 +197,13 @@ async def asyncio(
     client: AuthenticatedClient,
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
-) -> GetFeaturedResponse401 | GetFeaturedResponse403 | GetFeaturedResponse404 | list[FeaturedSchema] | None:
+) -> (
+    GetFeaturedResponse401
+    | GetFeaturedResponse403
+    | GetFeaturedResponse404
+    | list[FeaturedSchema]
+    | None
+):
     """Get the list of featured things
 
      You can use `GET /search` with the `is_featured=1` parameter now.

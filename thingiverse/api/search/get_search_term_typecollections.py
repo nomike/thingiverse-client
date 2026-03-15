@@ -6,11 +6,21 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_search_term_typecollections_is_featured import GetSearchTermTypecollectionsIsFeatured
-from ...models.get_search_term_typecollections_response_200 import GetSearchTermTypecollectionsResponse200
-from ...models.get_search_term_typecollections_response_401 import GetSearchTermTypecollectionsResponse401
-from ...models.get_search_term_typecollections_response_403 import GetSearchTermTypecollectionsResponse403
-from ...models.get_search_term_typecollections_response_404 import GetSearchTermTypecollectionsResponse404
+from ...models.get_search_term_typecollections_is_featured import (
+    GetSearchTermTypecollectionsIsFeatured,
+)
+from ...models.get_search_term_typecollections_response_200 import (
+    GetSearchTermTypecollectionsResponse200,
+)
+from ...models.get_search_term_typecollections_response_401 import (
+    GetSearchTermTypecollectionsResponse401,
+)
+from ...models.get_search_term_typecollections_response_403 import (
+    GetSearchTermTypecollectionsResponse403,
+)
+from ...models.get_search_term_typecollections_response_404 import (
+    GetSearchTermTypecollectionsResponse404,
+)
 from ...models.get_search_term_typecollections_sort import GetSearchTermTypecollectionsSort
 from ...types import UNSET, Response, Unset
 

@@ -28,7 +28,13 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> CopySchema | GetCopiesCopyIdResponse401 | GetCopiesCopyIdResponse403 | GetCopiesCopyIdResponse404 | None:
+) -> (
+    CopySchema
+    | GetCopiesCopyIdResponse401
+    | GetCopiesCopyIdResponse403
+    | GetCopiesCopyIdResponse404
+    | None
+):
     if response.status_code == 200:
         response_200 = CopySchema.from_dict(response.json())
 
@@ -57,7 +63,12 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[CopySchema | GetCopiesCopyIdResponse401 | GetCopiesCopyIdResponse403 | GetCopiesCopyIdResponse404]:
+) -> Response[
+    CopySchema
+    | GetCopiesCopyIdResponse401
+    | GetCopiesCopyIdResponse403
+    | GetCopiesCopyIdResponse404
+]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -70,7 +81,12 @@ def sync_detailed(
     copy_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[CopySchema | GetCopiesCopyIdResponse401 | GetCopiesCopyIdResponse403 | GetCopiesCopyIdResponse404]:
+) -> Response[
+    CopySchema
+    | GetCopiesCopyIdResponse401
+    | GetCopiesCopyIdResponse403
+    | GetCopiesCopyIdResponse404
+]:
     """Get make (copy) by id
 
     Args:
@@ -99,7 +115,13 @@ def sync(
     copy_id: int,
     *,
     client: AuthenticatedClient,
-) -> CopySchema | GetCopiesCopyIdResponse401 | GetCopiesCopyIdResponse403 | GetCopiesCopyIdResponse404 | None:
+) -> (
+    CopySchema
+    | GetCopiesCopyIdResponse401
+    | GetCopiesCopyIdResponse403
+    | GetCopiesCopyIdResponse404
+    | None
+):
     """Get make (copy) by id
 
     Args:
@@ -123,7 +145,12 @@ async def asyncio_detailed(
     copy_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[CopySchema | GetCopiesCopyIdResponse401 | GetCopiesCopyIdResponse403 | GetCopiesCopyIdResponse404]:
+) -> Response[
+    CopySchema
+    | GetCopiesCopyIdResponse401
+    | GetCopiesCopyIdResponse403
+    | GetCopiesCopyIdResponse404
+]:
     """Get make (copy) by id
 
     Args:
@@ -150,7 +177,13 @@ async def asyncio(
     copy_id: int,
     *,
     client: AuthenticatedClient,
-) -> CopySchema | GetCopiesCopyIdResponse401 | GetCopiesCopyIdResponse403 | GetCopiesCopyIdResponse404 | None:
+) -> (
+    CopySchema
+    | GetCopiesCopyIdResponse401
+    | GetCopiesCopyIdResponse403
+    | GetCopiesCopyIdResponse404
+    | None
+):
     """Get make (copy) by id
 
     Args:

@@ -7,9 +7,15 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.forum_schema import ForumSchema
-from ...models.get_groups_group_id_group_forums_response_401 import GetGroupsGroupIdGroupForumsResponse401
-from ...models.get_groups_group_id_group_forums_response_403 import GetGroupsGroupIdGroupForumsResponse403
-from ...models.get_groups_group_id_group_forums_response_404 import GetGroupsGroupIdGroupForumsResponse404
+from ...models.get_groups_group_id_group_forums_response_401 import (
+    GetGroupsGroupIdGroupForumsResponse401,
+)
+from ...models.get_groups_group_id_group_forums_response_403 import (
+    GetGroupsGroupIdGroupForumsResponse403,
+)
+from ...models.get_groups_group_id_group_forums_response_404 import (
+    GetGroupsGroupIdGroupForumsResponse404,
+)
 from ...types import Response
 
 

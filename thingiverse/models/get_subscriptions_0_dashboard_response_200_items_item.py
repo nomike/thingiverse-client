@@ -122,7 +122,9 @@ class GetSubscriptions0DashboardResponse200ItemsItem:
 
         d = dict(src_dict)
 
-        def _parse_content(data: object) -> CategorySchema | CommentSchema | CopySchema | ThingSchema | Unset:
+        def _parse_content(
+            data: object,
+        ) -> CategorySchema | CommentSchema | CopySchema | ThingSchema | Unset:
             if isinstance(data, Unset):
                 return data
             try:

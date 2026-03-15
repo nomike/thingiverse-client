@@ -6,10 +6,18 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.post_collections_collection_id_like_response_200 import PostCollectionsCollectionIdLikeResponse200
-from ...models.post_collections_collection_id_like_response_401 import PostCollectionsCollectionIdLikeResponse401
-from ...models.post_collections_collection_id_like_response_403 import PostCollectionsCollectionIdLikeResponse403
-from ...models.post_collections_collection_id_like_response_404 import PostCollectionsCollectionIdLikeResponse404
+from ...models.post_collections_collection_id_like_response_200 import (
+    PostCollectionsCollectionIdLikeResponse200,
+)
+from ...models.post_collections_collection_id_like_response_401 import (
+    PostCollectionsCollectionIdLikeResponse401,
+)
+from ...models.post_collections_collection_id_like_response_403 import (
+    PostCollectionsCollectionIdLikeResponse403,
+)
+from ...models.post_collections_collection_id_like_response_404 import (
+    PostCollectionsCollectionIdLikeResponse404,
+)
 from ...types import Response
 
 

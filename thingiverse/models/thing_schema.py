@@ -15,7 +15,9 @@ if TYPE_CHECKING:
     from ..models.tag_schema import TagSchema
     from ..models.thing_schema_ancestors_item import ThingSchemaAncestorsItem
     from ..models.thing_schema_details_parts_item import ThingSchemaDetailsPartsItem
-    from ..models.thing_schema_edu_details_parts_type_0_item import ThingSchemaEduDetailsPartsType0Item
+    from ..models.thing_schema_edu_details_parts_type_0_item import (
+        ThingSchemaEduDetailsPartsType0Item,
+    )
     from ..models.thing_schema_education import ThingSchemaEducation
     from ..models.thing_schema_zip_data import ThingSchemaZipData
     from ..models.user_summary_schema_type_0 import UserSummarySchemaType0
@@ -465,7 +467,9 @@ class ThingSchema:
         from ..models.tag_schema import TagSchema
         from ..models.thing_schema_ancestors_item import ThingSchemaAncestorsItem
         from ..models.thing_schema_details_parts_item import ThingSchemaDetailsPartsItem
-        from ..models.thing_schema_edu_details_parts_type_0_item import ThingSchemaEduDetailsPartsType0Item
+        from ..models.thing_schema_edu_details_parts_type_0_item import (
+            ThingSchemaEduDetailsPartsType0Item,
+        )
         from ..models.thing_schema_education import ThingSchemaEducation
         from ..models.thing_schema_zip_data import ThingSchemaZipData
         from ..models.user_summary_schema_type_0 import UserSummarySchemaType0
@@ -539,7 +543,9 @@ class ThingSchema:
             try:
                 if not isinstance(data, dict):
                     raise TypeError()
-                componentsschemasimage_summary_schema_type_0 = ImageSummarySchemaType0.from_dict(data)
+                componentsschemasimage_summary_schema_type_0 = ImageSummarySchemaType0.from_dict(
+                    data
+                )
 
                 return componentsschemasimage_summary_schema_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
@@ -569,7 +575,9 @@ class ThingSchema:
 
         edu_details = d.pop("edu_details", UNSET)
 
-        def _parse_edu_details_parts(data: object) -> list[ThingSchemaEduDetailsPartsType0Item] | None | Unset:
+        def _parse_edu_details_parts(
+            data: object,
+        ) -> list[ThingSchemaEduDetailsPartsType0Item] | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):

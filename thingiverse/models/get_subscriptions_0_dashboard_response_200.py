@@ -63,7 +63,9 @@ class GetSubscriptions0DashboardResponse200:
         if _items is not UNSET:
             items = []
             for items_item_data in _items:
-                items_item = GetSubscriptions0DashboardResponse200ItemsItem.from_dict(items_item_data)
+                items_item = GetSubscriptions0DashboardResponse200ItemsItem.from_dict(
+                    items_item_data
+                )
 
                 items.append(items_item)
 

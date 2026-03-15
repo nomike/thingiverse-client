@@ -23,7 +23,13 @@ def _get_kwargs() -> dict[str, Any]:
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> GetHomebannerResponse401 | GetHomebannerResponse403 | GetHomebannerResponse404 | HomebannerSchema | None:
+) -> (
+    GetHomebannerResponse401
+    | GetHomebannerResponse403
+    | GetHomebannerResponse404
+    | HomebannerSchema
+    | None
+):
     if response.status_code == 200:
         response_200 = HomebannerSchema.from_dict(response.json())
 
@@ -52,7 +58,12 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[GetHomebannerResponse401 | GetHomebannerResponse403 | GetHomebannerResponse404 | HomebannerSchema]:
+) -> Response[
+    GetHomebannerResponse401
+    | GetHomebannerResponse403
+    | GetHomebannerResponse404
+    | HomebannerSchema
+]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -64,7 +75,12 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-) -> Response[GetHomebannerResponse401 | GetHomebannerResponse403 | GetHomebannerResponse404 | HomebannerSchema]:
+) -> Response[
+    GetHomebannerResponse401
+    | GetHomebannerResponse403
+    | GetHomebannerResponse404
+    | HomebannerSchema
+]:
     """Get the banner on the home page
 
     Raises:
@@ -87,7 +103,13 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-) -> GetHomebannerResponse401 | GetHomebannerResponse403 | GetHomebannerResponse404 | HomebannerSchema | None:
+) -> (
+    GetHomebannerResponse401
+    | GetHomebannerResponse403
+    | GetHomebannerResponse404
+    | HomebannerSchema
+    | None
+):
     """Get the banner on the home page
 
     Raises:
@@ -106,7 +128,12 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-) -> Response[GetHomebannerResponse401 | GetHomebannerResponse403 | GetHomebannerResponse404 | HomebannerSchema]:
+) -> Response[
+    GetHomebannerResponse401
+    | GetHomebannerResponse403
+    | GetHomebannerResponse404
+    | HomebannerSchema
+]:
     """Get the banner on the home page
 
     Raises:
@@ -127,7 +154,13 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-) -> GetHomebannerResponse401 | GetHomebannerResponse403 | GetHomebannerResponse404 | HomebannerSchema | None:
+) -> (
+    GetHomebannerResponse401
+    | GetHomebannerResponse403
+    | GetHomebannerResponse404
+    | HomebannerSchema
+    | None
+):
     """Get the banner on the home page
 
     Raises:

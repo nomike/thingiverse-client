@@ -5,9 +5,15 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_apps_0_approvedandpublished_response_401 import GetApps0ApprovedandpublishedResponse401
-from ...models.get_apps_0_approvedandpublished_response_403 import GetApps0ApprovedandpublishedResponse403
-from ...models.get_apps_0_approvedandpublished_response_404 import GetApps0ApprovedandpublishedResponse404
+from ...models.get_apps_0_approvedandpublished_response_401 import (
+    GetApps0ApprovedandpublishedResponse401,
+)
+from ...models.get_apps_0_approvedandpublished_response_403 import (
+    GetApps0ApprovedandpublishedResponse403,
+)
+from ...models.get_apps_0_approvedandpublished_response_404 import (
+    GetApps0ApprovedandpublishedResponse404,
+)
 from ...types import Response
 
 

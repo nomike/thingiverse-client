@@ -44,7 +44,9 @@ def _parse_response(
             try:
                 if not isinstance(data, dict):
                     raise TypeError()
-                componentsschemassitewidenotification_schema_type_0 = SitewidenotificationSchemaType0.from_dict(data)
+                componentsschemassitewidenotification_schema_type_0 = (
+                    SitewidenotificationSchemaType0.from_dict(data)
+                )
 
                 return componentsschemassitewidenotification_schema_type_0
             except (TypeError, ValueError, AttributeError, KeyError):

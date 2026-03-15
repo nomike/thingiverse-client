@@ -23,7 +23,13 @@ def _get_kwargs() -> dict[str, Any]:
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> GetVerifiedResponse401 | GetVerifiedResponse403 | GetVerifiedResponse404 | list[VerifiedSchema] | None:
+) -> (
+    GetVerifiedResponse401
+    | GetVerifiedResponse403
+    | GetVerifiedResponse404
+    | list[VerifiedSchema]
+    | None
+):
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -57,7 +63,9 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[GetVerifiedResponse401 | GetVerifiedResponse403 | GetVerifiedResponse404 | list[VerifiedSchema]]:
+) -> Response[
+    GetVerifiedResponse401 | GetVerifiedResponse403 | GetVerifiedResponse404 | list[VerifiedSchema]
+]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -69,7 +77,9 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-) -> Response[GetVerifiedResponse401 | GetVerifiedResponse403 | GetVerifiedResponse404 | list[VerifiedSchema]]:
+) -> Response[
+    GetVerifiedResponse401 | GetVerifiedResponse403 | GetVerifiedResponse404 | list[VerifiedSchema]
+]:
     """Get the latest things verified
 
     Raises:
@@ -92,7 +102,13 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-) -> GetVerifiedResponse401 | GetVerifiedResponse403 | GetVerifiedResponse404 | list[VerifiedSchema] | None:
+) -> (
+    GetVerifiedResponse401
+    | GetVerifiedResponse403
+    | GetVerifiedResponse404
+    | list[VerifiedSchema]
+    | None
+):
     """Get the latest things verified
 
     Raises:
@@ -111,7 +127,9 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-) -> Response[GetVerifiedResponse401 | GetVerifiedResponse403 | GetVerifiedResponse404 | list[VerifiedSchema]]:
+) -> Response[
+    GetVerifiedResponse401 | GetVerifiedResponse403 | GetVerifiedResponse404 | list[VerifiedSchema]
+]:
     """Get the latest things verified
 
     Raises:
@@ -132,7 +150,13 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-) -> GetVerifiedResponse401 | GetVerifiedResponse403 | GetVerifiedResponse404 | list[VerifiedSchema] | None:
+) -> (
+    GetVerifiedResponse401
+    | GetVerifiedResponse403
+    | GetVerifiedResponse404
+    | list[VerifiedSchema]
+    | None
+):
     """Get the latest things verified
 
     Raises:

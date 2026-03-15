@@ -6,10 +6,18 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_things_thing_id_root_comments_response_200_item import GetThingsThingIdRootCommentsResponse200Item
-from ...models.get_things_thing_id_root_comments_response_401 import GetThingsThingIdRootCommentsResponse401
-from ...models.get_things_thing_id_root_comments_response_403 import GetThingsThingIdRootCommentsResponse403
-from ...models.get_things_thing_id_root_comments_response_404 import GetThingsThingIdRootCommentsResponse404
+from ...models.get_things_thing_id_root_comments_response_200_item import (
+    GetThingsThingIdRootCommentsResponse200Item,
+)
+from ...models.get_things_thing_id_root_comments_response_401 import (
+    GetThingsThingIdRootCommentsResponse401,
+)
+from ...models.get_things_thing_id_root_comments_response_403 import (
+    GetThingsThingIdRootCommentsResponse403,
+)
+from ...models.get_things_thing_id_root_comments_response_404 import (
+    GetThingsThingIdRootCommentsResponse404,
+)
 from ...types import Response
 
 
@@ -39,7 +47,9 @@ def _parse_response(
         response_200 = []
         _response_200 = response.json()
         for response_200_item_data in _response_200:
-            response_200_item = GetThingsThingIdRootCommentsResponse200Item.from_dict(response_200_item_data)
+            response_200_item = GetThingsThingIdRootCommentsResponse200Item.from_dict(
+                response_200_item_data
+            )
 
             response_200.append(response_200_item)
 

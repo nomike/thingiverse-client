@@ -66,4 +66,7 @@ p.write_text(t)
 " "$OUTPUT_DIR/__init__.py"
 fi
 
+echo "Applying Ruff (check --fix and format) so generated code matches repo config..."
+ruff check thingiverse --fix && ruff format thingiverse
+
 echo "Done. Client is in $OUTPUT_DIR"

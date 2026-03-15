@@ -6,9 +6,15 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_groups_group_id_group_topics_response_401 import GetGroupsGroupIdGroupTopicsResponse401
-from ...models.get_groups_group_id_group_topics_response_403 import GetGroupsGroupIdGroupTopicsResponse403
-from ...models.get_groups_group_id_group_topics_response_404 import GetGroupsGroupIdGroupTopicsResponse404
+from ...models.get_groups_group_id_group_topics_response_401 import (
+    GetGroupsGroupIdGroupTopicsResponse401,
+)
+from ...models.get_groups_group_id_group_topics_response_403 import (
+    GetGroupsGroupIdGroupTopicsResponse403,
+)
+from ...models.get_groups_group_id_group_topics_response_404 import (
+    GetGroupsGroupIdGroupTopicsResponse404,
+)
 from ...models.topic_schema import TopicSchema
 from ...types import UNSET, Response, Unset
 

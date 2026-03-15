@@ -6,10 +6,18 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.post_users_username_followers_response_200 import PostUsersUsernameFollowersResponse200
-from ...models.post_users_username_followers_response_401 import PostUsersUsernameFollowersResponse401
-from ...models.post_users_username_followers_response_403 import PostUsersUsernameFollowersResponse403
-from ...models.post_users_username_followers_response_404 import PostUsersUsernameFollowersResponse404
+from ...models.post_users_username_followers_response_200 import (
+    PostUsersUsernameFollowersResponse200,
+)
+from ...models.post_users_username_followers_response_401 import (
+    PostUsersUsernameFollowersResponse401,
+)
+from ...models.post_users_username_followers_response_403 import (
+    PostUsersUsernameFollowersResponse403,
+)
+from ...models.post_users_username_followers_response_404 import (
+    PostUsersUsernameFollowersResponse404,
+)
 from ...types import Response
 
 

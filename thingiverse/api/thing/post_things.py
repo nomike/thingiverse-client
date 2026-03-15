@@ -36,7 +36,14 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> PostThingsResponse400 | PostThingsResponse401 | PostThingsResponse403 | PostThingsResponse404 | ThingSchema | None:
+) -> (
+    PostThingsResponse400
+    | PostThingsResponse401
+    | PostThingsResponse403
+    | PostThingsResponse404
+    | ThingSchema
+    | None
+):
     if response.status_code == 200:
         response_200 = ThingSchema.from_dict(response.json())
 
@@ -71,7 +78,11 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    PostThingsResponse400 | PostThingsResponse401 | PostThingsResponse403 | PostThingsResponse404 | ThingSchema
+    PostThingsResponse400
+    | PostThingsResponse401
+    | PostThingsResponse403
+    | PostThingsResponse404
+    | ThingSchema
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -86,7 +97,11 @@ def sync_detailed(
     client: AuthenticatedClient,
     body: PostThingsBody | Unset = UNSET,
 ) -> Response[
-    PostThingsResponse400 | PostThingsResponse401 | PostThingsResponse403 | PostThingsResponse404 | ThingSchema
+    PostThingsResponse400
+    | PostThingsResponse401
+    | PostThingsResponse403
+    | PostThingsResponse404
+    | ThingSchema
 ]:
     """Create a new thing
 
@@ -116,7 +131,14 @@ def sync(
     *,
     client: AuthenticatedClient,
     body: PostThingsBody | Unset = UNSET,
-) -> PostThingsResponse400 | PostThingsResponse401 | PostThingsResponse403 | PostThingsResponse404 | ThingSchema | None:
+) -> (
+    PostThingsResponse400
+    | PostThingsResponse401
+    | PostThingsResponse403
+    | PostThingsResponse404
+    | ThingSchema
+    | None
+):
     """Create a new thing
 
     Args:
@@ -141,7 +163,11 @@ async def asyncio_detailed(
     client: AuthenticatedClient,
     body: PostThingsBody | Unset = UNSET,
 ) -> Response[
-    PostThingsResponse400 | PostThingsResponse401 | PostThingsResponse403 | PostThingsResponse404 | ThingSchema
+    PostThingsResponse400
+    | PostThingsResponse401
+    | PostThingsResponse403
+    | PostThingsResponse404
+    | ThingSchema
 ]:
     """Create a new thing
 
@@ -169,7 +195,14 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     body: PostThingsBody | Unset = UNSET,
-) -> PostThingsResponse400 | PostThingsResponse401 | PostThingsResponse403 | PostThingsResponse404 | ThingSchema | None:
+) -> (
+    PostThingsResponse400
+    | PostThingsResponse401
+    | PostThingsResponse403
+    | PostThingsResponse404
+    | ThingSchema
+    | None
+):
     """Create a new thing
 
     Args:

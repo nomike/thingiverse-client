@@ -62,7 +62,10 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    Any | GetFilesFileIdDownloadResponse401 | GetFilesFileIdDownloadResponse403 | GetFilesFileIdDownloadResponse404
+    Any
+    | GetFilesFileIdDownloadResponse401
+    | GetFilesFileIdDownloadResponse403
+    | GetFilesFileIdDownloadResponse404
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -77,7 +80,10 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    Any | GetFilesFileIdDownloadResponse401 | GetFilesFileIdDownloadResponse403 | GetFilesFileIdDownloadResponse404
+    Any
+    | GetFilesFileIdDownloadResponse401
+    | GetFilesFileIdDownloadResponse403
+    | GetFilesFileIdDownloadResponse404
 ]:
     """Get tracked download URL
 
@@ -144,7 +150,10 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    Any | GetFilesFileIdDownloadResponse401 | GetFilesFileIdDownloadResponse403 | GetFilesFileIdDownloadResponse404
+    Any
+    | GetFilesFileIdDownloadResponse401
+    | GetFilesFileIdDownloadResponse403
+    | GetFilesFileIdDownloadResponse404
 ]:
     """Get tracked download URL
 

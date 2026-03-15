@@ -7,10 +7,18 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.patch_things_thing_id_images_image_id_body import PatchThingsThingIdImagesImageIdBody
-from ...models.patch_things_thing_id_images_image_id_response_200 import PatchThingsThingIdImagesImageIdResponse200
-from ...models.patch_things_thing_id_images_image_id_response_401 import PatchThingsThingIdImagesImageIdResponse401
-from ...models.patch_things_thing_id_images_image_id_response_403 import PatchThingsThingIdImagesImageIdResponse403
-from ...models.patch_things_thing_id_images_image_id_response_404 import PatchThingsThingIdImagesImageIdResponse404
+from ...models.patch_things_thing_id_images_image_id_response_200 import (
+    PatchThingsThingIdImagesImageIdResponse200,
+)
+from ...models.patch_things_thing_id_images_image_id_response_401 import (
+    PatchThingsThingIdImagesImageIdResponse401,
+)
+from ...models.patch_things_thing_id_images_image_id_response_403 import (
+    PatchThingsThingIdImagesImageIdResponse403,
+)
+from ...models.patch_things_thing_id_images_image_id_response_404 import (
+    PatchThingsThingIdImagesImageIdResponse404,
+)
 from ...types import UNSET, Response, Unset
 
 

@@ -7,10 +7,18 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.post_users_username_cover_image_body import PostUsersUsernameCoverImageBody
-from ...models.post_users_username_cover_image_response_200 import PostUsersUsernameCoverImageResponse200
-from ...models.post_users_username_cover_image_response_401 import PostUsersUsernameCoverImageResponse401
-from ...models.post_users_username_cover_image_response_403 import PostUsersUsernameCoverImageResponse403
-from ...models.post_users_username_cover_image_response_404 import PostUsersUsernameCoverImageResponse404
+from ...models.post_users_username_cover_image_response_200 import (
+    PostUsersUsernameCoverImageResponse200,
+)
+from ...models.post_users_username_cover_image_response_401 import (
+    PostUsersUsernameCoverImageResponse401,
+)
+from ...models.post_users_username_cover_image_response_403 import (
+    PostUsersUsernameCoverImageResponse403,
+)
+from ...models.post_users_username_cover_image_response_404 import (
+    PostUsersUsernameCoverImageResponse404,
+)
 from ...types import UNSET, Response, Unset
 
 

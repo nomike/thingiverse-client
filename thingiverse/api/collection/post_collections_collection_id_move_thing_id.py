@@ -6,7 +6,9 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.post_collections_collection_id_move_thing_id_body import PostCollectionsCollectionIdMoveThingIdBody
+from ...models.post_collections_collection_id_move_thing_id_body import (
+    PostCollectionsCollectionIdMoveThingIdBody,
+)
 from ...models.post_collections_collection_id_move_thing_id_response_200 import (
     PostCollectionsCollectionIdMoveThingIdResponse200,
 )

@@ -28,7 +28,13 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> GetThingsThingIdResponse401 | GetThingsThingIdResponse403 | GetThingsThingIdResponse404 | ThingSchema | None:
+) -> (
+    GetThingsThingIdResponse401
+    | GetThingsThingIdResponse403
+    | GetThingsThingIdResponse404
+    | ThingSchema
+    | None
+):
     if response.status_code == 200:
         response_200 = ThingSchema.from_dict(response.json())
 
@@ -57,7 +63,12 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[GetThingsThingIdResponse401 | GetThingsThingIdResponse403 | GetThingsThingIdResponse404 | ThingSchema]:
+) -> Response[
+    GetThingsThingIdResponse401
+    | GetThingsThingIdResponse403
+    | GetThingsThingIdResponse404
+    | ThingSchema
+]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -70,7 +81,12 @@ def sync_detailed(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[GetThingsThingIdResponse401 | GetThingsThingIdResponse403 | GetThingsThingIdResponse404 | ThingSchema]:
+) -> Response[
+    GetThingsThingIdResponse401
+    | GetThingsThingIdResponse403
+    | GetThingsThingIdResponse404
+    | ThingSchema
+]:
     """Get thing by id
 
     Args:
@@ -99,7 +115,13 @@ def sync(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-) -> GetThingsThingIdResponse401 | GetThingsThingIdResponse403 | GetThingsThingIdResponse404 | ThingSchema | None:
+) -> (
+    GetThingsThingIdResponse401
+    | GetThingsThingIdResponse403
+    | GetThingsThingIdResponse404
+    | ThingSchema
+    | None
+):
     """Get thing by id
 
     Args:
@@ -123,7 +145,12 @@ async def asyncio_detailed(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[GetThingsThingIdResponse401 | GetThingsThingIdResponse403 | GetThingsThingIdResponse404 | ThingSchema]:
+) -> Response[
+    GetThingsThingIdResponse401
+    | GetThingsThingIdResponse403
+    | GetThingsThingIdResponse404
+    | ThingSchema
+]:
     """Get thing by id
 
     Args:
@@ -150,7 +177,13 @@ async def asyncio(
     thing_id: int,
     *,
     client: AuthenticatedClient,
-) -> GetThingsThingIdResponse401 | GetThingsThingIdResponse403 | GetThingsThingIdResponse404 | ThingSchema | None:
+) -> (
+    GetThingsThingIdResponse401
+    | GetThingsThingIdResponse403
+    | GetThingsThingIdResponse404
+    | ThingSchema
+    | None
+):
     """Get thing by id
 
     Args:

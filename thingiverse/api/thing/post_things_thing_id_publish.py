@@ -57,7 +57,9 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    PostThingsThingIdPublishResponse200 | PostThingsThingIdPublishResponse403 | PostThingsThingIdPublishResponse404
+    PostThingsThingIdPublishResponse200
+    | PostThingsThingIdPublishResponse403
+    | PostThingsThingIdPublishResponse404
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -72,7 +74,9 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    PostThingsThingIdPublishResponse200 | PostThingsThingIdPublishResponse403 | PostThingsThingIdPublishResponse404
+    PostThingsThingIdPublishResponse200
+    | PostThingsThingIdPublishResponse403
+    | PostThingsThingIdPublishResponse404
 ]:
     r"""Publish a thing
 
@@ -140,7 +144,9 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    PostThingsThingIdPublishResponse200 | PostThingsThingIdPublishResponse403 | PostThingsThingIdPublishResponse404
+    PostThingsThingIdPublishResponse200
+    | PostThingsThingIdPublishResponse403
+    | PostThingsThingIdPublishResponse404
 ]:
     r"""Publish a thing
 

@@ -6,9 +6,15 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_things_thing_id_ancestors_response_401 import GetThingsThingIdAncestorsResponse401
-from ...models.get_things_thing_id_ancestors_response_403 import GetThingsThingIdAncestorsResponse403
-from ...models.get_things_thing_id_ancestors_response_404 import GetThingsThingIdAncestorsResponse404
+from ...models.get_things_thing_id_ancestors_response_401 import (
+    GetThingsThingIdAncestorsResponse401,
+)
+from ...models.get_things_thing_id_ancestors_response_403 import (
+    GetThingsThingIdAncestorsResponse403,
+)
+from ...models.get_things_thing_id_ancestors_response_404 import (
+    GetThingsThingIdAncestorsResponse404,
+)
 from ...models.thing_schema import ThingSchema
 from ...types import Response
 

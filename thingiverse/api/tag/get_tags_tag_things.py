@@ -28,7 +28,13 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> GetTagsTagThingsResponse401 | GetTagsTagThingsResponse403 | GetTagsTagThingsResponse404 | list[ThingSchema] | None:
+) -> (
+    GetTagsTagThingsResponse401
+    | GetTagsTagThingsResponse403
+    | GetTagsTagThingsResponse404
+    | list[ThingSchema]
+    | None
+):
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -63,7 +69,10 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    GetTagsTagThingsResponse401 | GetTagsTagThingsResponse403 | GetTagsTagThingsResponse404 | list[ThingSchema]
+    GetTagsTagThingsResponse401
+    | GetTagsTagThingsResponse403
+    | GetTagsTagThingsResponse404
+    | list[ThingSchema]
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -78,7 +87,10 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    GetTagsTagThingsResponse401 | GetTagsTagThingsResponse403 | GetTagsTagThingsResponse404 | list[ThingSchema]
+    GetTagsTagThingsResponse401
+    | GetTagsTagThingsResponse403
+    | GetTagsTagThingsResponse404
+    | list[ThingSchema]
 ]:
     """Get the latest things with the specified tag
 
@@ -111,7 +123,13 @@ def sync(
     tag: str,
     *,
     client: AuthenticatedClient,
-) -> GetTagsTagThingsResponse401 | GetTagsTagThingsResponse403 | GetTagsTagThingsResponse404 | list[ThingSchema] | None:
+) -> (
+    GetTagsTagThingsResponse401
+    | GetTagsTagThingsResponse403
+    | GetTagsTagThingsResponse404
+    | list[ThingSchema]
+    | None
+):
     """Get the latest things with the specified tag
 
      Tags are normalized before searching by converting whitespace to underscores and stripping out all
@@ -139,7 +157,10 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
 ) -> Response[
-    GetTagsTagThingsResponse401 | GetTagsTagThingsResponse403 | GetTagsTagThingsResponse404 | list[ThingSchema]
+    GetTagsTagThingsResponse401
+    | GetTagsTagThingsResponse403
+    | GetTagsTagThingsResponse404
+    | list[ThingSchema]
 ]:
     """Get the latest things with the specified tag
 
@@ -170,7 +191,13 @@ async def asyncio(
     tag: str,
     *,
     client: AuthenticatedClient,
-) -> GetTagsTagThingsResponse401 | GetTagsTagThingsResponse403 | GetTagsTagThingsResponse404 | list[ThingSchema] | None:
+) -> (
+    GetTagsTagThingsResponse401
+    | GetTagsTagThingsResponse403
+    | GetTagsTagThingsResponse404
+    | list[ThingSchema]
+    | None
+):
     """Get the latest things with the specified tag
 
      Tags are normalized before searching by converting whitespace to underscores and stripping out all

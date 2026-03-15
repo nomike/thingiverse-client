@@ -37,7 +37,8 @@ def _get_kwargs(
     show_customized: str | Unset = UNSET,
     has_makes: GetSearchTermTypethingsHasMakes | Unset = UNSET,
     is_featured: GetSearchTermTypethingsIsFeatured | Unset = UNSET,
-    is_fis_challenge_winnereatured: GetSearchTermTypethingsIsFisChallengeWinnereatured | Unset = UNSET,
+    is_fis_challenge_winnereatured: GetSearchTermTypethingsIsFisChallengeWinnereatured
+    | Unset = UNSET,
     liked_by: str | Unset = UNSET,
     made_by: str | Unset = UNSET,
     is_derivative: GetSearchTermTypethingsIsDerivative | Unset = UNSET,
@@ -185,7 +186,8 @@ def sync_detailed(
     show_customized: str | Unset = UNSET,
     has_makes: GetSearchTermTypethingsHasMakes | Unset = UNSET,
     is_featured: GetSearchTermTypethingsIsFeatured | Unset = UNSET,
-    is_fis_challenge_winnereatured: GetSearchTermTypethingsIsFisChallengeWinnereatured | Unset = UNSET,
+    is_fis_challenge_winnereatured: GetSearchTermTypethingsIsFisChallengeWinnereatured
+    | Unset = UNSET,
     liked_by: str | Unset = UNSET,
     made_by: str | Unset = UNSET,
     is_derivative: GetSearchTermTypethingsIsDerivative | Unset = UNSET,
@@ -277,7 +279,8 @@ def sync(
     show_customized: str | Unset = UNSET,
     has_makes: GetSearchTermTypethingsHasMakes | Unset = UNSET,
     is_featured: GetSearchTermTypethingsIsFeatured | Unset = UNSET,
-    is_fis_challenge_winnereatured: GetSearchTermTypethingsIsFisChallengeWinnereatured | Unset = UNSET,
+    is_fis_challenge_winnereatured: GetSearchTermTypethingsIsFisChallengeWinnereatured
+    | Unset = UNSET,
     liked_by: str | Unset = UNSET,
     made_by: str | Unset = UNSET,
     is_derivative: GetSearchTermTypethingsIsDerivative | Unset = UNSET,
@@ -365,7 +368,8 @@ async def asyncio_detailed(
     show_customized: str | Unset = UNSET,
     has_makes: GetSearchTermTypethingsHasMakes | Unset = UNSET,
     is_featured: GetSearchTermTypethingsIsFeatured | Unset = UNSET,
-    is_fis_challenge_winnereatured: GetSearchTermTypethingsIsFisChallengeWinnereatured | Unset = UNSET,
+    is_fis_challenge_winnereatured: GetSearchTermTypethingsIsFisChallengeWinnereatured
+    | Unset = UNSET,
     liked_by: str | Unset = UNSET,
     made_by: str | Unset = UNSET,
     is_derivative: GetSearchTermTypethingsIsDerivative | Unset = UNSET,
@@ -455,7 +459,8 @@ async def asyncio(
     show_customized: str | Unset = UNSET,
     has_makes: GetSearchTermTypethingsHasMakes | Unset = UNSET,
     is_featured: GetSearchTermTypethingsIsFeatured | Unset = UNSET,
-    is_fis_challenge_winnereatured: GetSearchTermTypethingsIsFisChallengeWinnereatured | Unset = UNSET,
+    is_fis_challenge_winnereatured: GetSearchTermTypethingsIsFisChallengeWinnereatured
+    | Unset = UNSET,
     liked_by: str | Unset = UNSET,
     made_by: str | Unset = UNSET,
     is_derivative: GetSearchTermTypethingsIsDerivative | Unset = UNSET,

@@ -6,9 +6,15 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_users_username_recommended_tags_response_401 import GetUsersUsernameRecommendedTagsResponse401
-from ...models.get_users_username_recommended_tags_response_403 import GetUsersUsernameRecommendedTagsResponse403
-from ...models.get_users_username_recommended_tags_response_404 import GetUsersUsernameRecommendedTagsResponse404
+from ...models.get_users_username_recommended_tags_response_401 import (
+    GetUsersUsernameRecommendedTagsResponse401,
+)
+from ...models.get_users_username_recommended_tags_response_403 import (
+    GetUsersUsernameRecommendedTagsResponse403,
+)
+from ...models.get_users_username_recommended_tags_response_404 import (
+    GetUsersUsernameRecommendedTagsResponse404,
+)
 from ...models.tag_schema import TagSchema
 from ...types import Response
 

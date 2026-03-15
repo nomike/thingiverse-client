@@ -32,7 +32,12 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item] | None:
+) -> (
+    GetPrinters0BrandsResponse401
+    | GetPrinters0BrandsResponse403
+    | list[GetPrinters0BrandsResponse200Item]
+    | None
+):
     if response.status_code == 200:
         response_200 = []
         _response_200 = response.json()
@@ -61,7 +66,11 @@ def _parse_response(
 
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
-) -> Response[GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item]]:
+) -> Response[
+    GetPrinters0BrandsResponse401
+    | GetPrinters0BrandsResponse403
+    | list[GetPrinters0BrandsResponse200Item]
+]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -74,7 +83,11 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
     include_user_defined: bool | Unset = UNSET,
-) -> Response[GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item]]:
+) -> Response[
+    GetPrinters0BrandsResponse401
+    | GetPrinters0BrandsResponse403
+    | list[GetPrinters0BrandsResponse200Item]
+]:
     """Get a list of all known printer brands
 
     Args:
@@ -103,7 +116,12 @@ def sync(
     *,
     client: AuthenticatedClient,
     include_user_defined: bool | Unset = UNSET,
-) -> GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item] | None:
+) -> (
+    GetPrinters0BrandsResponse401
+    | GetPrinters0BrandsResponse403
+    | list[GetPrinters0BrandsResponse200Item]
+    | None
+):
     """Get a list of all known printer brands
 
     Args:
@@ -127,7 +145,11 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
     include_user_defined: bool | Unset = UNSET,
-) -> Response[GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item]]:
+) -> Response[
+    GetPrinters0BrandsResponse401
+    | GetPrinters0BrandsResponse403
+    | list[GetPrinters0BrandsResponse200Item]
+]:
     """Get a list of all known printer brands
 
     Args:
@@ -154,7 +176,12 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     include_user_defined: bool | Unset = UNSET,
-) -> GetPrinters0BrandsResponse401 | GetPrinters0BrandsResponse403 | list[GetPrinters0BrandsResponse200Item] | None:
+) -> (
+    GetPrinters0BrandsResponse401
+    | GetPrinters0BrandsResponse403
+    | list[GetPrinters0BrandsResponse200Item]
+    | None
+):
     """Get a list of all known printer brands
 
     Args:

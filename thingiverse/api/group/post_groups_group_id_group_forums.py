@@ -8,9 +8,15 @@ from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.forum_schema import ForumSchema
 from ...models.post_groups_group_id_group_forums_body import PostGroupsGroupIdGroupForumsBody
-from ...models.post_groups_group_id_group_forums_response_401 import PostGroupsGroupIdGroupForumsResponse401
-from ...models.post_groups_group_id_group_forums_response_403 import PostGroupsGroupIdGroupForumsResponse403
-from ...models.post_groups_group_id_group_forums_response_404 import PostGroupsGroupIdGroupForumsResponse404
+from ...models.post_groups_group_id_group_forums_response_401 import (
+    PostGroupsGroupIdGroupForumsResponse401,
+)
+from ...models.post_groups_group_id_group_forums_response_403 import (
+    PostGroupsGroupIdGroupForumsResponse403,
+)
+from ...models.post_groups_group_id_group_forums_response_404 import (
+    PostGroupsGroupIdGroupForumsResponse404,
+)
 from ...types import UNSET, Response, Unset
 
 

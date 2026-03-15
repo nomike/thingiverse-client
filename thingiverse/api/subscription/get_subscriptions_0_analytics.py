@@ -5,10 +5,18 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_subscriptions_0_analytics_response_200 import GetSubscriptions0AnalyticsResponse200
-from ...models.get_subscriptions_0_analytics_response_401 import GetSubscriptions0AnalyticsResponse401
-from ...models.get_subscriptions_0_analytics_response_403 import GetSubscriptions0AnalyticsResponse403
-from ...models.get_subscriptions_0_analytics_response_404 import GetSubscriptions0AnalyticsResponse404
+from ...models.get_subscriptions_0_analytics_response_200 import (
+    GetSubscriptions0AnalyticsResponse200,
+)
+from ...models.get_subscriptions_0_analytics_response_401 import (
+    GetSubscriptions0AnalyticsResponse401,
+)
+from ...models.get_subscriptions_0_analytics_response_403 import (
+    GetSubscriptions0AnalyticsResponse403,
+)
+from ...models.get_subscriptions_0_analytics_response_404 import (
+    GetSubscriptions0AnalyticsResponse404,
+)
 from ...types import Response
 
 

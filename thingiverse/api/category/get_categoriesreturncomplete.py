@@ -5,10 +5,18 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.get_categoriesreturncomplete_response_200_item import GetCategoriesreturncompleteResponse200Item
-from ...models.get_categoriesreturncomplete_response_401 import GetCategoriesreturncompleteResponse401
-from ...models.get_categoriesreturncomplete_response_403 import GetCategoriesreturncompleteResponse403
-from ...models.get_categoriesreturncomplete_response_404 import GetCategoriesreturncompleteResponse404
+from ...models.get_categoriesreturncomplete_response_200_item import (
+    GetCategoriesreturncompleteResponse200Item,
+)
+from ...models.get_categoriesreturncomplete_response_401 import (
+    GetCategoriesreturncompleteResponse401,
+)
+from ...models.get_categoriesreturncomplete_response_403 import (
+    GetCategoriesreturncompleteResponse403,
+)
+from ...models.get_categoriesreturncomplete_response_404 import (
+    GetCategoriesreturncompleteResponse404,
+)
 from ...types import UNSET, Response, Unset
 
 
@@ -47,7 +55,9 @@ def _parse_response(
         response_200 = []
         _response_200 = response.json()
         for response_200_item_data in _response_200:
-            response_200_item = GetCategoriesreturncompleteResponse200Item.from_dict(response_200_item_data)
+            response_200_item = GetCategoriesreturncompleteResponse200Item.from_dict(
+                response_200_item_data
+            )
 
             response_200.append(response_200_item)
 

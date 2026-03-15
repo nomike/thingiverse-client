@@ -74,7 +74,10 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    Any | GetThingsThingIdImagesResponse401 | GetThingsThingIdImagesResponse403 | GetThingsThingIdImagesResponse404
+    Any
+    | GetThingsThingIdImagesResponse401
+    | GetThingsThingIdImagesResponse403
+    | GetThingsThingIdImagesResponse404
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -91,7 +94,10 @@ def sync_detailed(
     size: str | Unset = UNSET,
     type_: str | Unset = UNSET,
 ) -> Response[
-    Any | GetThingsThingIdImagesResponse401 | GetThingsThingIdImagesResponse403 | GetThingsThingIdImagesResponse404
+    Any
+    | GetThingsThingIdImagesResponse401
+    | GetThingsThingIdImagesResponse403
+    | GetThingsThingIdImagesResponse404
 ]:
     """Get image(s) by thing
 
@@ -168,7 +174,10 @@ async def asyncio_detailed(
     size: str | Unset = UNSET,
     type_: str | Unset = UNSET,
 ) -> Response[
-    Any | GetThingsThingIdImagesResponse401 | GetThingsThingIdImagesResponse403 | GetThingsThingIdImagesResponse404
+    Any
+    | GetThingsThingIdImagesResponse401
+    | GetThingsThingIdImagesResponse403
+    | GetThingsThingIdImagesResponse404
 ]:
     """Get image(s) by thing
 

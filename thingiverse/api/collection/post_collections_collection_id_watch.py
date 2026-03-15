@@ -6,10 +6,18 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.post_collections_collection_id_watch_response_200 import PostCollectionsCollectionIdWatchResponse200
-from ...models.post_collections_collection_id_watch_response_401 import PostCollectionsCollectionIdWatchResponse401
-from ...models.post_collections_collection_id_watch_response_403 import PostCollectionsCollectionIdWatchResponse403
-from ...models.post_collections_collection_id_watch_response_404 import PostCollectionsCollectionIdWatchResponse404
+from ...models.post_collections_collection_id_watch_response_200 import (
+    PostCollectionsCollectionIdWatchResponse200,
+)
+from ...models.post_collections_collection_id_watch_response_401 import (
+    PostCollectionsCollectionIdWatchResponse401,
+)
+from ...models.post_collections_collection_id_watch_response_403 import (
+    PostCollectionsCollectionIdWatchResponse403,
+)
+from ...models.post_collections_collection_id_watch_response_404 import (
+    PostCollectionsCollectionIdWatchResponse404,
+)
 from ...types import Response
 
 

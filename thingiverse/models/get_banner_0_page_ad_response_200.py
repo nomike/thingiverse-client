@@ -9,7 +9,9 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.get_banner_0_page_ad_response_200_custom_ads import GetBanner0PageAdResponse200CustomAds
+    from ..models.get_banner_0_page_ad_response_200_custom_ads import (
+        GetBanner0PageAdResponse200CustomAds,
+    )
 
 
 T = TypeVar("T", bound="GetBanner0PageAdResponse200")
@@ -46,7 +48,9 @@ class GetBanner0PageAdResponse200:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.get_banner_0_page_ad_response_200_custom_ads import GetBanner0PageAdResponse200CustomAds
+        from ..models.get_banner_0_page_ad_response_200_custom_ads import (
+            GetBanner0PageAdResponse200CustomAds,
+        )
 
         d = dict(src_dict)
         blocked_ad_variation = d.pop("blockedAdVariation", UNSET)

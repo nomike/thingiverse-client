@@ -6,10 +6,18 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.delete_things_thing_id_images_image_id_response_200 import DeleteThingsThingIdImagesImageIdResponse200
-from ...models.delete_things_thing_id_images_image_id_response_401 import DeleteThingsThingIdImagesImageIdResponse401
-from ...models.delete_things_thing_id_images_image_id_response_403 import DeleteThingsThingIdImagesImageIdResponse403
-from ...models.delete_things_thing_id_images_image_id_response_404 import DeleteThingsThingIdImagesImageIdResponse404
+from ...models.delete_things_thing_id_images_image_id_response_200 import (
+    DeleteThingsThingIdImagesImageIdResponse200,
+)
+from ...models.delete_things_thing_id_images_image_id_response_401 import (
+    DeleteThingsThingIdImagesImageIdResponse401,
+)
+from ...models.delete_things_thing_id_images_image_id_response_403 import (
+    DeleteThingsThingIdImagesImageIdResponse403,
+)
+from ...models.delete_things_thing_id_images_image_id_response_404 import (
+    DeleteThingsThingIdImagesImageIdResponse404,
+)
 from ...types import Response
 
 

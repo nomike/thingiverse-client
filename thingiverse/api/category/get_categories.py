@@ -77,7 +77,10 @@ def _parse_response(
 def _build_response(
     *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[
-    GetCategoriesResponse401 | GetCategoriesResponse403 | GetCategoriesResponse404 | list[GetCategoriesResponse200Item]
+    GetCategoriesResponse401
+    | GetCategoriesResponse403
+    | GetCategoriesResponse404
+    | list[GetCategoriesResponse200Item]
 ]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -93,7 +96,10 @@ def sync_detailed(
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
 ) -> Response[
-    GetCategoriesResponse401 | GetCategoriesResponse403 | GetCategoriesResponse404 | list[GetCategoriesResponse200Item]
+    GetCategoriesResponse401
+    | GetCategoriesResponse403
+    | GetCategoriesResponse404
+    | list[GetCategoriesResponse200Item]
 ]:
     """List of root categories. Does not list any sub categories.
 
@@ -160,7 +166,10 @@ async def asyncio_detailed(
     page: int | Unset = UNSET,
     per_page: int | Unset = UNSET,
 ) -> Response[
-    GetCategoriesResponse401 | GetCategoriesResponse403 | GetCategoriesResponse404 | list[GetCategoriesResponse200Item]
+    GetCategoriesResponse401
+    | GetCategoriesResponse403
+    | GetCategoriesResponse404
+    | list[GetCategoriesResponse200Item]
 ]:
     """List of root categories. Does not list any sub categories.
 

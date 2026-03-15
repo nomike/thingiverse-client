@@ -6,9 +6,15 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.post_grouptopics_grouptopic_id_pin_response_401 import PostGrouptopicsGrouptopicIdPinResponse401
-from ...models.post_grouptopics_grouptopic_id_pin_response_403 import PostGrouptopicsGrouptopicIdPinResponse403
-from ...models.post_grouptopics_grouptopic_id_pin_response_404 import PostGrouptopicsGrouptopicIdPinResponse404
+from ...models.post_grouptopics_grouptopic_id_pin_response_401 import (
+    PostGrouptopicsGrouptopicIdPinResponse401,
+)
+from ...models.post_grouptopics_grouptopic_id_pin_response_403 import (
+    PostGrouptopicsGrouptopicIdPinResponse403,
+)
+from ...models.post_grouptopics_grouptopic_id_pin_response_404 import (
+    PostGrouptopicsGrouptopicIdPinResponse404,
+)
 from ...models.topic_schema import TopicSchema
 from ...types import Response
 
