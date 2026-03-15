@@ -93,7 +93,12 @@ def _get_request_body_schema(spec: dict, path_str: str, method: str) -> dict | N
 
 
 def _fix_request_body_primitive_arrays(spec: dict) -> int:
-    """Set correct items type for request-body arrays that are primitives (not objects). Returns count of overrides."""
+    """Set correct items type for request-body arrays that are primitives (not objects). Returns count of overrides.
+
+    The upstream spec does not declare these arrays as primitive item types; the generator would
+    otherwise produce array-of-object models and from_dict() would fail when the API sends
+    primitive arrays (e.g. tags: ["foo", "bar"], ancestors: [2000]).
+    """
     changes = 0
 
     # PATCH /things/{thing_id}: tags = array of string, ancestors = array of integer
