@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. This format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1](https://github.com/nomike/thingiverse-client/compare/v1.1.0...v1.1.1) (2026-03-15)
+
+
+### Bug Fixes
+
+* treat tags and ancestors as primitive arrays in PATCH thing body ([#15](https://github.com/nomike/thingiverse-client/issues/15)) ([9e0d863](https://github.com/nomike/thingiverse-client/commit/9e0d863e068fa3e1f3a44c894ab9b79c73d24a98))
+
 ## [1.1.0](https://github.com/nomike/thingiverse-client/compare/v1.0.0...v1.1.0) (2026-03-14)
 
 
